@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>总结各种获取宽高的方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言最近在研究一款触屏手势库Hammer.js,发现在实现各种效果的时候，需要获取元素各种宽高的值。我本来就对这些方法有些混乱，而且还要边学Hammer.js边查该用什么方法获取值，这简直不能忍。于是，特意写篇博客来总结一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结各种获取宽高的方法">
+<meta property="og:url" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言最近在研究一款触屏手势库Hammer.js,发现在实现各种效果的时候，需要获取元素各种宽高的值。我本来就对这些方法有些混乱，而且还要边学Hammer.js边查该用什么方法获取值，这简直不能忍。于是，特意写篇博客来总结一下。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/booktree.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/widthheight.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/innerWidthinnerHeight.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/outerWidthouterHeight.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/offset.png">
+<meta property="article:published_time" content="2017-11-01T02:03:38.000Z">
+<meta property="article:modified_time" content="2018-08-28T09:07:24.567Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JS+jQuery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/booktree.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-总结各种获取宽高的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2017-11-01T02:03:38.000Z" itemprop="datePublished">2017-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      总结各种获取宽高的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="booktree.jpg" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在研究一款触屏手势库Hammer.js,发现在实现各种效果的时候，需要获取元素各种宽高的值。我本来就对这些方法有些混乱，而且还要边学Hammer.js边查该用什么方法获取值，这简直不能忍。于是，特意写篇博客来总结一下。</p>
+<a id="more"></a>
+
+<h2 id="总结window和body的各种取值问题"><a href="#总结window和body的各种取值问题" class="headerlink" title="总结window和body的各种取值问题"></a>总结window和body的各种取值问题</h2><h3 id="1-window-width-和-widow-height"><a href="#1-window-width-和-widow-height" class="headerlink" title="1. $(window).width()和 $(widow).height()"></a>1. <code>$(window).width()</code>和 <code>$(widow).height()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).width();  <span class="comment">//浏览器可视区域的宽（包括padding+border+margin，不包括竖滚动条的宽度）</span></span><br><span class="line">$(<span class="built_in">window</span>).height();  <span class="comment">//浏览器可视区域的高（包括padding+border+margin，不包括横滚动条的高度）</span></span><br></pre></td></tr></table></figure>
+
+<p>具体范围如图蓝色区域所示：</p>
+<p><img src="widthheight.jpg" alt=""></p>
+<blockquote>
+<p>document.documentElement.clientWidth</p>
+<p>document.documentElement.clientHeight</p>
+<p>这两个和上面获取的范围一样,不过这个是原生JS获取的方法</p>
+</blockquote>
+<h3 id="2-window-innerWidth-和-window-innerHeight"><a href="#2-window-innerWidth-和-window-innerHeight" class="headerlink" title="2.window.innerWidth 和 window.innerHeight"></a>2.window.innerWidth 和 window.innerHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.innerWidth;		<span class="comment">//浏览器可视区域的宽（包括padding+border+margin，也包括竖滚动条的宽度）</span></span><br><span class="line"><span class="built_in">window</span>.innerHeight;		<span class="comment">//浏览器可视区域的高（包括padding+border+margin，也包括横滚动条的高度）</span></span><br></pre></td></tr></table></figure>
+
+<p>具体范围如绿色箭头所示：</p>
+<p><img src="innerWidthinnerHeight.png" alt=""></p>
+<h3 id="3-window-outerWidth-和-window-outerHeight"><a href="#3-window-outerWidth-和-window-outerHeight" class="headerlink" title="3.window.outerWidth 和 window.outerHeight"></a>3.window.outerWidth 和 window.outerHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.outerWidth;	<span class="comment">//浏览器窗口的宽（包括padding+border+margin，也包括竖滚动条的宽度）</span></span><br><span class="line"><span class="built_in">window</span>.outerHeight;	<span class="comment">//浏览器窗口的高（包括padding+border+margin，也包括横滚动条的高度、工具栏的高度）</span></span><br></pre></td></tr></table></figure>
+
+<p>具体范围如绿色箭头所示：</p>
+<p><img src="outerWidthouterHeight.png" alt=""></p>
+<h3 id="4-document-body-clientWidth-和-document-body-clientHeight"><a href="#4-document-body-clientWidth-和-document-body-clientHeight" class="headerlink" title="4.document.body.clientWidth 和 document.body.clientHeight"></a>4.document.body.clientWidth 和 document.body.clientHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.clientWidth; <span class="comment">//获取body的宽度（包括padding，不包括border和margin）</span></span><br><span class="line"><span class="built_in">document</span>.body.clientHeight; <span class="comment">//获取body的高度（包括padding，不包括border和margin）</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-window-screenLeft-和-window-screenTop"><a href="#5-window-screenLeft-和-window-screenTop" class="headerlink" title="5.window.screenLeft 和 window.screenTop"></a>5.window.screenLeft 和 window.screenTop</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.screenLeft;     <span class="comment">//获取浏览器窗口距离pc屏幕最左边的距离</span></span><br><span class="line"><span class="built_in">window</span>.screenTop;      <span class="comment">//获取浏览器窗口距离pc屏幕顶部的距离</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>window.screenX的效果和windon.screenLeft一样；<br>window.screenY的效果和window.screenTop一样。</p>
+</blockquote>
+<h3 id="6-document-scrollTop-和-document-scrollLeft"><a href="#6-document-scrollTop-和-document-scrollLeft" class="headerlink" title="6.$(document).scrollTop() 和 $(document).scrollLeft()"></a>6.<code>$(document).scrollTop()</code> 和 <code>$(document).scrollLeft()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).scrollTop();  <span class="comment">//获取竖向滚动条卷曲进去那部分距离</span></span><br><span class="line">$(<span class="built_in">document</span>).scrollLeft();  <span class="comment">//获取横向滚动条卷曲进去那部分距离</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>存在一个问题：当垂直方向的滚动条到最低端的时候，它的值也为零。</p>
+</blockquote>
+<h2 id="总结普通元素的各种取值问题"><a href="#总结普通元素的各种取值问题" class="headerlink" title="总结普通元素的各种取值问题"></a>总结普通元素的各种取值问题</h2><h3 id="1-quot-div-quot-width-和-quot-div-quot-height"><a href="#1-quot-div-quot-width-和-quot-div-quot-height" class="headerlink" title="1.$(&quot;div&quot;).width()和 $(&quot;div&quot;).height()"></a>1.<code>$(&quot;div&quot;).width()</code>和 <code>$(&quot;div&quot;).height()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).width();	<span class="comment">//元素的宽（不包括padding+border+margin）</span></span><br><span class="line">$(<span class="string">"div"</span>).height();	<span class="comment">//元素的宽（不包括padding+border+margin）</span></span><br></pre></td></tr></table></figure>
+
+<p>如果div的样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$(“div”).width() 结果为 200</p>
+<p>$(“div”).height() 结果为 100</p>
+<h3 id="2-quot-div-quot-innerWidth-和-quot-div-quot-innerHeight"><a href="#2-quot-div-quot-innerWidth-和-quot-div-quot-innerHeight" class="headerlink" title="2.$(&quot;div&quot;).innerWidth() 和 $(&quot;div&quot;).innerHeight()"></a>2.<code>$(&quot;div&quot;).innerWidth()</code> 和 <code>$(&quot;div&quot;).innerHeight()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).innerWidth(); <span class="comment">//获得包括内边距（padding）的元素宽度</span></span><br><span class="line">$(<span class="string">"div"</span>).innerHeight();  <span class="comment">//获得包括内边距（padding）的元素高度</span></span><br></pre></td></tr></table></figure>
+
+<p>如果div的样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$(“div”).innerWidth();   结果为：240</p>
+<p>$(“div”).innerHeight();   结果为：140</p>
+<h3 id="3-quot-div-quot-outerWidth-和-quot-div-quot-outerHeight"><a href="#3-quot-div-quot-outerWidth-和-quot-div-quot-outerHeight" class="headerlink" title="3.$(&quot;div&quot;).outerWidth() 和 $(&quot;div&quot;).outerHeight()"></a>3.<code>$(&quot;div&quot;).outerWidth()</code> 和 <code>$(&quot;div&quot;).outerHeight()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).outerWidth(); <span class="comment">//获得包括内边距和边框（padding + border）的元素宽度</span></span><br><span class="line">$(<span class="string">"div"</span>).outerHeight();  <span class="comment">//获得包括内边距和边框（padding + border）的元素高度</span></span><br></pre></td></tr></table></figure>
+
+<p>如果div的样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$(“div”).outerWidth();   结果为：280</p>
+<p>$(“div”).outerHeight();   结果为：180</p>
+<h3 id="4-quot-div-quot-outerWidth-true-和-quot-div-quot-outerHeight-true"><a href="#4-quot-div-quot-outerWidth-true-和-quot-div-quot-outerHeight-true" class="headerlink" title="4.$(&quot;div&quot;).outerWidth(true) 和 $(&quot;div&quot;).outerHeight(true)"></a>4.<code>$(&quot;div&quot;).outerWidth(true)</code> 和 <code>$(&quot;div&quot;).outerHeight(true)</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).outerWidth(<span class="literal">true</span>); <span class="comment">//获得包括内外边距和边框（padding + border + margin）的元素宽度</span></span><br><span class="line">$(<span class="string">"div"</span>).outerHeight(<span class="literal">true</span>);  <span class="comment">//获得包括内外边距和边框（padding + border + margin）的元素高度</span></span><br></pre></td></tr></table></figure>
+
+<p>如果div的样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$(“div”).outerWidth(true);   结果为：320</p>
+<p>$(“div”).outerHeight(true);   结果为：220</p>
+<h3 id="5-quot-div-quot-offset-top-和-quot-div-quot-offset-left"><a href="#5-quot-div-quot-offset-top-和-quot-div-quot-offset-left" class="headerlink" title="5.$(&quot;div&quot;).offset().top 和 $(&quot;div&quot;).offset().left"></a>5.<code>$(&quot;div&quot;).offset().top</code> 和 <code>$(&quot;div&quot;).offset().left</code></h3><p>这个属性比较复杂，分两种情况：</p>
+<p>（1）脱离文档流</p>
+<p>​    当脱离文档流时，<code>$(&quot;div&quot;).offset().left</code> 的值为相对于父元素的left值+marginLeft 值之和，top值同理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).offset().top;    <span class="comment">//$("div").offset().top = top + marginTop</span></span><br><span class="line">$(<span class="string">"div"</span>).offset().left;    <span class="comment">//$("div").offset().left = left + marginLeft</span></span><br></pre></td></tr></table></figure>
+
+<p>当div样式为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.dv</span>&#123;</span></span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    border: 20px solid blue;</span><br><span class="line">    margin: 20px;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.cls</span>&#123;</span></span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 10px solid yellowgreen;</span><br><span class="line">    margin: 10px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 40px;</span><br><span class="line">    top: 40px;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dv"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cls"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>$(“div”).offset().top;   结果为：50px</p>
+<p>$(“div”).offset().left;    结果为：50px</p>
+<p>（2）没有脱离文档流</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).offset().top;    <span class="comment">//元素(包含元素外边距margin值)相对于HTML顶部的偏移量</span></span><br><span class="line">$(<span class="string">"div"</span>).offset().left;    <span class="comment">//元素(包含元素外边距margin值)相对于HTML左侧的偏移量</span></span><br></pre></td></tr></table></figure>
+
+<p>结果如图所示：</p>
+<p><img src="offset.png" alt=""></p>
+<blockquote>
+<p>注意：$(“div”).offset().left 是jQuery的写法；</p>
+<p>原生JS的写法为： </p>
+<p>​    ele.offsetLeft;   </p>
+<p>​    ele.offsetTop;</p>
+</blockquote>
+<h3 id="6-ele-offsetWidth-和-ele-offsetHeight"><a href="#6-ele-offsetWidth-和-ele-offsetHeight" class="headerlink" title="6.ele.offsetWidth 和 ele.offsetHeight"></a>6.ele.offsetWidth 和 ele.offsetHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>)[<span class="number">0</span>].offsetWidth;   <span class="comment">//offsetWidth = width + padding + border</span></span><br><span class="line">$(<span class="string">"div"</span>)[<span class="number">0</span>].offsetHeight;  <span class="comment">//offsetHeight = height + padding + border</span></span><br><span class="line">和outerWidth() outerHeight()取值相同</span><br></pre></td></tr></table></figure>
+
+<p>如果div的样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$(“div”)[0].offsetWidth;    结果为：280<br>$(“div”)[0].offsetHeight;   结果为：180</p>
+<h3 id="7-ele-clientWidth-和-ele-clientHeight"><a href="#7-ele-clientWidth-和-ele-clientHeight" class="headerlink" title="7.ele.clientWidth 和 ele.clientHeight"></a>7.ele.clientWidth 和 ele.clientHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".dv"</span>)[<span class="number">0</span>].clientWidth;     <span class="comment">// clientWidth = width + padding-滚动条宽度</span></span><br><span class="line">$(<span class="string">".dv"</span>)[<span class="number">0</span>].clientHeight;     <span class="comment">// clientHeight = height + padding - 滚动条高度</span></span><br></pre></td></tr></table></figure>
+
+<p>如果div样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dv</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="attribute">overflow</span>: auto;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.cls</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">10px</span> solid yellowgreen;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>$(“.dv”)[0].clientWidth;   结果为：223 （223 = 200+20*2-17（滚动条））</p>
+<p>$(“.dv”)[0].clientHeight;   结果为：123（123 = 100+20*2-17（滚动条））</p>
+<h3 id="8-ele-scrollWidth-和-ele-scrollHeight"><a href="#8-ele-scrollWidth-和-ele-scrollHeight" class="headerlink" title="8.ele.scrollWidth 和 ele.scrollHeight"></a>8.ele.scrollWidth 和 ele.scrollHeight</h3><p>以下求的都是元素A的scrollWidth和scrollHeight,如果A元素和B元素之间的关系为：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"A"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"B"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>（1）当B元素的width/height+padding+border+margin不超过A元素width/height+padding的值时,</p>
+<p>​         scrollWidth =A元素的width + A元素的padding;  </p>
+<p>​     scrollHeight = A元素的height + A元素的padding;</p>
+<p>如果样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid yellowgreen;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        $(“.A”)[0].scrollWidth 的值为 240 =  200(A’width) + 20（A’padding）x2；</p>
+<p>​    $(“.A”)[0].scrollHeight 的值为 140 =  100(A’height) + 20（A’padding）x2 ；</p>
+<p>（2）当只有B元素的height+padding+border+margin超过A元素height+padding的值时，出现竖直滚动条，</p>
+<p>​    scrollWidth = A元素的width + A元素的padding - 竖直滚动条宽度;</p>
+<p>​        scrollHeight = A元素的padding + B元素的（height + padding + border + margin）;</p>
+<p>​    如果样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid yellowgreen;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        $(“.A”)[0].scrollWidth 的值为 223 =  200(A’width) + 20（A’padding）x2 - 17(竖直滚动条宽度))</p>
+<p>​    $(“.A”)[0].scrollHeight 的值为 300 =   20(A‘padding)x2 +  200(B’height) + 10(B’padding)x2 + 10(B’border)x2+10(B’margin)x2</p>
+<p>（3）当只有B元素的width+padding+border+margin超过A元素width+padding的值时，出现横向滚动条，</p>
+<p>​    scrollWidth = A元素的padding-left + B元素的（height + padding + border + margin-left）;</p>
+<p>​        scrollHeight = A元素的height + A元素的padding - 横向滚动条高度;</p>
+<p>如果样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid yellowgreen;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        $(“.A”)[0].scrollWidth 的值为 270=  20(A‘padding-left) +  200(B’width) + 10(B’padding)x2 + 10x2(B’border)+10(B’margin-left)</p>
+<p>​    $(“.A”)[0].scrollHeight 的值为123 = 100(A’height) + 20（A’padding）x2 - 17(横向滚动条宽度))</p>
+<p>（4）当B元素的width/height+padding+border+margin都超过A元素width/height+padding的值时</p>
+<p>​     scrollWidth = A元素的padding-left + B元素的（height + padding + border + margin-left）;</p>
+<p>​     scrollHeight = A元素的padding + B元素的（height + padding + border + margin）;</p>
+<p>​    如果样式为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">20px</span> solid blue;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid yellowgreen;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        $(“.A”)[0].scrollWidth 的值为 270=  20(A‘padding-left) +  200(B’width) + 10(B’padding)x2 + 10x2(B’border)+10(B’margin-left)</p>
+<p>​    $(“.A”)[0].scrollHeight 的值为 300 =   20(A‘padding)x2 +  200(B’height) + 10(B’padding)x2 + 10(B’border)x2+10(B’margin)x2</p>
+<blockquote>
+<p>以上情况都是B元素没有脱离文档流的情况，当B元素脱离文档流之后，</p>
+<p>情况（1）一样；</p>
+<p>情况（2）scrollWidth 一样，scrollHeight =B元素的（height + padding + border + margin+top）；</p>
+<p>情况（3）scrollHeight 一样，scrollWidth =B元素的（height + padding + border + margin/2+left）；</p>
+<p>情况（4）scrollWidth =B元素的（height + padding + border + margin/2+left）</p>
+<p>​          scrollHeight =B元素的（height + padding + border + margin+top）。</p>
+</blockquote>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h4 id="1-如何获取一个元素离他相对定位父元素（position-relative-）之间的高度？"><a href="#1-如何获取一个元素离他相对定位父元素（position-relative-）之间的高度？" class="headerlink" title="1.如何获取一个元素离他相对定位父元素（position: relative;）之间的高度？"></a>1.如何获取一个元素离他相对定位父元素（position: relative;）之间的高度？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(ele).position().top;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-怎么获取一个有滚动条的元素的实际高度"><a href="#2-怎么获取一个有滚动条的元素的实际高度" class="headerlink" title="2.怎么获取一个有滚动条的元素的实际高度?"></a>2.怎么获取一个有滚动条的元素的实际高度?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.rent-has-selection&quot;)[0].scrollHeight;</span><br><span class="line">或者</span><br><span class="line">$(&#39;.rent-has-selection&#39;).prop(&#39;scrollHeight&#39;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-怎样让一个div高度和浏览器高度一样"><a href="#3-怎样让一个div高度和浏览器高度一样" class="headerlink" title="3.怎样让一个div高度和浏览器高度一样?"></a>3.怎样让一个div高度和浏览器高度一样?</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">html,body&#123;height:100%;overflow:hidden;&#125;</span><br><span class="line">.demo&#123;</span><br><span class="line">  width	100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="ckclpfcwa002hmswf4mgq6v2j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-jQuery/" rel="tag">JS+jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/06/%E6%8E%A8%E8%8D%90%E5%87%A0%E4%B8%AA%E6%AF%94%E8%BE%83%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          推荐几个比较好用的工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/30/%E5%8C%BA%E5%88%86%E5%8E%9F%E7%94%9FJS%E5%92%8CjQuery%E4%B8%AD%E7%9A%84%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">区分原生JS和jQuery中的循环遍历函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe-photoshop-CC-2017/" rel="tag">Adobe photoshop CC 2017</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clipboard-js/" rel="tag">Clipboard.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-JS/" rel="tag">HTML+CSS+JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-Jquery/" rel="tag">HTML+CSS+Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS-jQuery/" rel="tag">JS+jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cropper-js/" rel="tag">cropper.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/" rel="tag">video</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Adobe-photoshop-CC-2017/" style="font-size: 10px;">Adobe photoshop CC 2017</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Clipboard-js/" style="font-size: 10px;">Clipboard.js</a> <a href="/tags/HTML-CSS-JS/" style="font-size: 18.33px;">HTML+CSS+JS</a> <a href="/tags/HTML-CSS-Jquery/" style="font-size: 20px;">HTML+CSS+Jquery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JS-jQuery/" style="font-size: 13.33px;">JS+jQuery</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/Vue-js/" style="font-size: 13.33px;">Vue.js</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 11.67px;">bootstrap</a> <a href="/tags/cropper-js/" style="font-size: 10px;">cropper.js</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 15px;">h5</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 16.67px;">小程序</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/%E8%A7%86%E5%B7%AE%E6%BB%9A%E5%8A%A8/">视差滚动</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/cookie%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%99%BB%E9%99%86/">cookie判断用户是否第一次登陆</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%AD%BE%E5%88%B0%E6%A1%88%E4%BE%8B/">微信小程序-签到案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/%E8%A7%A3%E5%86%B3position-fixed%E5%9C%A8ios%E7%B3%BB%E7%BB%9F%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/">解决position:fixed在ios系统失效的问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

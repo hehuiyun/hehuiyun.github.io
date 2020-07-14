@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>H5自定义视频播放器实现 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言目前，只是对自定义视频播放器的初步实现，之后会逐步完善!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5自定义视频播放器实现">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言目前，只是对自定义视频播放器的初步实现，之后会逐步完善!">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/avatar.jpg">
+<meta property="article:published_time" content="2018-05-04T06:23:27.000Z">
+<meta property="article:modified_time" content="2018-05-21T02:37:52.269Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="h5">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/avatar.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-H5自定义视频播放器实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/" class="article-date">
+  <time datetime="2018-05-04T06:23:27.000Z" itemprop="datePublished">2018-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      H5自定义视频播放器实现
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="avatar.jpg" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前，只是对自定义视频播放器的初步实现，之后会逐步完善!</p>
+<a id="more"></a>
+
+<h3 id="一、H5视频、声频常用方法"><a href="#一、H5视频、声频常用方法" class="headerlink" title="一、H5视频、声频常用方法"></a>一、H5视频、声频常用方法</h3><p><strong>1.canPlayType();        检查浏览器是否能够播放指定的视频、声频。</strong></p>
+<p>使用<em>canPlayType()</em>方法检查浏览器是否能够播放指定的视频、声频。canPlayType()方法能够返回以下值：</p>
+<ul>
+<li>“probably” : 浏览器最有可能支持视频的类型</li>
+<li>“maybe” : 浏览器或许能够支持视频的类型</li>
+<li>“ “ : 空字符，浏览器不支持视频的类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>指定视频的种类以及解码器。                                                                                                                                            常用值如下：video/mp4video/oggvideo/webm同时指定常用值及解码器：video/ogg;</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.canPlayType(kind,label,language);</td>
+</tr>
+</tbody></table>
+<p><strong>2.load();加载视频、声频元素</strong></p>
+<p>使用<em>load()</em>方法重新加载视频元素。load()方法通常用于给video元素加载或设置新的媒体数据。</p>
+<p><strong>3.play();播放媒体数据</strong></p>
+<p>使用<em>play()</em>方法播放当前视频。该方法通常与pause()方法一起使用，实现播放和暂停功能。使用controls属性显示视频的操作界面（界面上通常包括播放、暂停、滑动条、音量等）。</p>
+<p><strong>4.pause();暂停媒体数据</strong></p>
+<p>使用<em>pause()</em>方法暂停当前视频。该方法通常与play()方法一起使用，实现播放和暂停功能。使用controls属性显示视频的操作界面（界面上通常包括播放、暂停、滑动条、音量等）。</p>
+<h3 id="二、H5视频、声频常用属性"><a href="#二、H5视频、声频常用属性" class="headerlink" title="二、H5视频、声频常用属性"></a>二、H5视频、声频常用属性</h3><p><strong>1.autoplay属性  自动播放</strong></p>
+<p>使用<em>autoplay</em>属性，当视频播放准备工作一旦完成，视频马上播放。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true</td>
+<td>打开网页，视频自动播放，设置方法：autoplay=true，这时返回true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>打开网页，视频不自动播放，设置方法：autoplay=false，这时返回false。默认值</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.autoplay=true/false;</td>
+</tr>
+</tbody></table>
+<p><strong>2.buffered属性返回声频、视频的缓冲信息</strong></p>
+<p>使用<em>buffered</em>属性，返回TimeTanges事件，从TimeTanges事件中可以获得视频、声频的缓冲信息。</p>
+<p>在TimeTanges事件中，针对完成缓冲的部分，有表示开始点的start属性和结束点的end属性，与currentTime相同， 容纳了以秒计算的实数值。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TimeRanges事件</td>
+<td>表示声频、视频的缓冲范围；                                                                                             TimeTanges事件的属性：length:获取声频、视频的缓冲长度；                                           start(index):获取缓冲范围的开始点；                                                                                   end(index):获取缓冲范围的结束点注：矩阵的起始序号为0。</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.buffered;</td>
+</tr>
+</tbody></table>
+<p><strong>3.controls属性     设置或返回视频、声频用户界面</strong></p>
+<p>使用<em>controls</em>属性设置或返回能够操作视频、声频播放或停止的用户标准界面。</p>
+<p>用户标准界面的构成：</p>
+<ul>
+<li>播放</li>
+<li>暂停</li>
+<li>播放滑条</li>
+<li>音量</li>
+<li>满屏切换（视频）</li>
+<li>字幕切换（如果可用）</li>
+<li>字幕轨道（如果可用）</li>
+</ul>
+<p>注：使用<em>controls属性</em>设置或返回视频是否带有基本用户操作界面。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true</td>
+<td>设定用户界面显示</td>
+</tr>
+<tr>
+<td>false</td>
+<td>设定用户界面不显示</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.controls=true/false;默认值：false</td>
+</tr>
+</tbody></table>
+<p><strong>4.currentSrc属性        返回当前视频、声频的URL</strong></p>
+<p>使用<em>currentSrc</em>属性返回当前视频、声频的URL。如果没有视频或声频安装，将返回空字符。</p>
+<p>该属性为只读属性。使用src属性设置视频文件。</p>
+<table>
+<thead>
+<tr>
+<th>返回的值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>返回的值</td>
+<td>一串字符，即：当前视频、声频的ＵＲＬ。返回完整的ＵＲＬ，包括协议（如：　http://）， 如果没有设置媒体文件，将返回空字符。</td>
+</tr>
+<tr>
+<td>false</td>
+<td>设定用户界面不显示</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.currentSrc</td>
+</tr>
+</tbody></table>
+<p><strong>5.currentTime属性    设置或返回视频、声频的当前播放位置</strong></p>
+<p>使用<em>currentTime</em>属性设置或返回视频、声频的当前播放位置（以秒计算）。如果设置了该属性，将跳至被指定的位置开始 播放。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>秒（seconds）</td>
+<td>使用秒指定声频、视频的播放位置</td>
+</tr>
+<tr>
+<td>返回的值</td>
+<td>一个数值，当前的播放时间（以秒计算）</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.currentTime=“seconds”</td>
+</tr>
+</tbody></table>
+<p><strong>6.duration属性    返回当前视频、声频的长度（以秒计算）</strong></p>
+<p>使用<em>duration</em>属性返回当前视频、声频的长度（以秒计算）。 如果没有设置声频、视频文件，将返回NaN(Not-a-Number)。</p>
+<p>注：该属性为只读属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>返回值</td>
+<td>数值，指定的视频的长度，以秒计算。如果没有设置视频，将返回“NaN”（Not-a-Number）。如果只是视频流，没有预定的长度时，将返回 “Inf”（Infinity）。</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.duration</td>
+</tr>
+</tbody></table>
+<p><strong>7.ended属性        返回视频、声频是否播放完毕</strong></p>
+<p>使用<em>ended</em>属性返回视频、声频是否播放完毕。如果播放位置在视频、声频的结束位置，代表声频、视频 播放结束。</p>
+<p>注：该属性为只读属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>返回值</td>
+<td>布尔值，返回true：播放结束返回false：播放没有结束</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.ended</td>
+</tr>
+</tbody></table>
+<p><strong>8.loop属性    设置或返回视频、声频是否反复播放</strong></p>
+<p>使用<em>loop</em>属性，设置或返回视频、声频是否反复播放。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true</td>
+<td>指定视频、声频反复播放</td>
+</tr>
+<tr>
+<td>false</td>
+<td>指定视频、声频不反复播放</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>布尔值，如果视频、声频反复播放返回true；如果视频、声频不反复播放返回false;</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.loop=true/false</td>
+</tr>
+</tbody></table>
+<p><strong>9.muted属性;设置或返回视频、声频是否静音</strong></p>
+<p>使用<em>muted</em>属性设置或返回视频、声频是否静音。muted属于逻辑属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>true</td>
+<td>声频、视频指定静音</td>
+</tr>
+<tr>
+<td>false</td>
+<td>声频、视频不指定静音</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>布尔值；返回true时静音状态，返回false时不是静音状态。</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.muted=true/false;audio/video.muted（返回）</td>
+</tr>
+</tbody></table>
+<p><strong>10.paused属性; 返回视频、声频否是暂停</strong></p>
+<p>使用<em>paused</em>属性返回视频、声频是否是暂停。</p>
+<p>注：该属性为只读属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>返回值</td>
+<td>布尔值，返回true：声频、视频暂停；返回false：声频、视频没有暂停。</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.paused</td>
+</tr>
+</tbody></table>
+<p><strong>11.played属性    返回代表视频、声频播放部分的TimeTanges对象</strong></p>
+<p>使用<em>played</em>属性返回代表视频、声频播放部分的TimeTanges对象。播放部分是一个时间段， 用户可以获得多个即时播放时间段。</p>
+<p>在TimeTanges事件中，针对播放完毕的部分，有表示开始点的start属性和结束点的end属性，与currentTime相同， 容纳了以秒计算的实数值。start与end是以矩阵的形式存在的。</p>
+<p>注：该属性为只读属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TimeTanges事件</td>
+<td>代表媒体播放完了部分。TimeTanges事件的属性：length:获取声频、视频的播放长度；start(index):获取视频的开始点end(index):获取视频的结束点注：矩阵的起始序号为0</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.played</td>
+</tr>
+</tbody></table>
+<p><strong>12.playbackRate属性        设置或返回声频、视频的播放速度</strong></p>
+<p>使用<em>playbackRate</em>属性设置或返回声频、视频的播放速度。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>播放速度</td>
+<td>指定当前声频、视频的播放速度。值：1.0:标准速度；0.5:半速（慢速）；2.0:双倍速度（快速）；-1.0:后退（标准速度）；-0.5:后退（半速）;</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>数值，速度；默认值：1.0；</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.playbackRate</td>
+</tr>
+</tbody></table>
+<p><strong>13.src属性    设置或返回当前声频、视频资源的URL</strong></p>
+<p>使用<em>src</em>属性返回当前视频、声频资源的URL。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>URL</td>
+<td>指定的视频、声频资源的URL。</td>
+</tr>
+<tr>
+<td></td>
+<td>字符串，视频、声频的资源文件的保存地址（URL），返回绝对路径，包括协议（如: http://）</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.src=URLaudio/video.src(返回)</td>
+</tr>
+</tbody></table>
+<p><strong>14.volume属性    设置或安装视频、声频的音量</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数量</td>
+<td>指定当前声频、视频的音量。值必须取0.0-1.0之间的数值，例：1.0:声音最高（100%,默认值）0.5：中音（50%）0.0:静（相当于静音）</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>返回数值，代表当前音量</td>
+</tr>
+<tr>
+<td>JavaScript 语法</td>
+<td>audio/video.volume(返回)audio/video.volume=数值（设置）</td>
+</tr>
+</tbody></table>
+<h3 id="二、H5视频、声频常用属性-1"><a href="#二、H5视频、声频常用属性-1" class="headerlink" title="二、H5视频、声频常用属性"></a>二、H5视频、声频常用属性</h3><h4 id="1-加载声频、视频过程时，能够触发的事件如下："><a href="#1-加载声频、视频过程时，能够触发的事件如下：" class="headerlink" title="1.加载声频、视频过程时，能够触发的事件如下："></a>1.加载声频、视频过程时，能够触发的事件如下：</h4><ol>
+<li>开始读入媒体数据时触发的事件(onloadstart)</li>
+<li>更改声频、视频的时长时(ondurationchange)</li>
+<li>浏览器已加载声频、视频的元数据时触发的事件(onloadedmetadata)</li>
+<li>浏览器加载声频、视频当前帧结束后(onloadeddata)</li>
+<li>浏览器正在下载媒体数据时(onprogress)</li>
+<li>浏览器可以播放媒体数据时(oncanplay)</li>
+<li>当浏览器可以在不因缓冲而停顿的情况下播放时(oncanplaythrough)</li>
+</ol>
+<h4 id="2-加载声频、视频时，容易受到的干扰-如下："><a href="#2-加载声频、视频时，容易受到的干扰-如下：" class="headerlink" title="2.加载声频、视频时，容易受到的干扰,如下："></a>2.加载声频、视频时，容易受到的干扰,如下：</h4><ul>
+<li>因出错而中断(abort)</li>
+<li>空文件(emptied)</li>
+<li>出错(onerror)</li>
+<li>下载过程中，意外中断时（onstalled）</li>
+<li>浏览器不获取媒体数据时(onsuspend)</li>
+</ul>
+<h4 id="3-其它事件"><a href="#3-其它事件" class="headerlink" title="3.其它事件"></a>3.其它事件</h4><p>（1）onended事件    目前的播放列表结束时触发的事件</p>
+<p>​    使用场景如：当播放结束后自动显示或提示“谢谢观看！”、“谢谢收听！”等。</p>
+<p>（2）onpause事件    为声频、视频暂停时触发的事件</p>
+<p>（3）onplay事件        为声频、视频开始播放时触发的事件</p>
+<p>（4）onseeked事件    为用户改变播放位置后触发的事件</p>
+<p>​    即：用户操作滑动条到新的位置时触发的事件。</p>
+<p>（5）onseeking事件     为用户开始改变或正在改变播放位置时触发的事件</p>
+<p>​    即：用户正在操作滑动条时触发的事件。</p>
+<p>（6）ontimeupdate事件    为当前播放位置发生改变后触发的事件</p>
+<p>​    该timeupdate事件经常与Audio/Video事件的currentTime属性配合使用。curentTime属性返回 Audio/Video的当前播放位置。以秒计算。</p>
+<p>（7）onvolumechange事件    为更改了声频、视频的音量时触发的事件</p>
+<p>（8）onwaiting事件    为视频因为需要下载下一帧而停止时触发的事件</p>
+<h4 id="如果系统的看过以上H5声频、音频的相关知识，那么以下栗子就可以看得懂了。"><a href="#如果系统的看过以上H5声频、音频的相关知识，那么以下栗子就可以看得懂了。" class="headerlink" title="如果系统的看过以上H5声频、音频的相关知识，那么以下栗子就可以看得懂了。"></a>如果系统的看过以上H5声频、音频的相关知识，那么以下栗子就可以看得懂了。</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">id</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery-2.2.3.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/remauto.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义视频播放器<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.video-box</span>&#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 7<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 4<span class="selector-class">.2rem</span>;</span></span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.video-box</span> <span class="selector-tag">video</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 7<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 4<span class="selector-class">.2rem</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.controls-bar</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line">            bottom: 0;</span><br><span class="line">            width: 100%;</span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.5rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.2</span>);</span></span><br><span class="line">            z-index: 999;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.progress</span> &#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            float: left;</span><br><span class="line">            width: 3rem;</span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.06rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#8ed1bb</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-moz-border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span>: 0<span class="selector-class">.22rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-left</span>: 0<span class="selector-class">.16rem</span>;</span></span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.bar</span> &#123;</span></span><br><span class="line">            display: inline-block;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            width: 0;</span><br><span class="line">            height: 100%;</span><br><span class="line"><span class="css">            <span class="selector-tag">background</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-moz-border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-radius</span>: 0<span class="selector-class">.05rem</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.control</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">left</span>: <span class="selector-tag">-0</span><span class="selector-class">.04rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span>: <span class="selector-tag">-0</span><span class="selector-class">.04rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.14rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.14rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">            -webkit-border-radius: 50%;</span><br><span class="line">            -moz-border-radius: 50%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            z-index: 99;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.control</span><span class="selector-pseudo">:before</span>&#123;</span></span><br><span class="line">            content: '';</span><br><span class="line">            position: absolute;</span><br><span class="line"><span class="css">            <span class="selector-tag">right</span>: <span class="selector-tag">-0</span><span class="selector-class">.04rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span>: <span class="selector-tag">-0</span><span class="selector-class">.04rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.22rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.22rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background</span>: <span class="selector-tag">rgba</span>(255,255,255,0<span class="selector-class">.3</span>);</span></span><br><span class="line">            -webkit-border-radius: 50%;</span><br><span class="line">            -moz-border-radius: 50%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.vioce</span>&#123;</span></span><br><span class="line">            float: left;</span><br><span class="line">            -webkit-border-radius: 50%;</span><br><span class="line">            -moz-border-radius: 50%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span>: 0<span class="selector-class">.16rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-left</span>: 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span>: 0<span class="selector-class">.14rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#ffffff</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-class">.video-switch</span>&#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            float: left;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.4rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.4rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-border-radius</span>: 0<span class="selector-class">.1rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-moz-border-radius</span>: 0<span class="selector-class">.1rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-radius</span>: 0<span class="selector-class">.1rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin</span>: 0<span class="selector-class">.05rem</span> 0<span class="selector-class">.1rem</span>;</span></span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.switch-pause</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            right: 0;</span><br><span class="line">            top: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line">            width:  0;</span><br><span class="line">            height: 0;</span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 0<span class="selector-class">.1rem</span> <span class="selector-tag">solid</span> <span class="selector-tag">transparent</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-left</span>: 0<span class="selector-class">.12rem</span> <span class="selector-tag">solid</span> <span class="selector-id">#fff</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.switch-play</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            top: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.18rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.18rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-left</span>: 0<span class="selector-class">.05rem</span> <span class="selector-tag">solid</span> <span class="selector-id">#ffffff</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-right</span>: 0<span class="selector-class">.05rem</span> <span class="selector-tag">solid</span> <span class="selector-id">#ffffff</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#fullScreen</span>&#123;</span></span><br><span class="line">            float: left;</span><br><span class="line"><span class="css">            <span class="selector-tag">margin-top</span>: 0<span class="selector-class">.1rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-left</span>: 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.fullscreen-icon</span>&#123;</span></span><br><span class="line">            display: block;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line">            background: url("img/full.png") no-repeat;</span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-background-size</span>: 0<span class="selector-class">.3rem</span> 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-size</span>: 0<span class="selector-class">.3rem</span> 0<span class="selector-class">.3rem</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.video-mask</span>&#123;</span></span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.controls-bar</span>&#123;</span></span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.vioce</span> <span class="selector-tag">input</span><span class="selector-attr">[type=range]</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 1<span class="selector-class">.4rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.08rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-border-radius</span>: 0<span class="selector-class">.08rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-moz-border-radius</span>: 0<span class="selector-class">.08rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-radius</span>: 0<span class="selector-class">.08rem</span>;</span></span><br><span class="line">            vertical-align: middle;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.voice-icon</span>&#123;</span></span><br><span class="line">            display: inline-block;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span>: 0<span class="selector-class">.24rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span>: 0<span class="selector-class">.24rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">-webkit-background-size</span>: 0<span class="selector-class">.24rem</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-size</span>: 0<span class="selector-class">.24rem</span>;</span></span><br><span class="line">            vertical-align: middle;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.voice-opened-icon</span>&#123;</span></span><br><span class="line">            background: url("img/voice-opened.png") no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.voice-closed-icon</span>&#123;</span></span><br><span class="line">            background: url("img/voice-closed.png") no-repeat;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"video-box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"video-btn"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"video-mask"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"play-video-icon iconfont icon-bofang"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"perch.mp4"</span>  <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"movie.ogg"</span>  <span class="attr">type</span>=<span class="string">"video/ogg"</span>&gt;</span></span><br><span class="line">        您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"controls-bar"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--开关--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"video-switch"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"switch-btn switch-play"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--进度条--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"control"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--音量--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vioce"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"voice-icon voice-opened-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">value</span>=<span class="string">"50"</span> <span class="attr">id</span>=<span class="string">"vioceControle"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--全屏--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"fullScreen"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fullscreen-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//得到video标签对象</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> myVideo = $(<span class="string">"video"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> progress = $(<span class="string">".progress"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> bar = $(<span class="string">".bar"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> control = $(<span class="string">".control"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> fullScreen = <span class="built_in">document</span>.getElementById(<span class="string">"fullScreen"</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    $(<span class="string">".video-btn"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        videoSwitch();</span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">    $(<span class="string">".video-switch"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        videoSwitch();</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//    开关控制</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">videoSwitch</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line">        if (myVideo.paused)&#123;</span><br><span class="line">            myVideo.play();</span><br><span class="line"><span class="javascript">            $(<span class="string">".video-mask"</span>).hide();</span></span><br><span class="line"><span class="javascript">            $(<span class="string">".switch-btn"</span>).removeClass(<span class="string">'switch-pause'</span>).addClass(<span class="string">'switch-play'</span>);</span></span><br><span class="line"><span class="javascript">            $(<span class="string">".controls-bar"</span>).hide();</span></span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span>&#123;</span></span><br><span class="line">            myVideo.pause();</span><br><span class="line"><span class="javascript">            $(<span class="string">".video-mask"</span>).show();</span></span><br><span class="line"><span class="javascript">            $(<span class="string">".switch-btn"</span>).removeClass(<span class="string">'switch-play'</span>).addClass(<span class="string">'switch-pause'</span>);</span></span><br><span class="line"><span class="javascript">            $(<span class="string">".controls-bar"</span>).show();</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//    进度条</span></span></span><br><span class="line"><span class="actionscript">    myVideo.addEventListener(<span class="string">"timeupdate"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> scales = myVideo.currentTime / myVideo.duration;</span></span><br><span class="line"><span class="actionscript">        bar.style.width = progress.offsetWidth * scales/<span class="number">100</span> + <span class="string">"rem"</span>;</span></span><br><span class="line"><span class="actionscript">        control.style.left = progress.offsetWidth * scales/<span class="number">100</span> - <span class="number">0.04</span>  + <span class="string">"rem"</span>;</span></span><br><span class="line"><span class="actionscript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">    <span class="comment">//    调节音量</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vioceControle = <span class="built_in">document</span>.getElementById(<span class="string">"vioceControle"</span>);</span></span><br><span class="line"><span class="actionscript">    vioceControle.addEventListener(<span class="string">"change"</span>,<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">        myVideo.volume = vioceControle.value/100;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//    控制全屏</span></span></span><br><span class="line"><span class="actionscript">    fullScreen.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line">        myVideo.webkitRequestFullScreen();</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//    鼠标进入视频，控制栏的显示与隐藏控制</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">".video-box"</span>).on(<span class="string">"mouseover"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">".controls-bar"</span>).show();</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">    $(<span class="string">".video-box"</span>).on(<span class="string">"mouseout"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="built_in">console</span>.log(myVideo.paused);</span></span><br><span class="line">       if(!myVideo.paused)&#123;</span><br><span class="line"><span class="javascript">           $(<span class="string">".controls-bar"</span>).hide();</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="actionscript"><span class="comment">//    设置是否静音</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">".voice-icon"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        if(myVideo.muted) &#123;</span><br><span class="line"><span class="actionscript">            myVideo.muted = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">            $(<span class="keyword">this</span>).removeClass(<span class="string">"voice-closed-icon"</span>).addClass(<span class="string">"voice-opened-icon"</span>);</span></span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">            myVideo.muted = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">            $(<span class="keyword">this</span>).removeClass(<span class="string">"voice-opened-icon"</span>).addClass(<span class="string">"voice-closed-icon"</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>但是如何使用qq浏览器看该例子的话，会发现视频控制栏还是原来的样式，并不是我们自定义的样式。原因<a href="https://hehuiyun.github.io/2018/04/26/X5%E5%90%8C%E5%B1%82%E6%92%AD%E6%94%BE%E5%99%A8/#more]" target="_blank" rel="noopener">这篇文章</a>已经说过了，只要结合X5同层播放器就能解决了。</p>
+</blockquote>
+<p>参考链接：<a href="http://www.webkkl.com/api-v/addtexttrack.php" target="_blank" rel="noopener">http://www.webkkl.com/api-v/addtexttrack.php</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/" data-id="ckclpfcv80001mswf25dl9l9d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/h5/" rel="tag">h5</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端布局问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/02/jQuery%E8%AE%BE%E7%BD%AE%E5%92%8C%E8%8E%B7%E5%8F%96%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery设置和获取自定义属性</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe-photoshop-CC-2017/" rel="tag">Adobe photoshop CC 2017</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clipboard-js/" rel="tag">Clipboard.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-JS/" rel="tag">HTML+CSS+JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-Jquery/" rel="tag">HTML+CSS+Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS-jQuery/" rel="tag">JS+jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cropper-js/" rel="tag">cropper.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/" rel="tag">video</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Adobe-photoshop-CC-2017/" style="font-size: 10px;">Adobe photoshop CC 2017</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Clipboard-js/" style="font-size: 10px;">Clipboard.js</a> <a href="/tags/HTML-CSS-JS/" style="font-size: 18.33px;">HTML+CSS+JS</a> <a href="/tags/HTML-CSS-Jquery/" style="font-size: 20px;">HTML+CSS+Jquery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JS-jQuery/" style="font-size: 13.33px;">JS+jQuery</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/Vue-js/" style="font-size: 13.33px;">Vue.js</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 11.67px;">bootstrap</a> <a href="/tags/cropper-js/" style="font-size: 10px;">cropper.js</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 15px;">h5</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 16.67px;">小程序</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/%E8%A7%86%E5%B7%AE%E6%BB%9A%E5%8A%A8/">视差滚动</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/cookie%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%99%BB%E9%99%86/">cookie判断用户是否第一次登陆</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%AD%BE%E5%88%B0%E6%A1%88%E4%BE%8B/">微信小程序-签到案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/%E8%A7%A3%E5%86%B3position-fixed%E5%9C%A8ios%E7%B3%BB%E7%BB%9F%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/">解决position:fixed在ios系统失效的问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

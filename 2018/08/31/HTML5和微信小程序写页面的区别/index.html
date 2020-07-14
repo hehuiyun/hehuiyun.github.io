@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTML5和微信小程序写页面的区别 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言在写微信小程序页面时，发现和HTML5有些不同，记录一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5和微信小程序写页面的区别">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言在写微信小程序页面时，发现和HTML5有些不同，记录一下。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/avatar.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/difference.png">
+<meta property="article:published_time" content="2018-08-31T09:16:24.000Z">
+<meta property="article:modified_time" content="2018-09-03T09:22:24.377Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/avatar.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HTML5和微信小程序写页面的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2018-08-31T09:16:24.000Z" itemprop="datePublished">2018-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5和微信小程序写页面的区别
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="avatar.jpg" alt=""></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在写微信小程序页面时，发现和HTML5有些不同，记录一下。</p>
+<a id="more"></a>
+
+
+
+<h3 id="h5和小程序写页面有什么不同？"><a href="#h5和小程序写页面有什么不同？" class="headerlink" title="h5和小程序写页面有什么不同？"></a>h5和小程序写页面有什么不同？</h3><h4 id="1-标签的不同"><a href="#1-标签的不同" class="headerlink" title="1.标签的不同"></a>1.标签的不同</h4><p>小程序有自己的标签，常见的有<code>&lt;view&gt;</code> <code>&lt;text&gt;</code> <code>&lt;icon&gt;</code> 等；</p>
+<p><img src="difference.png" alt=""></p>
+<h4 id="2-选择器不同"><a href="#2-选择器不同" class="headerlink" title="2.选择器不同"></a>2.选择器不同</h4><table>
+<thead>
+<tr>
+<th>HTML5</th>
+<th>微信小程序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>div（标签选择器）</td>
+<td>view、text、icon、input、image、navigator（标签选择器）</td>
+</tr>
+<tr>
+<td>div:first-child等</td>
+<td>view:first-child等(不建议（工具过滤易导致页面错乱）)</td>
+</tr>
+<tr>
+<td>.class.class</td>
+<td>.class.class(不建议（工具过滤易导致页面错乱）)</td>
+</tr>
+</tbody></table>
+<h4 id="3-单位不同"><a href="#3-单位不同" class="headerlink" title="3.单位不同"></a>3.单位不同</h4><p>小程序中特有的单位rpx，也有rem，但是微信小程序中的rem的计算方式和HTML5中的rem不同。</p>
+<p>在微信小程序中， <code>1rem = 设计稿宽度/20</code> ;</p>
+<p>而在HTML5中，1rem的值是用js根据页面宽度动态设置文档根元素得来的。</p>
+<p>js如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">initFont</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="built_in">document</span>.getElementById(<span class="string">'viewport'</span>).setAttribute(<span class="string">'content'</span>,<span class="string">'width=device-width,initial-scale=1,user-scalable=no,width=750,maximum-scale='</span>+<span class="built_in">window</span>.screen.width/<span class="number">750</span>);</span><br><span class="line">        <span class="built_in">document</span>.documentElement.style.fontSize = (<span class="built_in">document</span>.documentElement.clientWidth &gt; <span class="number">750</span> ? <span class="number">750</span> : <span class="built_in">document</span>.documentElement.clientWidth) / <span class="number">7.5</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    initFont();</span><br><span class="line">   	<span class="built_in">window</span>.onresize=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;initFont()&#125;;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>rpx实际上就是系统级的rem（把页面按比例分割750份，1rpx=window.innerWidth/750）。也就是说，微信小程序的rpx布局把rem布局的js设置根元素字体尺寸这步省了。</p>
+</blockquote>
+<p>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>rpx换算px (屏幕宽度/750)</th>
+<th>px换算rpx (750/屏幕宽度)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iPhone5</td>
+<td>1rpx = 0.42px</td>
+<td>1px = 2.34rpx</td>
+</tr>
+<tr>
+<td>iPhone6</td>
+<td>1rpx = 0.5px</td>
+<td>1px = 2rpx</td>
+</tr>
+<tr>
+<td>iPhone6 Plus</td>
+<td>1rpx = 0.552px</td>
+<td>1px = 1.81rpx</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>因此，也可以说HTML5和微信小程序实现自适应的方式不同。微信小程序只要使用rpx单位进行布局，就可以实现自适应布局。而HTML5需要先用js根据页面宽度动态设置。</p>
+<p>比如在html标签中：1rem = 100px；</p>
+<p>那么在body标签中的元素，宽为50px时，需要设置成 0.5rem(50/100)；</p>
+</blockquote>
+<h4 id="4-placeholder的区别"><a href="#4-placeholder的区别" class="headerlink" title="4.placeholder的区别"></a>4.placeholder的区别</h4><h5 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h5><p>HTML5需要通过特殊的选择器来添加样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h5><p>小程序中可以直接给通过<code>placeholder-style</code> 给placeholder添加样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">'input-ui flex-item-3'</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入商铺名/公司名"</span>  <span class="attr">placeholder-style</span>=<span class="string">'color: #323232;'</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者通过<code>placeholder-class</code> 定义一个类添加样式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">'input-ui flex-item-3'</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入商铺名/公司名"</span>  <span class="attr">placeholder-class</span>=<span class="string">'create-placeholder'</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.create-placeholder</span>&#123;</span></span><br><span class="line"><span class="css">      <span class="selector-tag">color</span>: <span class="selector-id">#323232</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-图片引入不同"><a href="#5-图片引入不同" class="headerlink" title="5.图片引入不同"></a>5.图片引入不同</h4><p>在h5中，无论是<code>img</code> 标签引入的图片还是css中的背景图片，都可以是本地图片或者是线上的图片。但是在微信小程序中wxss中的背景图片必须是线上的图片。</p>
+<h4 id="6-js写法不同"><a href="#6-js写法不同" class="headerlink" title="6.js写法不同"></a>6.js写法不同</h4><p>小程序是操作数据，而在HTML5+CSS+JQUERY中是操作DOM。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/31/HTML5%E5%92%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%99%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckclpfcvc0005mswf64op0g2r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          小程序开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/27/koa%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">koa学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe-photoshop-CC-2017/" rel="tag">Adobe photoshop CC 2017</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clipboard-js/" rel="tag">Clipboard.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-JS/" rel="tag">HTML+CSS+JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS-Jquery/" rel="tag">HTML+CSS+Jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS-jQuery/" rel="tag">JS+jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MYSQL/" rel="tag">MYSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/" rel="tag">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cropper-js/" rel="tag">cropper.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/h5/" rel="tag">h5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koa/" rel="tag">koa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/" rel="tag">video</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Adobe-photoshop-CC-2017/" style="font-size: 10px;">Adobe photoshop CC 2017</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/Clipboard-js/" style="font-size: 10px;">Clipboard.js</a> <a href="/tags/HTML-CSS-JS/" style="font-size: 18.33px;">HTML+CSS+JS</a> <a href="/tags/HTML-CSS-Jquery/" style="font-size: 20px;">HTML+CSS+Jquery</a> <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/JS-jQuery/" style="font-size: 13.33px;">JS+jQuery</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/Vue-js/" style="font-size: 13.33px;">Vue.js</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/bootstrap/" style="font-size: 11.67px;">bootstrap</a> <a href="/tags/cropper-js/" style="font-size: 10px;">cropper.js</a> <a href="/tags/css/" style="font-size: 18.33px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/h5/" style="font-size: 15px;">h5</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/koa/" style="font-size: 10px;">koa</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 16.67px;">小程序</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/%E8%A7%86%E5%B7%AE%E6%BB%9A%E5%8A%A8/">视差滚动</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/09/cookie%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%99%BB%E9%99%86/">cookie判断用户是否第一次登陆</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%AD%BE%E5%88%B0%E6%A1%88%E4%BE%8B/">微信小程序-签到案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/19/%E8%A7%A3%E5%86%B3position-fixed%E5%9C%A8ios%E7%B3%BB%E7%BB%9F%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/">解决position:fixed在ios系统失效的问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
