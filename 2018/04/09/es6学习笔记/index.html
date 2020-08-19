@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2018/04/09/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在编程过程中，我一直是使用es5来进行编程。但随着es6、es7的引入，意识到学习它们的必要性。因此，现在开始学习es6新语法，以下是根据学习视频记录的笔记。</p>
 <a id="more"></a>
 
@@ -194,7 +194,7 @@
 <h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = "abc";</span><br><span class="line">const a = "efg";</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
 
 <p>会报语法错误：</p>
-<p><img src="es6-01.png" alt=""></p>
+<p><img src="/2018/04/09/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/es6-01.png" alt></p>
 <h3 id="3-解构赋值"><a href="#3-解构赋值" class="headerlink" title="3.解构赋值"></a>3.解构赋值</h3><p>什么是解构？ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。</p>
 <p>解构的作用？解构赋值在实际开发中可以大量减少我们的代码量，并且让我们的程序结构更清晰。</p>
 <h4 id="数组的结构赋值："><a href="#数组的结构赋值：" class="headerlink" title="数组的结构赋值："></a>数组的结构赋值：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> b=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> c=<span class="number">2</span>;</span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"><span class="keyword">let</span> [a,b,c] = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="comment">//按照位置的对象关系对变量赋值</span></span><br></pre></td></tr></table></figure>
@@ -363,7 +363,7 @@
 <p>（1）如果既使用默认值，又使用严谨模式的话，就会产生冲突。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b=<span class="number">3</span></span>) </span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span></span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 
-<p><img src="es6-02.png" alt=""></p>
+<p><img src="/2018/04/09/es6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/es6-02.png" alt></p>
 <p>（2）当参数中有默认值时，获取需要传递的参数个数时，不会计算有默认值的参数。所以这里需要注意的是add.length返回的参数个数是必须传递参数的个数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b=<span class="number">2</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add.length);	<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 
@@ -815,18 +815,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -839,11 +827,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -851,15 +839,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,7 +847,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -891,11 +871,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,6 +892,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

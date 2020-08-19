@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2017/10/30/%E5%8C%BA%E5%88%86%E5%8E%9F%E7%94%9FJS%E5%92%8CjQuery%E4%B8%AD%E7%9A%84%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%87%BD%E6%95%B0/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前总是不清楚原生JS和jQuery中有哪些循环遍历函数，而且有时候还总是把原生JS方法当成jQuery方法来用，以致于项目总是报错，并且还不知道是什么原因。所以，觉得有必要总结出来，区分一下。</p>
 <a id="more"></a>
 
@@ -183,7 +183,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">  arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">t,m,n</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(t);  <span class="comment">//数组中的元素</span></span><br><span class="line">      <span class="built_in">console</span>.log(m);  <span class="comment">//索引</span></span><br><span class="line">      <span class="built_in">console</span>.log(n);  <span class="comment">//整个数组</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 
 <p>运行结果如图所示：</p>
-<p><img src="jsforEach.png" alt=""></p>
+<p><img src="/2017/10/30/%E5%8C%BA%E5%88%86%E5%8E%9F%E7%94%9FJS%E5%92%8CjQuery%E4%B8%AD%E7%9A%84%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%87%BD%E6%95%B0/jsforEach.png" alt></p>
 <p>​    </p>
 <h3 id="3-every"><a href="#3-every" class="headerlink" title="3.every()"></a>3.every()</h3><blockquote>
 <p>every() 方法用于检测数组所有元素是否都符合指定条件（通过函数提供）。</p>
@@ -226,7 +226,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"Tom"</span>,</span><br><span class="line">    age: <span class="number">12</span>,</span><br><span class="line">    gender: <span class="string">"Male"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> m <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(m);  <span class="comment">//获取属性</span></span><br><span class="line">    <span class="built_in">console</span>.log(obj[m]);  <span class="comment">//获取属性值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结果如图所示：</p>
-<p><img src="forIn.png" alt=""></p>
+<p><img src="/2017/10/30/%E5%8C%BA%E5%88%86%E5%8E%9F%E7%94%9FJS%E5%92%8CjQuery%E4%B8%AD%E7%9A%84%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%87%BD%E6%95%B0/forIn.png" alt></p>
 <h2 id="jQuery循环遍历函数"><a href="#jQuery循环遍历函数" class="headerlink" title="jQuery循环遍历函数"></a>jQuery循环遍历函数</h2><h3 id="1-each"><a href="#1-each" class="headerlink" title="1.each()"></a>1.each()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"x"</span>,<span class="string">"y"</span>,<span class="string">"z"</span>];</span><br><span class="line">$(arr).each(<span class="function"><span class="keyword">function</span> (<span class="params">index,item</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(index);   <span class="comment">//当前元素索引</span></span><br><span class="line">      <span class="built_in">console</span>.log(item);   <span class="comment">//当前元素</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-map"><a href="#2-map" class="headerlink" title="2.map()"></a>2.map()</h3><p>用于使用指定函数处理数组中的每个元素(或对象的每个属性)，并将处理结果封装为新的数组返回。</p>
@@ -522,18 +522,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -546,11 +534,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,15 +546,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,7 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,6 +599,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

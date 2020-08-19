@@ -170,13 +170,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2017/10/24/visual-viewport%E5%92%8Clayout-viewport/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在开发一个移动端项目，对于视口的概念任然比较模糊，在网上看了很多篇博客，在此把自己所领悟到的一些内容记录一下。</p>
 <a id="more"></a>
 
 <h3 id="1-什么是visual-viewport-和layout-viewport？"><a href="#1-什么是visual-viewport-和layout-viewport？" class="headerlink" title="1.什么是visual viewport 和layout viewport？"></a>1.什么是visual viewport 和layout viewport？</h3><p>首先，通过两张图来理解一下！</p>
-<p><img src="viewport1.jpg" alt=""></p>
-<p><img src="viewport2.jpg" alt=""></p>
+<p><img src="/2017/10/24/visual-viewport%E5%92%8Clayout-viewport/viewport1.jpg" alt></p>
+<p><img src="/2017/10/24/visual-viewport%E5%92%8Clayout-viewport/viewport2.jpg" alt></p>
 <p><strong>打个比方，比如我们通过一个圆筒看一张画，画不动，圆筒离得越近，画就越大，圆筒离得越远，画就越小。并且当你移动圆筒的方向时，呈现的画的部分也不同。同时也可以缩放和放大圆筒的大小，呈现的画也会随之放大和缩小。</strong></p>
 <p><strong>这是一种常见的现象，visual viewport和layout viewport之间也是这样的关系。visual viewport就相当于那个圆筒所呈现出的画面，layout viewport 就相当于画。但我们要明白，layout viewport的宽高没发生任何的变化,变化的仅仅是visual viewport去远离或者靠近layout viewport，比如用户通过滚动来改变他所看到的页面的部分，或者通过缩放来改变visual viewport的大小。</strong></p>
 <p>以上就是我个人的理解!</p>
@@ -223,7 +223,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">id</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>部分机型默认viewport大小：</p>
-<p><img src="viewportphone.jpg" alt=""></p>
+<p><img src="/2017/10/24/visual-viewport%E5%92%8Clayout-viewport/viewportphone.jpg" alt></p>
 <p><strong>关于缩放以及initial-scale的默认值问题</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visual viewport宽度 &#x3D; ideal viewport宽度  &#x2F; 当前缩放值</span><br><span class="line"></span><br><span class="line">当前缩放值 &#x3D; ideal viewport宽度  &#x2F; visual viewport宽度</span><br></pre></td></tr></table></figure>
 
@@ -549,18 +549,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -573,11 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,15 +573,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +581,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,11 +605,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,6 +626,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

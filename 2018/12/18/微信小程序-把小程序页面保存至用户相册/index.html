@@ -168,7 +168,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2018/12/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8A%8A%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BF%9D%E5%AD%98%E8%87%B3%E7%94%A8%E6%88%B7%E7%9B%B8%E5%86%8C/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>生成分享海报！产生这种需求的原因在于目前小程序不支持直接分享到微信朋友圈。但是微信小程序支持通过扫描/长按识别二维码或小程序码图片的方式进入一个小程序首页或小程序中某个特定页面。</p>
 <a id="more"></a>
 
@@ -181,7 +181,7 @@
 <h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line">// pages/poster/poster.js</span><br><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">    shareTempFilePath: ''</span><br><span class="line">  &#125;,</span><br><span class="line">  // 处理在canvas中，文字不会自己换行的问题</span><br><span class="line">  dealWords: function (options) &#123;</span><br><span class="line">    options.ctx.setFontSize(options.fontSize);//设置字体大小</span><br><span class="line">    var allRow = Math.ceil(options.ctx.measureText(options.word).width / options.maxWidth);//实际总共能分多少行</span><br><span class="line">    var count = allRow &gt;= options.maxLine ? options.maxLine : allRow;//实际能分多少行与设置的最大显示行数比，谁小就用谁做循环次数</span><br><span class="line">    var endPos = 0;//当前字符串的截断点</span><br><span class="line">    for (var j = 0; j <span class="tag">&lt; <span class="attr">count</span>; <span class="attr">j</span>++) &#123;</span></span><br><span class="line"><span class="tag">      <span class="attr">var</span> <span class="attr">nowStr</span> = <span class="string">options.word.slice(endPos);//当前剩余的字符串</span></span></span><br><span class="line"><span class="tag">      <span class="attr">var</span> <span class="attr">rowWid</span> = <span class="string">0;//每一行当前宽度</span>  </span></span><br><span class="line"><span class="tag">      <span class="attr">if</span> (<span class="attr">options.ctx.measureText</span>(<span class="attr">nowStr</span>)<span class="attr">.width</span> &gt;</span> options.maxWidth) &#123;//如果当前的字符串宽度大于最大宽度，然后开始截取</span><br><span class="line">        for (var m = 0; m <span class="tag">&lt; <span class="attr">nowStr.length</span>; <span class="attr">m</span>++) &#123;</span></span><br><span class="line"><span class="tag">          <span class="attr">rowWid</span> += <span class="string">options.ctx.measureText(nowStr[m]).width;//当前字符串总宽度</span></span></span><br><span class="line"><span class="tag">          <span class="attr">if</span> (<span class="attr">rowWid</span> &gt;</span> options.maxWidth) &#123;</span><br><span class="line">            if (j === options.maxLine - 1) &#123; //如果是最后一行</span><br><span class="line">              options.ctx.fillText(nowStr.slice(0, m - 1) + '...', options.x, options.y + (j + 1) * 24);  //(j+1)*18这是每一行的高度    </span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              options.ctx.fillText(nowStr.slice(0, m), options.x, options.y + (j + 1) * 24);</span><br><span class="line">            &#125;</span><br><span class="line">            endPos += m;//下次截断点</span><br><span class="line">            break;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;//如果当前的字符串宽度小于最大宽度就直接输出</span><br><span class="line">        options.ctx.fillText(nowStr.slice(0), options.x, options.y + (j + 1) * 24);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面初次渲染完成</span><br><span class="line">   */</span><br><span class="line">  onReady: function () &#123;</span><br><span class="line">    let promise1 = new Promise(function (resolve, reject) &#123;</span><br><span class="line">      /* 获得要在画布上绘制的图片 */</span><br><span class="line">      wx.getImageInfo(&#123;</span><br><span class="line">        src: '../img/poster-pic.png',</span><br><span class="line">        success: function (res) &#123;</span><br><span class="line">          resolve(res);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">    let promise2 = new Promise(function (resolve, reject) &#123;</span><br><span class="line">      wx.getImageInfo(&#123;</span><br><span class="line">        src: '../img/qrCode.png',</span><br><span class="line">        success: function (res) &#123;</span><br><span class="line">          resolve(res);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    /* 图片获取成功才执行后续代码 */</span><br><span class="line">    Promise.all(</span><br><span class="line">      [promise1, promise2]</span><br><span class="line">    ).then(res =&gt; &#123;</span><br><span class="line">      /* 创建 canvas 画布 */</span><br><span class="line">      const ctx = wx.createCanvasContext('share');</span><br><span class="line">        // 绘制矩形</span><br><span class="line">      ctx.fillStyle="#fff";</span><br><span class="line">      ctx.fillRect(0, 320, 320, 140);</span><br><span class="line"></span><br><span class="line">      ctx.setStrokeStyle("#33cccc");</span><br><span class="line">      ctx.setLineWidth(0.5);</span><br><span class="line">      ctx.rect(220, 330, 70, 70);</span><br><span class="line"></span><br><span class="line">      /* 绘制图像到画布  图片的位置你自己计算好就行 参数的含义看文档 */</span><br><span class="line">      ctx.drawImage('/' + res[0].path, 0, 0, 320, 320);</span><br><span class="line">      ctx.drawImage('/' + res[1].path, 225, 335, 60, 60);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">      /* 绘制文字 位置自己计算 参数自己看文档 */      </span><br><span class="line">      ctx.setFillStyle('#323232');                       //  颜色</span><br><span class="line">      var name = '灵眸OSMO+手机云台租赁手机云台租赁';</span><br><span class="line">      this.dealWords(&#123;</span><br><span class="line">        ctx: ctx,//画布上下文</span><br><span class="line">        fontSize: 16,//字体大小</span><br><span class="line">        word: name,//需要处理的文字</span><br><span class="line">        maxWidth: 180,//一行文字最大宽度</span><br><span class="line">        x: 10,//文字在x轴要显示的位置</span><br><span class="line">        y: 325,//文字在y轴要显示的位置</span><br><span class="line">        maxLine: 3//文字最多显示的行数</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      ctx.setFontSize(12);  </span><br><span class="line">      ctx.setFillStyle('#646464');     </span><br><span class="line">      ctx.fillText('微信长按小程序码', 205, 420);     </span><br><span class="line">      ctx.fillText('开启你的找租旅途', 205, 440); </span><br><span class="line"></span><br><span class="line">      ctx.setFontSize(16)   </span><br><span class="line">      ctx.setFillStyle('#f17229');</span><br><span class="line">      ctx.fillText('￥20元/天', 10, 430)         //  内容</span><br><span class="line"></span><br><span class="line">      /* 绘制 */</span><br><span class="line">      ctx.stroke();</span><br><span class="line">      ctx.draw(false, this.getTempFilePath);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  //获取临时路径</span><br><span class="line">  getTempFilePath: function () &#123;</span><br><span class="line">    wx.canvasToTempFilePath(&#123;</span><br><span class="line">      canvasId: 'share',</span><br><span class="line">      success: (res) =&gt; &#123;</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          shareTempFilePath: res.tempFilePath</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  //保存至相册</span><br><span class="line">  saveImageToPhotosAlbum: function () &#123;</span><br><span class="line">    if (!this.data.shareTempFilePath) &#123;</span><br><span class="line">      wx.showModal(&#123;</span><br><span class="line">        title: '提示',</span><br><span class="line">        content: '图片绘制中，请稍后重试',</span><br><span class="line">        showCancel: false</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    wx.saveImageToPhotosAlbum(&#123;</span><br><span class="line">      filePath: this.data.shareTempFilePath,</span><br><span class="line">      success: (res) =&gt; &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">          wx.navigateTo(&#123;</span><br><span class="line">            url: '../new-store-detail/new-store-detail',</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;, 3000);</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: (err) =&gt; &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>最终结果如图所示：</p>
-<p><img src="result.png" alt=""></p>
+<p><img src="/2018/12/18/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%8A%8A%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BF%9D%E5%AD%98%E8%87%B3%E7%94%A8%E6%88%B7%E7%9B%B8%E5%86%8C/result.png" alt></p>
 
       
 
@@ -423,18 +423,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -447,11 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,15 +447,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,7 +455,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,11 +479,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +500,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

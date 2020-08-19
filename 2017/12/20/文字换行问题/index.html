@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于文字换行的问题，以前的认知是不管英文还是中文都会自动换行的。其实这是对的结论，但突然有一天我自创了一个很长的单词，发现它会溢出。然后我就怀疑自己的认知是不是有问题，于是就去认证。认证之后的结果是：<code>英文字母不会自动换行，除非碰到空格或者连字符。而英文单词会换行。至于中文，它本身每个字之间都是独立个体，所以一段中文可以随时换行。</code>因此我就想如何让一段文字强制不换行。所以，就有了这篇文章。</p>
 <a id="more"></a>
 
@@ -185,9 +185,9 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.dv</span>&#123;</span></span><br><span class="line">       width: 100px;</span><br><span class="line">       font-size: 20px;</span><br><span class="line">       line-height: 30px;</span><br><span class="line"><span class="css">       <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line">       margin: 20px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dv"</span>&gt;</span>ssssssssssssssssssssssssssssss<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dv"</span>&gt;</span>这是一个测试文本!这是一个测试文本!这是一个测试文本!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>结果：</p>
-<p><img src="question.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/question.png" alt></p>
 <p>解决方法：后面在知乎中查到了相关答案，如下所示：</p>
-<p><img src="result.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/result.png" alt></p>
 <blockquote>
 <p>意思是：</p>
 <p>1.西方文字的换行取决于空格和连字符；</p>
@@ -224,15 +224,15 @@
 <p>以下的三种情况分别是当以上代码中word-break为对应值时的情况：</p>
 <p><strong>1）word-break: normal;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="normal.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/normal.png" alt></p>
 <p><strong>结论：英文字母不自动换行，除非碰到空格或者连字符；中文会自动换行。</strong></p>
 <p><strong>2）word-break: break-all;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="break-all.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/break-all.png" alt></p>
 <p><strong>结论：这个主要针对的是英文字母强制换行，因为中文是自动换行的。因此，不会出现溢出的情况！</strong></p>
 <p><strong>3）word-break: keep-all;</strong></p>
 <p>运行结果如图所示：</p>
-<p>​    <img src="keep-all.png" alt=""></p>
+<p>​    <img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/keep-all.png" alt></p>
 <p><strong>结论：</strong></p>
 <p>​    <strong>1.英文字母只碰到空格或则连字符强制换行；</strong></p>
 <p>​    <strong>2.中文只有碰到标点(无论中文标点还是英文标点)和空格以及连字符<code>-</code>的地方强制换行。当中文出现换行的条件宽度大于div的宽度时会出现溢出的现象。</strong></p>
@@ -271,11 +271,11 @@
 &lt;div class=&quot;dv&quot;&gt;这是一个测试文本 这是一个测试文本-这是一个测试文本，这是一个测试文本&lt;/div&gt;</code></pre><p>以下的两种情况分别是当以上代码中word-wrap为对应值时的情况：</p>
 <p><strong>1）word-wrap: normal;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="wrap-normal.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/wrap-normal.png" alt></p>
 <p><strong>结论：不会因为单词太长而自动换行，而是碰到空格或者连接符时换行。</strong></p>
 <p><strong>2）word-wrap: break-word;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="break-word.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/break-word.png" alt></p>
 <p><strong>结论：</strong></p>
 <p><strong>1.<code>word-wrap: break-word;</code> 只对长英文单词进行换行，然而不会填充之前的空白，会起一个新行来放置长单词，新的一行还是放不下时则会对长单词进行强制断句。</strong></p>
 <p><strong>2.对中文不起作用。</strong></p>
@@ -324,11 +324,11 @@
 <p>这里只说两种比较常用的属性值：</p>
 <p><strong>1）white-space: pre;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="pre.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/pre.png" alt></p>
 <p><strong>结论：空白会被浏览器保留。</strong></p>
 <p><strong>2）white-space: nowrap;</strong></p>
 <p>运行结果如图所示：</p>
-<p><img src="nowrap.png" alt=""></p>
+<p><img src="/2017/12/20/%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/nowrap.png" alt></p>
 <p><strong>结论：文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。</strong></p>
 <h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h2><p>说完这三个属性之后，根据需求来使用它们就可以了。下次碰到相关的情况，再记录下来！</p>
 <blockquote>
@@ -575,18 +575,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -599,11 +587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +599,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +607,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +631,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,6 +652,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

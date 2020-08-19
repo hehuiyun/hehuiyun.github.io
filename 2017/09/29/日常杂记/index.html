@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="timg.jpg" alt=""></p>
+        <p><img src="/2017/09/29/%E6%97%A5%E5%B8%B8%E6%9D%82%E8%AE%B0/timg.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在工作中，会遇到一些小问题，用这篇文章记录一下。</p>
 <a id="more"></a>
 
@@ -198,9 +198,9 @@
 <h3 id="4-如何解决display没有过渡功能，即transition对它无效？"><a href="#4-如何解决display没有过渡功能，即transition对它无效？" class="headerlink" title="4.如何解决display没有过渡功能，即transition对它无效？"></a>4.如何解决<code>display</code>没有过渡功能，即transition对它无效？</h3><p>解决方法： 可以使用<code>visibility: visible; opacity: 1;</code> 代替<code>display:block</code> ；</p>
 <p>​            使用<code>visibility: hidden; opacity: 0;</code> 代替<code>display:none;</code> ；</p>
 <h2 id="5-如何下载GitHub中指定文件？"><a href="#5-如何下载GitHub中指定文件？" class="headerlink" title="5.如何下载GitHub中指定文件？"></a>5.如何下载GitHub中指定文件？</h2><p>比如我想要下载<code>https://github.com/hehuiyun/Monokai-Sublime</code> 中的README.md文件，如图所示：</p>
-<p><img src="github.png" alt=""></p>
+<p><img src="/2017/09/29/%E6%97%A5%E5%B8%B8%E6%9D%82%E8%AE%B0/github.png" alt></p>
 <p>步骤：点击<code>README.md</code> 文件，页面中出现<code>Row</code> 按钮，右击<code>链接另存为...</code> ,然后选择文件保存即可。</p>
-<p><img src="githubCopy.png" alt=""></p>
+<p><img src="/2017/09/29/%E6%97%A5%E5%B8%B8%E6%9D%82%E8%AE%B0/githubCopy.png" alt></p>
 <h2 id="6-如何让背景图片自适应？"><a href="#6-如何让背景图片自适应？" class="headerlink" title="6.如何让背景图片自适应？"></a>6.如何让背景图片自适应？</h2><p>1.当背景图片为单独图片,需要设置<code>background-position:center;</code> ,而且background-size的值与图片宽高值一致。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 1<span class="selector-tag">rem</span>;</span><br><span class="line"><span class="selector-tag">height</span>: 0<span class="selector-class">.6rem</span>;</span><br><span class="line">background: url(../img/icon.png) no-repeat center;</span><br><span class="line"><span class="selector-tag">background-size</span>: 1<span class="selector-tag">rem</span> 0<span class="selector-class">.6rem</span>;</span><br></pre></td></tr></table></figure>
 
@@ -215,7 +215,7 @@
 <p>它的错误之处就在于：<code>$(this).parent(&quot;.evaluate-preview-img&quot;).remove();</code>删除了这个元素之后，之后的<code>$(this)</code> 找不到这个元素了，所以之后的代码就不起作用了。</p>
 <p>注意点： 以后要删除元素的话，最好把删除元素这行代码放在最后。</p>
 <h3 id="9-hexo-d-执行之后出现报错"><a href="#9-hexo-d-执行之后出现报错" class="headerlink" title="9.hexo d 执行之后出现报错"></a>9.hexo d 执行之后出现报错</h3><p>报错情况如图所示：</p>
-<p><img src="hexod.png" alt=""></p>
+<p><img src="/2017/09/29/%E6%97%A5%E5%B8%B8%E6%9D%82%E8%AE%B0/hexod.png" alt></p>
 <p>在网上找到了办法，但并不知道是什么原因引起的。</p>
 <p>方法：之前在_config.yml文件中配置的git远程仓库地址使用的是https路径，将路径改成ssh格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  #  repository: https:&#x2F;&#x2F;github.com&#x2F;hehuiyun&#x2F;hehuiyun.github.io.git</span><br><span class="line"> repository: git@github.com:hehuiyun&#x2F;hehuiyun.github.io.git</span><br><span class="line">  branch: gh-pages</span><br></pre></td></tr></table></figure>
@@ -248,7 +248,7 @@
 <h3 id="13-去除chrome表单input自动填充黄色背景"><a href="#13-去除chrome表单input自动填充黄色背景" class="headerlink" title="13.去除chrome表单input自动填充黄色背景"></a>13.去除chrome表单input自动填充黄色背景</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input:-webkit-autofill &#123;</span><br><span class="line">	-webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如图所示：如果不设置以上css样式，对于chrome浏览器记住密码的账号，input会自动加上黄色的背景</p>
-<p><img src="13.png" alt=""></p>
+<p><img src="/2017/09/29/%E6%97%A5%E5%B8%B8%E6%9D%82%E8%AE%B0/13.png" alt></p>
 <h3 id="14-如何设置背景为一张图片，占满屏幕大小，并且无滚动条？"><a href="#14-如何设置背景为一张图片，占满屏幕大小，并且无滚动条？" class="headerlink" title="14.如何设置背景为一张图片，占满屏幕大小，并且无滚动条？"></a>14.如何设置背景为一张图片，占满屏幕大小，并且无滚动条？</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.background</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">position</span><span class="selector-pseudo">:fixed</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">top</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">left</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">bottom</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">right</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">z-index</span><span class="selector-pseudo">:-1</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.background</span> <span class="selector-tag">img</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span><span class="selector-pseudo">:0</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.background</span> <span class="selector-class">.background-mask</span>&#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            top: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 100%;</span><br><span class="line"><span class="css">            <span class="selector-tag">background</span>: <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.4</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"background"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/bg.png"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"background-mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
@@ -502,18 +502,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -526,11 +514,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +526,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +534,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,11 +558,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,6 +579,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

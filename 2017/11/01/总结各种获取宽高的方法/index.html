@@ -171,14 +171,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="booktree.jpg" alt=""></p>
+        <p><img src="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/booktree.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在研究一款触屏手势库Hammer.js,发现在实现各种效果的时候，需要获取元素各种宽高的值。我本来就对这些方法有些混乱，而且还要边学Hammer.js边查该用什么方法获取值，这简直不能忍。于是，特意写篇博客来总结一下。</p>
 <a id="more"></a>
 
 <h2 id="总结window和body的各种取值问题"><a href="#总结window和body的各种取值问题" class="headerlink" title="总结window和body的各种取值问题"></a>总结window和body的各种取值问题</h2><h3 id="1-window-width-和-widow-height"><a href="#1-window-width-和-widow-height" class="headerlink" title="1. $(window).width()和 $(widow).height()"></a>1. <code>$(window).width()</code>和 <code>$(widow).height()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).width();  <span class="comment">//浏览器可视区域的宽（包括padding+border+margin，不包括竖滚动条的宽度）</span></span><br><span class="line">$(<span class="built_in">window</span>).height();  <span class="comment">//浏览器可视区域的高（包括padding+border+margin，不包括横滚动条的高度）</span></span><br></pre></td></tr></table></figure>
 
 <p>具体范围如图蓝色区域所示：</p>
-<p><img src="widthheight.jpg" alt=""></p>
+<p><img src="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/widthheight.jpg" alt></p>
 <blockquote>
 <p>document.documentElement.clientWidth</p>
 <p>document.documentElement.clientHeight</p>
@@ -187,11 +187,11 @@
 <h3 id="2-window-innerWidth-和-window-innerHeight"><a href="#2-window-innerWidth-和-window-innerHeight" class="headerlink" title="2.window.innerWidth 和 window.innerHeight"></a>2.window.innerWidth 和 window.innerHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.innerWidth;		<span class="comment">//浏览器可视区域的宽（包括padding+border+margin，也包括竖滚动条的宽度）</span></span><br><span class="line"><span class="built_in">window</span>.innerHeight;		<span class="comment">//浏览器可视区域的高（包括padding+border+margin，也包括横滚动条的高度）</span></span><br></pre></td></tr></table></figure>
 
 <p>具体范围如绿色箭头所示：</p>
-<p><img src="innerWidthinnerHeight.png" alt=""></p>
+<p><img src="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/innerWidthinnerHeight.png" alt></p>
 <h3 id="3-window-outerWidth-和-window-outerHeight"><a href="#3-window-outerWidth-和-window-outerHeight" class="headerlink" title="3.window.outerWidth 和 window.outerHeight"></a>3.window.outerWidth 和 window.outerHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.outerWidth;	<span class="comment">//浏览器窗口的宽（包括padding+border+margin，也包括竖滚动条的宽度）</span></span><br><span class="line"><span class="built_in">window</span>.outerHeight;	<span class="comment">//浏览器窗口的高（包括padding+border+margin，也包括横滚动条的高度、工具栏的高度）</span></span><br></pre></td></tr></table></figure>
 
 <p>具体范围如绿色箭头所示：</p>
-<p><img src="outerWidthouterHeight.png" alt=""></p>
+<p><img src="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/outerWidthouterHeight.png" alt></p>
 <h3 id="4-document-body-clientWidth-和-document-body-clientHeight"><a href="#4-document-body-clientWidth-和-document-body-clientHeight" class="headerlink" title="4.document.body.clientWidth 和 document.body.clientHeight"></a>4.document.body.clientWidth 和 document.body.clientHeight</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.clientWidth; <span class="comment">//获取body的宽度（包括padding，不包括border和margin）</span></span><br><span class="line"><span class="built_in">document</span>.body.clientHeight; <span class="comment">//获取body的高度（包括padding，不包括border和margin）</span></span><br></pre></td></tr></table></figure>
 
 
@@ -247,7 +247,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).offset().top;    <span class="comment">//元素(包含元素外边距margin值)相对于HTML顶部的偏移量</span></span><br><span class="line">$(<span class="string">"div"</span>).offset().left;    <span class="comment">//元素(包含元素外边距margin值)相对于HTML左侧的偏移量</span></span><br></pre></td></tr></table></figure>
 
 <p>结果如图所示：</p>
-<p><img src="offset.png" alt=""></p>
+<p><img src="/2017/11/01/%E6%80%BB%E7%BB%93%E5%90%84%E7%A7%8D%E8%8E%B7%E5%8F%96%E5%AE%BD%E9%AB%98%E7%9A%84%E6%96%B9%E6%B3%95/offset.png" alt></p>
 <blockquote>
 <p>注意：$(“div”).offset().left 是jQuery的写法；</p>
 <p>原生JS的写法为： </p>
@@ -573,18 +573,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -597,11 +585,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,15 +597,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,7 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,11 +629,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,6 +650,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

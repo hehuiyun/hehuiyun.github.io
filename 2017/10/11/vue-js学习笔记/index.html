@@ -180,7 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么是MVVM模式？"><a href="#什么是MVVM模式？" class="headerlink" title="什么是MVVM模式？"></a>什么是MVVM模式？</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="MVVM.png" alt=""></h2><blockquote>
+        <h2 id="什么是MVVM模式？"><a href="#什么是MVVM模式？" class="headerlink" title="什么是MVVM模式？"></a>什么是MVVM模式？</h2><h2 id><a href="#" class="headerlink" title></a><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/MVVM.png" alt></h2><blockquote>
 <p>MVVM和MVC最大区别在于，MVVM可以实现双向绑定。因此，刚开始接触Vue.js时，就迫不及待的想要尝试双向绑定到底是什么样的？</p>
 </blockquote>
 <a id="more"></a>
@@ -189,13 +189,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; message&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="text" v-model="message"&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    var exampleData = &#123;</span></span><br><span class="line"><span class="regexp">        message: 'Hello Vue.js!'</span></span><br><span class="line"><span class="regexp">    &#125;;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: exampleData</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>实现效果如下：</p>
-<p><img src="v-model.gif" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v-model.gif" alt></p>
 <blockquote>
 <p>正方向（这里没有正反之分，只是为了方便理解）的绑定为：将message绑定到文本框，当文本框的值改变时，<div></div>的值也会跟着改变。</p>
 <p>反方向的绑定为：当<div></div>的值改变时，文本框的值也会随之改变。</p>
 </blockquote>
 <p>在chrome的控制台中可以改变<code>&lt;div&gt;&lt;/div&gt;</code>的值，结果如图所示。</p>
-<p><img src="console.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/console.png" alt></p>
 <blockquote>
 <p>体验完之后，才明白双向绑定的含义。但即使这样，此时的我还是不能够理解Vue.js有什么强大的地方。于是，怀着敬畏之心，继续学习。</p>
 </blockquote>
@@ -210,14 +210,14 @@
 <pre><code>绑定类：v-bind:class
 
 绑定样式：v-bind:style</code></pre><p>出现一个错误：v-bind显示‘Namespace ‘v-bind’is not bound’</p>
-<p><img src="bind-error.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-error.png" alt></p>
 <blockquote>
 <p>百度后解决问题，发现这是webstorm的问题，webstorm不认识v-bind。</p>
 <p>解决方法是：</p>
 <p>​    File-&gt;Settings -&gt; Editor -&gt; Inspections,找到XML，把 Unbound XML namespace prefix的勾去掉。</p>
 </blockquote>
 <p>如图所示：</p>
-<p><img src="bind-solution.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-solution.png" alt></p>
 <blockquote>
 <p>注意：绑定类和绑定样式分别有两种语法：对象语法和数组语法。</p>
 </blockquote>
@@ -228,14 +228,14 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123;current: isCurrent&#125;"</span>&gt;绑定类&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: &#123;</span></span><br><span class="line"><span class="regexp">            isCurrent: true</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>渲染效果如图：</p>
-<p><img src="bind-obj.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-obj.png" alt></p>
 <blockquote>
 <p>数组语法：把一个数组传给v-bind:class，以应用一个class列表。即类名为data对象中一个键值对的值，其键名可以随意取名，然后以数组的形式绑定在v-bind:class中。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[currentClass]"</span>&gt;绑定类&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: &#123;</span></span><br><span class="line"><span class="regexp">            currentClass: 'current'  /</span><span class="regexp">/类名</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>显示效果如图所示：</p>
-<p><img src="bind-arr.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-arr.png" alt></p>
 <p><strong>2.绑定样式</strong></p>
 <blockquote>
 <p>对象语法: 使用缩写时，非常像CSS。</p>
@@ -248,7 +248,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-bind:style=<span class="string">"&#123;color:currentColor,fontSize:fontSize+'px'&#125;"</span>&gt;绑定样式&lt;<span class="regexp">/div&gt;   </span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: &#123;</span></span><br><span class="line"><span class="regexp">            currentColor: 'blue',  /</span><span class="regexp">/必须使用驼峰命名法，否则会报错</span></span><br><span class="line"><span class="regexp">            fontSize: 40</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>渲染效果如图所示：</p>
-<p><img src="bind-style-obj.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-style-obj.png" alt></p>
 <p>也可以绑定一个整体对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-bind:style=<span class="string">"currentStyle"</span>&gt;绑定样式&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: &#123;</span></span><br><span class="line"><span class="regexp">            currentStyle: &#123;</span></span><br><span class="line"><span class="regexp">                color: "red",</span></span><br><span class="line"><span class="regexp">                fontSize: "40px"</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
@@ -260,7 +260,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-bind:style=<span class="string">"[currentStyleA,currentStyleB]"</span>&gt;绑定样式&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: '#app',</span></span><br><span class="line"><span class="regexp">        data: &#123;</span></span><br><span class="line"><span class="regexp">            currentStyleA: &#123;</span></span><br><span class="line"><span class="regexp">                color: "red",</span></span><br><span class="line"><span class="regexp">                fontSize: "40px"</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            currentStyleB:&#123;</span></span><br><span class="line"><span class="regexp">              backgroundColor: 'gray',</span></span><br><span class="line"><span class="regexp">              textDecoration:'underline'</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>渲染效果如图所示：</p>
-<p><img src="bind-style-arr.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/bind-style-arr.png" alt></p>
 <h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>1.事件绑定</p>
 <blockquote>
 <p>（1）直接在HTML中输入js代码</p>
@@ -270,7 +270,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-on:click=<span class="string">"couter+=1"</span>&gt;按钮&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p&gt;这个按钮被点击了&#123;&#123; couter &#125;&#125;次&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">"#app"</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            couter: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>运行效果如图所示：</p>
-<p><img src="v-on.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v-on.png" alt></p>
 <p>（2）在HTML中输入方法</p>
 <p>可以获取data中的数据</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-on:click=<span class="string">"greet"</span>&gt;按钮&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el:"#app",</span></span><br><span class="line"><span class="regexp">        data:&#123;</span></span><br><span class="line"><span class="regexp">            name:"world!"</span></span><br><span class="line"><span class="regexp">        &#125;,</span></span><br><span class="line"><span class="regexp">        methods: &#123;</span></span><br><span class="line"><span class="regexp">            greet:function () &#123;</span></span><br><span class="line"><span class="regexp">                alert("hello "+this.name);</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
@@ -302,7 +302,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;h1 v-show=<span class="string">"yes"</span>&gt;Yes!&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;h1 v-show="no"&gt;No!&lt;/</span>h1&gt;</span><br><span class="line">    &lt;div v-show=<span class="string">"age&gt;= 20"</span>&gt;show&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div v-show="age&lt; 20"&gt;none&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">"#app"</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            yes: <span class="literal">true</span>,</span><br><span class="line">            no: <span class="literal">false</span>,</span><br><span class="line">            age: <span class="number">25</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>显示效果如图所示：</p>
-<p><img src="v-show.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v-show.png" alt></p>
 <h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><blockquote>
 <p>用于遍历一个数组。</p>
 <p>注意：</p>
@@ -313,7 +313,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li  v-<span class="keyword">for</span>=<span class="string">"(index, item) in items"</span>&gt;</span><br><span class="line">           &#123;&#123;index&#125;&#125;:&#123;&#123;item.name&#125;&#125;</span><br><span class="line">        &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">"#app"</span>,</span><br><span class="line">        data:&#123;</span><br><span class="line">            items:[</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">"Tom"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">"Alan"</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>渲染效果如图显示：</p>
-<p><img src="v-forArray.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v-forArray.png" alt></p>
 <blockquote>
 <p>用于遍历一个对象的属性。</p>
 <p>注意：</p>
@@ -323,7 +323,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div v-<span class="keyword">for</span>=<span class="string">"(key,item) in items"</span>&gt;&#123;&#123;key&#125;&#125;:&#123;&#123;item&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el:"#app",</span></span><br><span class="line"><span class="regexp">        data:&#123;</span></span><br><span class="line"><span class="regexp">            items: &#123;</span></span><br><span class="line"><span class="regexp">                name: "Lucy",</span></span><br><span class="line"><span class="regexp">                age: 12,</span></span><br><span class="line"><span class="regexp">                gender: "女"</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>渲染效果如图所示：</p>
-<p><img src="v-forObj.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/v-forObj.png" alt></p>
 <h2 id="表单数据绑定"><a href="#表单数据绑定" class="headerlink" title="表单数据绑定"></a>表单数据绑定</h2><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"message"</span>&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"../vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: "#app",</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -376,7 +376,7 @@
 <p>2.<code>&lt;my-component :my-name=&quot;name&quot; :my-age=&quot;age&quot;&gt;&lt;/my-component&gt;</code>中my-name和my-age的值name和age是初始化中data中的属性。</p>
 </blockquote>
 <p>所以，以上代码运行结果为：</p>
-<p><img src="basic-component.png" alt=""></p>
+<p><img src="/2017/10/11/vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/basic-component.png" alt></p>
 <h3 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h3><p><strong>注意：和全局的组件不同的是，局部组件注册时，component是加s的。因为不一定只有一个局部组件，可能有很多，还有这里的组件只能在它制定的作用域里面使用。</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;part-component&gt;&lt;<span class="regexp">/part-component&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script src=<span class="string">"vue.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    new Vue(&#123;</span></span><br><span class="line"><span class="regexp">        el: "#app",</span></span><br><span class="line"><span class="regexp">        components:&#123;</span></span><br><span class="line"><span class="regexp">            "part-component":&#123;</span></span><br><span class="line"><span class="regexp">                template:"&lt;div&gt;this is a part-component&lt;/</span>div&gt;<span class="string">"</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -648,18 +648,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -672,11 +660,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,15 +672,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,7 +680,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -724,11 +704,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -741,6 +725,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>

@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="avatar.jpg" alt=""></p>
+        <p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/avatar.jpg" alt></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在总结如何让img标签垂直居中时发现，vertical-align这个属性非常重要。之前一直用到的属性值也就middle，它真的挺管用的，但没有系统的把它的其它属性值了解清楚。所以，这篇文章打算结合图片来形象说明。</p>
 <a id="more"></a>
 
@@ -244,7 +244,7 @@
 <p>行高 = 内容区 + 行间距。</p>
 </blockquote>
 <p>具体如图所示：</p>
-<p><img src="base_line.jpg" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/base_line.jpg" alt></p>
 <p>接下来，分别对这些取值进行比较。</p>
 <h3 id="1-vertical-align-baseline"><a href="#1-vertical-align-baseline" class="headerlink" title="1.vertical-align: baseline;"></a>1.vertical-align: baseline;</h3><blockquote>
 <p>vertical-align: baseline;   元素和父元素的基线对齐。</p>
@@ -252,7 +252,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>:baseline;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">100px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="baseline.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/baseline.png" alt></p>
 <p>如上图所示，和文字最低端还有一部分距离。</p>
 <h3 id="2-vertical-align-sub"><a href="#2-vertical-align-sub" class="headerlink" title="2.vertical-align: sub;"></a>2.vertical-align: sub;</h3><blockquote>
 <p>vertical-align: sub;   垂直对齐文本的下标</p>
@@ -260,7 +260,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>:sub;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">sub</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">100px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是H<span class="tag">&lt;<span class="name">sub</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sub</span>&gt;</span>O<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="sub.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/sub.png" alt></p>
 <p>注意：我已经把sub标签中的文字特意设置变大，我们可以清楚的看到图片是和sub标签内的内容2的最低端对齐的。</p>
 <h3 id="3-vertical-align-super"><a href="#3-vertical-align-super" class="headerlink" title="3.vertical-align: super;"></a>3.vertical-align: super;</h3><blockquote>
 <p>vertical-align: super;   垂直对齐文本的上标</p>
@@ -268,7 +268,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>:super;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">sup</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">100px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  这是x<span class="tag">&lt;<span class="name">sup</span>&gt;</span>2<span class="tag">&lt;/<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="super.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/super.png" alt></p>
 <p>注意：我已经把sup标签中的文字特意设置变大，我们可以清楚的看到图片是和sup标签内的内容2的最低端对齐的。</p>
 <h3 id="4-vertical-align-top"><a href="#4-vertical-align-top" class="headerlink" title="4.vertical-align: top;"></a>4.vertical-align: top;</h3><blockquote>
 <p>vertical-align: top;   与本行的最大行高的最顶端对齐</p>
@@ -278,7 +278,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">font-size</span>: <span class="number">14px</span>; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>:top;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">200px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="top.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/top.png" alt></p>
 <p>注意：其实这里的图片对齐的地方就是行高的顶端，而一行中的行高是由行内元素中最大的值决定的。此时，这里最大的行高就是span标签的行高，因此这一行的行高为200px。要是不信，可以将span的行高改为300px,你会发现图片依然在最顶端显示。</p>
 <h3 id="5-vertical-align-text-top"><a href="#5-vertical-align-text-top" class="headerlink" title="5.vertical-align: text-top;"></a>5.vertical-align: text-top;</h3><blockquote>
 <p>vertical-align: text-top;   把元素的顶端与父元素字体的顶端对齐</p>
@@ -286,7 +286,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">width</span>: <span class="number">400px</span>; <span class="attribute">font-size</span>: <span class="number">14px</span>; <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: text-top;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">200px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="text-top.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/text-top.png" alt></p>
 <p>注意：这里说的父元素的字体的顶端是“这是”和“位于段落中的图像”这些文字，因此图片与它们的顶端对齐，并不与span标签内的文字对齐。</p>
 <h3 id="6-vertical-align-middle"><a href="#6-vertical-align-middle" class="headerlink" title="6.vertical-align: middle;"></a>6.vertical-align: middle;</h3><blockquote>
 <p>vertical-align: middle;   把元素的中部与父元素字体的中部对齐</p>
@@ -294,7 +294,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: middle;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">100px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="middle.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/middle.png" alt></p>
 <p>注意：从图中可以发现图片并不处于p标签的中部。要让图片垂直居中，需要在父元素设置<code>font-size: 0;</code> 。</p>
 <p>其实，middle是向谁看齐，现在还不是很清楚。有人说是中线，但也有人说对齐到中线而是对齐到基线以上1/2x的位置。这里先放着，下次再查查资料，因此，这里只说中部对齐。</p>
 <h3 id="7-vertical-align-bottom"><a href="#7-vertical-align-bottom" class="headerlink" title="7.vertical-align: bottom;"></a>7.vertical-align: bottom;</h3><blockquote>
@@ -303,7 +303,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: bottom;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">200px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="bottom.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/bottom.png" alt></p>
 <p>注意：为了有直观的效果，把span的行高改为了200px。</p>
 <h3 id="8-vertical-align-text-bottom"><a href="#8-vertical-align-text-bottom" class="headerlink" title="8.vertical-align: text-bottom;"></a>8.vertical-align: text-bottom;</h3><blockquote>
 <p>vertical-align: text-bottom;   把元素的顶端与父元素字体的低端对齐</p>
@@ -311,7 +311,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span>&#123;<span class="attribute">font-size</span>: <span class="number">14px</span>;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: text-bottom;&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">span</span>&#123;<span class="attribute">font-size</span>: <span class="number">30px</span>; <span class="attribute">line-height</span>: <span class="number">200px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	这是<span class="tag">&lt;<span class="name">span</span>&gt;</span>一幅<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.png"</span> /&gt;</span>位于段落中的图像。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
-<p><img src="text-bottom.png" alt=""></p>
+<p><img src="/2017/11/21/%E8%AF%B4%E4%B8%80%E8%AF%B4vertical-align/text-bottom.png" alt></p>
 <p>注意：这里的span的行高也是200px。</p>
 
       
@@ -554,18 +554,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">h5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
@@ -578,11 +566,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">Adobe photoshop CC 2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">video</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,15 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +586,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,11 +610,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">h5</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">HTML+CSS+Jquery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Clipboard.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,6 +631,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">video</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cropper.js</a>
               </li>
             
             <div class="clearfix"></div>
