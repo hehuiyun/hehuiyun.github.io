@@ -144,6 +144,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js数组与字符串的相互转换方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/js%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/">js数组与字符串的相互转换方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/19/js%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-19T14:05:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2020/08/19/js%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/C:%5CUsers%5Cuser%5CDesktop%5C%E6%96%B0%E7%9A%84blog%E6%96%87%E4%BB%B6%5Cjs%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95%5Cavatar.jpg" alt="avatar"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在处理数据的时候，一般都要根据后端给出的数据处理成相应的数据格式。</p>
+<p>1、数组转字符串<br>需要将数组元素用某个字符连接成字符串，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [0,1,2,3,4];</span><br><span class="line">var b &#x3D; a.join(&quot;-&quot;);      &#x2F;&#x2F;&quot;0-1-2-3-4&quot;</span><br></pre></td></tr></table></figure>
+
+<p>2、字符串转数组</p>
+<p>实现方法为将字符串按某个字符切割成若干个字符串，并以数组形式返回，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str &#x3D; &quot;你,好,吗&quot;;</span><br><span class="line">var result &#x3D; str.split(&quot;,&quot;);&#x2F;&#x2F; 在每个逗号(,)处进行分解  [&quot;你&quot;, &quot;好&quot;, &quot;好&quot;]</span><br><span class="line">var str2 &#x3D; &quot;hello&quot;;</span><br><span class="line">var result2 &#x3D; str2.split(&#39;&#39;);  &#x2F;&#x2F;[&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/19/js%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-视差滚动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -413,83 +493,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/19/%E8%A7%A3%E5%86%B3position-fixed%E5%9C%A8ios%E7%B3%BB%E7%BB%9F%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js-canvas实现多张图片拼接成一张图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/js-canvas%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87/">js+canvas实现多张图片拼接成一张图片</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/15/js-canvas%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2019-02-15T01:50:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/02/15/js-canvas%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做照片直播这块需求的时候，需要将多张图片合成一张，可供用户保存下载。</p>
-        
-          <a class="article-more-a" href="/2019/02/15/js-canvas%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/15/js-canvas%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87/">展开全文 >></a>
         </p>
       
 
