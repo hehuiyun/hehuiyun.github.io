@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Whittney&#39;s blog</title>
+  <title>创建自己的json接口 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/10/index.html">
+  <meta name="description" content="前言创建自己的json接口，便于测试！ 步骤网站：https:&#x2F;&#x2F;my-json-server.typicode.com 1.在自己的github新建一个仓库（必须得是公共仓库）；2.在仓库中新建一个db.json文件；可以直接在github上新建文件以及编辑，如图所示： 新建：  编辑：  3.在db.json文件中输入自己要写的json 注意：必须是json格式，要用双引号  比如： 123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建自己的json接口">
+<meta property="og:url" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言创建自己的json接口，便于测试！ 步骤网站：https:&#x2F;&#x2F;my-json-server.typicode.com 1.在自己的github新建一个仓库（必须得是公共仓库）；2.在仓库中新建一个db.json文件；可以直接在github上新建文件以及编辑，如图所示： 新建：  编辑：  3.在db.json文件中输入自己要写的json 注意：必须是json格式，要用双引号  比如： 123">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/avatar.png">
+<meta property="og:image" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step.png">
+<meta property="og:image" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step2.png">
+<meta property="og:image" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step3.png">
+<meta property="article:published_time" content="2020-09-30T09:25:02.000Z">
+<meta property="article:modified_time" content="2020-09-30T10:01:54.936Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/avatar.png">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,35 +150,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-表单美化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-创建自己的json接口" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/%E8%A1%A8%E5%8D%95%E7%BE%8E%E5%8C%96/">表单美化</a>
+    <h1 class="article-title" itemprop="name">
+      创建自己的json接口
     </h1>
   
 
         
-        <a href="/2017/12/11/%E8%A1%A8%E5%8D%95%E7%BE%8E%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2017-12-11T09:04:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
+        <a href="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2020-09-30T09:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2017/12/11/%E8%A1%A8%E5%8D%95%E7%BE%8E%E5%8C%96/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我经常遇到这样的情况：UI设计了一个下拉列表，它和原生的下拉列表的样式相差很大。以前pc端，我都是自己重新写一个下拉列表。但是，我们都知道select在移动端所表现出来的交互行为和pc端有很大的差异。而且，ios和安卓所表现出来的样式也不同。综上，如果我们要用JS实现select，那么开发成本就太大了。因此，最近就开始研究如何在使用select标签的情况下改变它的默认样式，设置我们自己想要的样式。</p>
-        
-          <a class="article-more-a" href="/2017/12/11/%E8%A1%A8%E5%8D%95%E7%BE%8E%E5%8C%96/#more">more >></a>
-        
+        <p><img src="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/avatar.png" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>创建自己的json接口，便于测试！</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>网站：<a href="https://my-json-server.typicode.com" target="_blank" rel="noopener">https://my-json-server.typicode.com</a></p>
+<h5 id="1-在自己的github新建一个仓库（必须得是公共仓库）；"><a href="#1-在自己的github新建一个仓库（必须得是公共仓库）；" class="headerlink" title="1.在自己的github新建一个仓库（必须得是公共仓库）；"></a>1.在自己的github新建一个仓库（必须得是公共仓库）；</h5><h5 id="2-在仓库中新建一个db-json文件；"><a href="#2-在仓库中新建一个db-json文件；" class="headerlink" title="2.在仓库中新建一个db.json文件；"></a>2.在仓库中新建一个db.json文件；</h5><p>可以直接在github上新建文件以及编辑，如图所示：</p>
+<p>新建：</p>
+<p><img src="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step.png" alt></p>
+<p>编辑：</p>
+<p><img src="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step2.png" alt></p>
+<h5 id="3-在db-json文件中输入自己要写的json"><a href="#3-在db-json文件中输入自己要写的json" class="headerlink" title="3.在db.json文件中输入自己要写的json"></a>3.在db.json文件中输入自己要写的json</h5><blockquote>
+<p>注意：必须是json格式，要用双引号</p>
+</blockquote>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;token&quot;: &#123;</span><br><span class="line">    &quot;code&quot;: 0,</span><br><span class="line">      &quot;data&quot;: &#123;</span><br><span class="line">      &quot;token&quot;: &quot;12&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;info&quot;:&#123;</span><br><span class="line">    &quot;code&quot;:0,</span><br><span class="line">    &quot;data&quot;:&#123;</span><br><span class="line">      &quot;roles&quot;:[&quot;admin&quot;],</span><br><span class="line">      &quot;introduction&quot;:&quot;I am a super administrator&quot;,</span><br><span class="line">      &quot;avatar&quot;:&quot;https:&#x2F;&#x2F;wpimg.wallstcn.com&#x2F;f778738c-e4f8-4870-b634-56703b4acafe.gif&quot;,</span><br><span class="line">      &quot;name&quot;:&quot;Super Admin&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;menu&quot;:&#123;</span><br><span class="line">    &quot;code&quot;:0,</span><br><span class="line">    &quot;data&quot;:[</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;path&quot;: &quot;&#x2F;testIndex&quot;,</span><br><span class="line">          &quot;component&quot;: &quot;Layout&quot;,</span><br><span class="line">          &quot;name&quot;: &quot;TestIndex&quot;,</span><br><span class="line">          &quot;title&quot;: &quot;多级菜单测试&quot;,</span><br><span class="line">          &quot;icon&quot;: &quot;link&quot;,</span><br><span class="line">          &quot;children&quot;: [</span><br><span class="line">            &#123;</span><br><span class="line">              &quot;path&quot;: &quot;firstMenu&quot;,</span><br><span class="line">              &quot;name&quot;: &quot;FirstMenu&quot;,</span><br><span class="line">              &quot;component&quot;: &quot;&#x2F;test&#x2F;firstMenu&quot;,</span><br><span class="line">              &quot;title&quot;: &quot;第一个菜单&quot;, </span><br><span class="line">              &quot;icon&quot;: &quot;table&quot;</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;comments&quot;: [</span><br><span class="line">    &#123; &quot;id&quot;: 1, &quot;body&quot;: &quot;some comment&quot;, &quot;postId&quot;: 1 &#125;,</span><br><span class="line">    &#123; &quot;id&quot;: 2, &quot;body&quot;: &quot;some comment&quot;, &quot;postId&quot;: 1 &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;profile&quot;: &#123;</span><br><span class="line">    &quot;name&quot;: &quot;typicode&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-可以在以下网址了解到接口信息"><a href="#4-可以在以下网址了解到接口信息" class="headerlink" title="4.可以在以下网址了解到接口信息"></a>4.可以在以下网址了解到接口信息</h5><blockquote>
+<p><a href="https://my-json-server.typicode.com/" target="_blank" rel="noopener">https://my-json-server.typicode.com/</a>&lt;github/用户名&gt;/&lt;新建的仓库名&gt;</p>
+</blockquote>
+<p><img src="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/step3.png" alt></p>
+<h5 id="5-以上json代表了5个接口，获取方式如下："><a href="#5-以上json代表了5个接口，获取方式如下：" class="headerlink" title="5.以上json代表了5个接口，获取方式如下："></a>5.以上json代表了5个接口，获取方式如下：</h5><blockquote>
+<p><a href="https://my-json-server.typicode.com/" target="_blank" rel="noopener">https://my-json-server.typicode.com/</a>&lt;github用户名&gt;/myTestApi/token</p>
+</blockquote>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -181,7 +225,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
@@ -190,16 +234,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/11/%E8%A1%A8%E5%8D%95%E7%BE%8E%E5%8C%96/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSP内容安全策略</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -219,320 +322,14 @@
 
 
 
-
-  
-    <article id="post-表单验证" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">表单验证</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/07/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/" class="archive-article-date">
-  	<time datetime="2017-12-07T01:26:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/12/07/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在一个项目中，表单验证是必不可少的。之前对于这部分有点生疏，这次把我知道的几种方式都说明一遍，并且尽可能的给出完整代码。</p>
-        
-          <a class="article-more-a" href="/2017/12/07/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/07/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MYSQL学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/MYSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MYSQL学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/05/MYSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2017-12-05T01:16:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/12/05/MYSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在大学期间竟然没有学好数据库是我的一大遗憾，这次学ajax时，想要体验一下完整的从前端到后端的工作，就看视频学习了一下数据库。由于MYSQL对PHP有很好的支持，所以选择学习数据库MYSQL。</p>
-        
-          <a class="article-more-a" href="/2017/12/05/MYSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/MYSQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ajax学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/04/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">ajax学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/04/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2017-12-04T05:19:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/12/04/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前一直在学习ajax，但是在网上找了一部分课程发现不是太过于简单，就是具体的项目，这就需要了解PHP以及数据库。因此，特意去学习了一些相关的内容，之后会不断总结一些PHP和数据库相关的内容。</p>
-        
-          <a class="article-more-a" href="/2017/12/04/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/04/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-img标签下几像素间隙的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/img%E6%A0%87%E7%AD%BE%E4%B8%8B%E5%87%A0%E5%83%8F%E7%B4%A0%E9%97%B4%E9%9A%99%E7%9A%84%E9%97%AE%E9%A2%98/">img标签下几像素间隙的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/23/img%E6%A0%87%E7%AD%BE%E4%B8%8B%E5%87%A0%E5%83%8F%E7%B4%A0%E9%97%B4%E9%9A%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2017-11-23T09:07:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/11/23/img%E6%A0%87%E7%AD%BE%E4%B8%8B%E5%87%A0%E5%83%8F%E7%B4%A0%E9%97%B4%E9%9A%99%E7%9A%84%E9%97%AE%E9%A2%98/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>img</code> 标签下会存在几像素空隙，这个问题一直以来都是知道的。但是没有总结会出现这种情况的原因以及解决方法。</p>
-        
-          <a class="article-more-a" href="/2017/11/23/img%E6%A0%87%E7%AD%BE%E4%B8%8B%E5%87%A0%E5%83%8F%E7%B4%A0%E9%97%B4%E9%9A%99%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/23/img%E6%A0%87%E7%AD%BE%E4%B8%8B%E5%87%A0%E5%83%8F%E7%B4%A0%E9%97%B4%E9%9A%99%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -555,8 +352,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
