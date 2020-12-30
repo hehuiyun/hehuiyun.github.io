@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Whittney&#39;s blog</title>
+  <title>微信小程序页面传值-下一个页面向上一个页面传值 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+  <meta name="description" content="前言项目需求：订单页面选择地址跳转到地址列表页面，这种场景就需要页面之间传值。需要将选中的地址信息传给订单页面，这就是下一个页面向上一个页面传值。为了更直观的说明：下一个页面称为地址页面传值，上一个页面称为订单页面。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序页面传值-下一个页面向上一个页面传值">
+<meta property="og:url" content="http://yoursite.com/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言项目需求：订单页面选择地址跳转到地址列表页面，这种场景就需要页面之间传值。需要将选中的地址信息传给订单页面，这就是下一个页面向上一个页面传值。为了更直观的说明：下一个页面称为地址页面传值，上一个页面称为订单页面。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/avatar.jpg">
+<meta property="article:published_time" content="2020-12-30T06:23:55.000Z">
+<meta property="article:modified_time" content="2020-12-30T09:04:04.718Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,35 +147,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-谷歌播放flash视频默认flash屏蔽问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-微信小程序页面传值-下一个页面向上一个页面传值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/">谷歌播放flash视频默认flash屏蔽问题</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序页面传值-下一个页面向上一个页面传值
     </h1>
   
 
         
-        <a href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2018-06-12T08:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
+        <a href="/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/" class="archive-article-date">
+  	<time datetime="2020-12-30T06:23:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>现在的谷歌浏览器默认flash是被屏蔽的，需要用户手动设置允许使用flash。</p>
-        
-          <a class="article-more-a" href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/#more">more >></a>
-        
+        <p><img src="/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>项目需求：订单页面选择地址跳转到地址列表页面，这种场景就需要页面之间传值。需要将选中的地址信息传给订单页面，这就是下一个页面向上一个页面传值。为了更直观的说明：下一个页面称为地址页面传值，上一个页面称为订单页面。</p>
+<a id="more"></a>
+
+
+
+<h3 id="地址页面传值"><a href="#地址页面传值" class="headerlink" title="地址页面传值"></a>地址页面传值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">chooseAddress: function (e) &#123;</span><br><span class="line">	&#x2F;&#x2F;获取当前页面js里面的pages里的所有信息。</span><br><span class="line">  let pages &#x3D; getCurrentPages(); </span><br><span class="line">  &#x2F;&#x2F;prevPage 是获取上一个页面的js里面的pages的所有信息。 -2 是上一个页面，-3是上上个页面以此类推。</span><br><span class="line">  let prevPage &#x3D; pages[pages.length - 2];</span><br><span class="line">  if (prevPage) &#123;</span><br><span class="line">    prevPage.setData(&#123; &#x2F;&#x2F; 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作</span><br><span class="line">      address: e.currentTarget.dataset.address,</span><br><span class="line">      name: e.currentTarget.dataset.name,</span><br><span class="line">      phone: e.currentTarget.dataset.phone</span><br><span class="line">    &#125;)</span><br><span class="line">    wx.navigateBack(&#123;</span><br><span class="line">      delta: 1</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>之前试过setData传一个对象给订单页面，发现不起作用，然后就通过多个字段传值。</p>
+</blockquote>
+<h3 id="订单页面取值"><a href="#订单页面取值" class="headerlink" title="订单页面取值"></a>订单页面取值</h3><p>一般存在传值就会有取值，但这种传值方式是可以不用取值得。因为上面代码就是通过给上一个页面设值实现的。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -181,7 +213,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
@@ -190,16 +222,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">创建自己的json接口</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -219,323 +310,14 @@
 
 
 
-
-  
-    <article id="post-说一说animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/">说一说animation</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/" class="archive-article-date">
-  	<time datetime="2018-05-18T01:36:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在研究动画，上一篇也说过animation + @keyframes实现动画的方法，现在着重介绍一下animation的各种属性。</p>
-        
-          <a class="article-more-a" href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-多种方法实现web动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/">多种方法实现web动画</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2018-05-08T02:16:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>直至如今，已经有许多方法可以实现web动画效果了。就css实现的动画和js实现的动画我所知道的就有很多种，它们虽然都可以在一定程度上实现动画效果，但是在性能上还是有一定的差别的。一般来说，前端想要实现流畅的动画效果，建议使用css动画。如果使用js实现动画，建议前端使用requestAnimationFrame这个接口实现。</p>
-        
-          <a class="article-more-a" href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-前端布局问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">前端布局问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2018-05-04T08:14:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前端布局大概有三种方式：</p>
-<p>1.借助浮动、定位等方式布局；</p>
-<p>2.flex布局</p>
-<p>3.grid布局</p>
-        
-          <a class="article-more-a" href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-H5自定义视频播放器实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/">H5自定义视频播放器实现</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2018-05-04T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前，只是对自定义视频播放器的初步实现，之后会逐步完善!</p>
-        
-          <a class="article-more-a" href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -558,8 +340,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
