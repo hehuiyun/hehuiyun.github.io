@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Whittney&#39;s blog</title>
+  <title>微信小程序websocket的用法 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="前言需求：使用websocket的及时通讯实现直播间的评论、加入直播间、离开直播间、点赞、关注、商品上下架等操作能实时通知对方。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序websocket的用法">
+<meta property="og:url" content="http://yoursite.com/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言需求：使用websocket的及时通讯实现直播间的评论、加入直播间、离开直播间、点赞、关注、商品上下架等操作能实时通知对方。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
+<meta property="article:published_time" content="2021-01-22T07:43:59.000Z">
+<meta property="article:modified_time" content="2021-01-22T09:07:01.731Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,225 +147,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-微信小程序websocket的用法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-09-30T09:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/30/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84json%E6%8E%A5%E5%8F%A3/">创建自己的json接口</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序websocket的用法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-01-22T07:43:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>需求：使用websocket的及时通讯实现直播间的评论、加入直播间、离开直播间、点赞、关注、商品上下架等操作能实时通知对方。</p>
+<a id="more"></a>
+
+
+
+<h2 id="什么是WebSocket"><a href="#什么是WebSocket" class="headerlink" title="什么是WebSocket"></a><strong>什么是WebSocket</strong></h2><p>首先需要明白webSocket的概念，下边是维基百科的解释</p>
+<blockquote>
+<p>WebSocket是一种通信协议，可在单个TCP连接上进行全双工通信。WebSocket使得客户端和服务器之间的数据交换变得更加简单，允许服务端主动向客户端推送数据。在WebSocket API中，浏览器和服务器只需要完成一次握手，两者之间就可以建立持久性的连接，并进行双向数据传输。</p>
+</blockquote>
+<h2 id="websocket-API"><a href="#websocket-API" class="headerlink" title="websocket API"></a>websocket API</h2><blockquote>
+<p>wx.connectSocket：创建一个 WebSocket 连接 ；</p>
+<p>sotk.onOpen：监听 WebSocket 连接打开事件 ；</p>
+<p>sotk.onClose：监听 WebSocket 连接关闭事件 ；</p>
+<p>sotk.onError：监听 WebSocket 错误事件  ；</p>
+<p>sotk.onMessage：监听 WebSocket 接受到服务器的消息事件 ；（重要：负责监听接收数据）</p>
+<p>sotk.send：通过 WebSocket 连接发送数据 。（重要：负责发送数据）</p>
+</blockquote>
+<p>使用案例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">var sotk &#x3D; null;</span><br><span class="line">var socketOpen &#x3D; false;</span><br><span class="line">var wsbasePath &#x3D; &quot;ws:&#x2F;&#x2F;开发者服务器 wss 接口地址&#x2F;&quot;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;开始webSocket</span><br><span class="line">  webSocketStart(e)&#123;</span><br><span class="line">    sotk &#x3D; wx.connectSocket(&#123;</span><br><span class="line">      url: wsbasePath,</span><br><span class="line">      success: res &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;小程序连接成功：&#39;, res);</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: err &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;出现错误啦！！&#39; + err);</span><br><span class="line">        wx.showToast(&#123;</span><br><span class="line">          title: &#39;网络异常！&#39;,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    this.webSokcketMethods();</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;监听指令</span><br><span class="line">  webSokcketMethods(e)&#123;</span><br><span class="line">    let that &#x3D; this;</span><br><span class="line">    sotk.onOpen(res &#x3D;&gt; &#123;</span><br><span class="line">      socketOpen &#x3D; true;</span><br><span class="line">      console.log(&#39;监听 WebSocket 连接打开事件。&#39;, res);</span><br><span class="line">    &#125;)</span><br><span class="line">    sotk.onClose(onClose &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;监听 WebSocket 连接关闭事件。&#39;, onClose)</span><br><span class="line">      socketOpen &#x3D; false;</span><br><span class="line">    &#125;)</span><br><span class="line">    sotk.onError(onError &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;监听 WebSocket 错误。错误信息&#39;, onError)</span><br><span class="line">      socketOpen &#x3D; false</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    sotk.onMessage(onMessage &#x3D;&gt; &#123;</span><br><span class="line">      var data &#x3D; JSON.parse(onMessage.data);</span><br><span class="line">      console.log(&#39;监听WebSocket接受到服务器的消息事件。服务器返回的消息&#39;,data);</span><br><span class="line">     </span><br><span class="line">    &#125;)</span><br><span class="line">   </span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;发送消息</span><br><span class="line">  sendSocketMessage(msg) &#123;</span><br><span class="line">    let that &#x3D; this;</span><br><span class="line">    if (socketOpen)&#123;</span><br><span class="line">      console.log(&#39;通过 WebSocket 连接发送数据&#39;, JSON.stringify(msg))</span><br><span class="line">      sotk.send(&#123;</span><br><span class="line">        data: JSON.stringify(msg)</span><br><span class="line">      &#125;, function (res) &#123;</span><br><span class="line">        console.log(&#39;已发送&#39;, res)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line"> &#x2F;&#x2F;关闭连接</span><br><span class="line">  closeWebsocket(str)&#123;</span><br><span class="line">    if (socketOpen) &#123;</span><br><span class="line">      sotk.close(</span><br><span class="line">        &#123;</span><br><span class="line">          code: &quot;1000&quot;,</span><br><span class="line">          reason: str,</span><br><span class="line">          success: function () &#123;</span><br><span class="line">            console.log(&quot;成功关闭websocket连接&quot;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h2><blockquote>
+<p>1、通过onMessage监听收到的信息，接收到的信息会返回一个type值，通过type值判断接收到的数据是什么数据，之后分别进行处理、赋值即可；</p>
+<p>2、通过sendSocketMessage发送数据，根据后端定义的字段发送请求，字段中也包含type值，告诉websocket是处理什么类型的值。</p>
+</blockquote>
+<p>关键代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">webSokcketMethods(e) &#123;</span><br><span class="line">    this.websocket.onMessage(onMessage &#x3D;&gt; &#123;</span><br><span class="line">      console.log(this.data)</span><br><span class="line">      var data &#x3D; JSON.parse(onMessage.data);</span><br><span class="line">      console.log(&#39;监听WebSocket接受到服务器的消息事件。服务器返回的消息&#39;, data);</span><br><span class="line">      if (data.client_id) &#123;</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          client_id: data.client_id</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      if (data.msg_type &#x3D;&#x3D;&#x3D; &#39;init&#39;) &#123;</span><br><span class="line">        this.joinLive()</span><br><span class="line">      &#125;</span><br><span class="line">      if (data.msg_type &#x3D;&#x3D;&#x3D; &#39;join&#39;) &#123;</span><br><span class="line">        wx.hideLoading()</span><br><span class="line">        this.endtrain(data.msg_content)</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          is_join: true,</span><br><span class="line">          lookNumber: data.online_num</span><br><span class="line">        &#125;)</span><br><span class="line">        if (data.message_list) &#123;</span><br><span class="line">          this.setData(&#123;</span><br><span class="line">            commentList: data.message_list,</span><br><span class="line">            toLast: &#39;item&#39; + data.message_list.length,</span><br><span class="line">            lookNumber: data.online_num,</span><br><span class="line">            followNumber: data.subscribe_num</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      if (data.msg_type &#x3D;&#x3D; &#39;message&#39;) &#123;</span><br><span class="line">        var commentItem &#x3D; &#123;</span><br><span class="line">          name: data.from_name,</span><br><span class="line">          content: data.content</span><br><span class="line">        &#125;</span><br><span class="line">        var commentArr &#x3D; this.data.commentList</span><br><span class="line">        console.log(commentArr)</span><br><span class="line">        commentArr.push(commentItem)</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          commentList: commentArr,</span><br><span class="line">          toLast: &#39;item&#39; + commentArr.length,</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        if (this.data.platform &#x3D;&#x3D;&#x3D; &#39;android&#39;) &#123;</span><br><span class="line">          this.messageScroll()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      if (data.msg_type &#x3D;&#x3D; &#39;subscribe&#39;) &#123;</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          followNumber: data.subscribe_num</span><br><span class="line">        &#125;)</span><br><span class="line">        this.endtrain(data.msg_content)</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (data.msg_type &#x3D;&#x3D; &#39;leave&#39;) &#123;</span><br><span class="line">        this.endtrain(data.msg_content)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (data.msg_type &#x3D;&#x3D; &#39;buy&#39;) &#123;</span><br><span class="line">        this.endtrain(data.msg_content)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">   &#x2F;&#x2F; 加入直播间</span><br><span class="line">  joinLive() &#123;</span><br><span class="line">    var data &#x3D; &#123;</span><br><span class="line">      msg_type: &#39;join&#39;,</span><br><span class="line">      room_id: this.data.liveRoomId,</span><br><span class="line">      live_id: this.data.liveId,</span><br><span class="line">      from_uid: this.data.anchorUid,</span><br><span class="line">      client_id: this.data.client_id,</span><br><span class="line">      is_anchor: true,</span><br><span class="line">      from_name: this.data.anchorName</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&#39;通过 WebSocket 连接发送数据&#39;, JSON.stringify(data))</span><br><span class="line">    this.websocket.send(&#123;</span><br><span class="line">      data: JSON.stringify(data),</span><br><span class="line">      success: function (res) &#123;</span><br><span class="line">        console.log(res)</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: function (err) &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;&#x2F; 商品上架</span><br><span class="line">  goodsShelfOn(goodsId, goodsName, goodsPrice, defaultImage, status) &#123;</span><br><span class="line">    var data &#x3D; &#123;</span><br><span class="line">      msg_type: &#39;on_off_shelf&#39;,</span><br><span class="line">      room_id: this.data.liveRoomId,</span><br><span class="line">      live_id: this.data.liveId,</span><br><span class="line">      from_uid: this.data.anchorUid,</span><br><span class="line">      client_id: this.data.client_id,</span><br><span class="line">      from_name: this.data.anchorName,</span><br><span class="line">      goods_id: goodsId,</span><br><span class="line">      goods_name: goodsName,</span><br><span class="line">      goods_price: goodsPrice,</span><br><span class="line">      default_image: defaultImage,</span><br><span class="line">      status: &#39;on&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&#39;通过 WebSocket 连接发送数据&#39;, JSON.stringify(data))</span><br><span class="line">    this.websocket.send(&#123;</span><br><span class="line">      data: JSON.stringify(data),</span><br><span class="line">      success: function (res) &#123;</span><br><span class="line">        console.log(res)</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: function (err) &#123;</span><br><span class="line">        console.log(err)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="心跳检测、断线重连"><a href="#心跳检测、断线重连" class="headerlink" title="心跳检测、断线重连"></a>心跳检测、断线重连</h2><p>在实际应用中，需要不断判断websocket处于连接阶段。</p>
+<h5 id="wechat-websocket-js文件"><a href="#wechat-websocket-js文件" class="headerlink" title="wechat-websocket.js文件"></a>wechat-websocket.js文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">export default class websocket &#123;</span><br><span class="line">  constructor(&#123; heartCheck, isReconnection &#125;) &#123;</span><br><span class="line">    &#x2F;&#x2F; 是否连接</span><br><span class="line">    this._isLogin &#x3D; false;</span><br><span class="line">    &#x2F;&#x2F; 当前网络状态</span><br><span class="line">    this._netWork &#x3D; true;</span><br><span class="line">    &#x2F;&#x2F; 是否人为退出</span><br><span class="line">    this._isClosed &#x3D; false;</span><br><span class="line">    &#x2F;&#x2F; 心跳检测频率</span><br><span class="line">    this._timeout &#x3D; 3000;</span><br><span class="line">    this._timeoutObj &#x3D; null;</span><br><span class="line">    &#x2F;&#x2F; 当前重连次数</span><br><span class="line">    this._connectNum &#x3D; 0;</span><br><span class="line">    &#x2F;&#x2F; 心跳检测和断线重连开关，true为启用，false为关闭</span><br><span class="line">    this._heartCheck &#x3D; heartCheck;</span><br><span class="line">    this._isReconnection &#x3D; isReconnection;</span><br><span class="line">    this._onSocketOpened();</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 心跳重置</span><br><span class="line">  _reset() &#123;</span><br><span class="line">    clearTimeout(this._timeoutObj);</span><br><span class="line">    return this;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 心跳开始</span><br><span class="line">  _start() &#123;</span><br><span class="line">    let _this &#x3D; this;</span><br><span class="line">    this._timeoutObj &#x3D; setInterval(() &#x3D;&gt; &#123;</span><br><span class="line">      wx.sendSocketMessage(&#123;</span><br><span class="line">        &#x2F;&#x2F; 心跳发送的信息应由前后端商量后决定</span><br><span class="line">        data: JSON.stringify(&#123;</span><br><span class="line">          &quot;msg_type&quot;: &#39;ping&#39;</span><br><span class="line">        &#125;),</span><br><span class="line">        success(res) &#123;</span><br><span class="line">          console.log(res)</span><br><span class="line">          console.log(&quot;发送心跳成功&quot;);</span><br><span class="line">        &#125;,</span><br><span class="line">        fail(err) &#123;</span><br><span class="line">          console.log(err)</span><br><span class="line">          &#x2F;&#x2F; wx.showToast(&#123;</span><br><span class="line">          &#x2F;&#x2F;   title: &quot;websocket已断开&quot;,</span><br><span class="line">          &#x2F;&#x2F;   icon: &#39;none&#39;</span><br><span class="line">          &#x2F;&#x2F; &#125;)</span><br><span class="line">          _this._reset()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, this._timeout);</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 监听websocket连接关闭</span><br><span class="line">  onSocketClosed(options) &#123;</span><br><span class="line">    wx.onSocketClose(err &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;当前websocket连接已关闭,错误信息为:&#39; + JSON.stringify(err));</span><br><span class="line">      &#x2F;&#x2F; 停止心跳连接</span><br><span class="line">      if (this._heartCheck) &#123;</span><br><span class="line">        this._reset();</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F; 关闭已登录开关</span><br><span class="line">      this._isLogin &#x3D; false;</span><br><span class="line">      &#x2F;&#x2F; 检测是否是用户自己退出小程序</span><br><span class="line">      console.log(this._isClosed)</span><br><span class="line">      if (!this._isClosed) &#123;</span><br><span class="line">        &#x2F;&#x2F; 进行重连</span><br><span class="line">        if (this._isReconnection) &#123;</span><br><span class="line">          this._reConnect(options)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 检测网络变化</span><br><span class="line">  onNetworkChange(options) &#123;</span><br><span class="line">    wx.onNetworkStatusChange(res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;当前网络状态:&#39; + res.isConnected);</span><br><span class="line">      if (!this._netWork) &#123;</span><br><span class="line">        this._isLogin &#x3D; false;</span><br><span class="line">        &#x2F;&#x2F; 进行重连</span><br><span class="line">        if (this._isReconnection) &#123;</span><br><span class="line">          this._reConnect(options)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  _onSocketOpened() &#123;</span><br><span class="line">    wx.onSocketOpen(res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;websocket已打开&#39;);</span><br><span class="line">      &#x2F;&#x2F; 打开已登录开关</span><br><span class="line">      this._isLogin &#x3D; true;</span><br><span class="line">      &#x2F;&#x2F; 发送心跳</span><br><span class="line">      if (this._heartCheck) &#123;</span><br><span class="line">        this._reset()._start();</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F; 发送登录信息</span><br><span class="line">      wx.sendSocketMessage(&#123;</span><br><span class="line">        &#x2F;&#x2F; 这里是第一次建立连接所发送的信息，应由前后端商量后决定</span><br><span class="line">        data: JSON.stringify(&#123;</span><br><span class="line">          &quot;key&quot;: &#39;value&#39;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      &#x2F;&#x2F; 打开网络开关</span><br><span class="line">      this._netWork &#x3D; true;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 接收服务器返回的消息</span><br><span class="line">  onReceivedMsg(callBack) &#123;</span><br><span class="line">    wx.onSocketMessage(msg &#x3D;&gt; &#123;</span><br><span class="line">      if (typeof callBack &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">        callBack(msg)</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        console.log(&#39;参数的类型必须为函数&#39;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  &#x2F;&#x2F; 建立websocket连接</span><br><span class="line">  initWebSocket(options) &#123;</span><br><span class="line">    let _this &#x3D; this;</span><br><span class="line">    if (this._isLogin) &#123;</span><br><span class="line">      console.log(&quot;您已经登录了&quot;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      console.log(&#39;未登录&#39;)</span><br><span class="line">      &#x2F;&#x2F; 检查网络</span><br><span class="line">      wx.getNetworkType(&#123;</span><br><span class="line">        success(result) &#123;</span><br><span class="line">          if (result.networkType !&#x3D; &#39;none&#39;) &#123;</span><br><span class="line">            console.log(result.networkType)</span><br><span class="line">            &#x2F;&#x2F; 开始建立连接</span><br><span class="line">            wx.connectSocket(&#123;</span><br><span class="line">              url: options.url,</span><br><span class="line">              success(res) &#123;</span><br><span class="line">                if (typeof options.success &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">                  options.success(res)</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                  console.log(&#39;参数的类型必须为函数&#39;)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              fail(err) &#123;</span><br><span class="line">                if (typeof options.fail &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">                  options.fail(err)</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                  console.log(&#39;参数的类型必须为函数&#39;)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            console.log(&#39;网络已断开&#39;);</span><br><span class="line">            _this._netWork &#x3D; false;</span><br><span class="line">            &#x2F;&#x2F; 网络断开后显示model</span><br><span class="line">            wx.showModal(&#123;</span><br><span class="line">              title: &#39;网络错误&#39;,</span><br><span class="line">              content: &#39;请重新打开网络&#39;,</span><br><span class="line">              showCancel: false,</span><br><span class="line">              success: function (res) &#123;</span><br><span class="line">                if (res.confirm) &#123;</span><br><span class="line">                  console.log(&#39;用户点击确定&#39;)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 发送websocket消息</span><br><span class="line">  sendWebSocketMsg(options) &#123;</span><br><span class="line">    wx.sendSocketMessage(&#123;</span><br><span class="line">      data: options.data,</span><br><span class="line">      success(res) &#123;</span><br><span class="line">        if (typeof options.success &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">          options.success(res)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          console.log(&#39;参数的类型必须为函数&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      fail(err) &#123;</span><br><span class="line">        if (typeof options.fail &#x3D;&#x3D; &quot;function&quot;) &#123;</span><br><span class="line">          options.fail(err)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          console.log(&#39;参数的类型必须为函数&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 重连方法，会根据时间频率越来越慢</span><br><span class="line">  _reConnect(options) &#123;</span><br><span class="line">    let timer, _this &#x3D; this;</span><br><span class="line">    if (this._connectNum &lt; 20) &#123;</span><br><span class="line">      timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        this.initWebSocket(options)</span><br><span class="line">      &#125;, 3000)</span><br><span class="line">      this._connectNum +&#x3D; 1;</span><br><span class="line">    &#125; else if (this._connectNum &lt; 50) &#123;</span><br><span class="line">      timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        this.initWebSocket(options)</span><br><span class="line">      &#125;, 10000)</span><br><span class="line">      this._connectNum +&#x3D; 1;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        this.initWebSocket(options)</span><br><span class="line">      &#125;, 450000)</span><br><span class="line">      this._connectNum +&#x3D; 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 关闭websocket连接</span><br><span class="line">  closeWebSocket()&#123;</span><br><span class="line">    wx.closeSocket();</span><br><span class="line">    this._isClosed &#x3D; true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="archive-article-date">
-  	<time datetime="2019-07-06T08:55:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/">CSP内容安全策略</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/" class="archive-article-date">
-  	<time datetime="2019-06-20T07:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue项目websocket的用法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/">判断url中存在一个值并进行修改</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/12/localStorage/" class="archive-article-date">
-  	<time datetime="2019-06-12T15:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/12/localStorage/">localStorage</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-06-09T05:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/">实现在input输入一串含中文的字符串时，另一个input中实时显示缩写（要求中文显示拼音首字母大写）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -384,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
