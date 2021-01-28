@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue项目websocket的用法 | Whittney&#39;s blog</title>
+  <title>vue-阿里云播放器的用法 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言项目需求：通过">
+  <meta name="description" content="前言项目需求：视频点播。选择阿里云播放器的原因是支持视频加密播放，防止用户下载视频。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue项目websocket的用法">
-<meta property="og:url" content="http://yoursite.com/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:title" content="vue-阿里云播放器的用法">
+<meta property="og:url" content="http://yoursite.com/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="前言项目需求：通过">
+<meta property="og:description" content="前言项目需求：视频点播。选择阿里云播放器的原因是支持视频加密播放，防止用户下载视频。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
-<meta property="article:published_time" content="2021-01-22T07:21:28.000Z">
-<meta property="article:modified_time" content="2021-01-22T07:43:28.859Z">
+<meta property="og:image" content="http://yoursite.com/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
+<meta property="article:published_time" content="2021-01-28T07:57:51.000Z">
+<meta property="article:modified_time" content="2021-01-28T09:01:57.321Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="vue.js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -146,30 +147,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue项目websocket的用法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue-阿里云播放器的用法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue项目websocket的用法
+      vue-阿里云播放器的用法
     </h1>
   
 
         
-        <a href="/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-01-22T07:21:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
+        <a href="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-01-28T07:57:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>项目需求：通过</p>
+        <p><img src="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>项目需求：视频点播。选择阿里云播放器的原因是支持视频加密播放，防止用户下载视频。</p>
 <a id="more"></a>
 
+
+
+<h2 id="vue-alipayer-v2"><a href="#vue-alipayer-v2" class="headerlink" title="vue-alipayer-v2"></a>vue-alipayer-v2</h2><blockquote>
+<p>这是一个基于Alipayer 开发并封装成vue组件的播放器。</p>
+</blockquote>
+<h4 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i vue-aliplayer-v2 --save</span><br><span class="line">or</span><br><span class="line">yarn add vue-aliplayer-v2</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局注册-main-js"><a href="#全局注册-main-js" class="headerlink" title="全局注册 main.js"></a>全局注册 main.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import VueAliplayerV2 from &#39;vue-aliplayer-v2&#39;;</span><br><span class="line"></span><br><span class="line">Vue.use(VueAliplayerV2);</span><br></pre></td></tr></table></figure>
+
+<h4 id="局部注册-App-vue"><a href="#局部注册-App-vue" class="headerlink" title="局部注册 App.vue"></a>局部注册 App.vue</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import VueAliplayerV2 from &#39;vue-aliplayer-v2&#39;;</span><br><span class="line">components:&#123; VueAliplayerV2: VueAliplayerV2.Player &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if&#x3D;&quot;showAliPlayer&quot;&gt;</span><br><span class="line">    &lt;vue-aliplayer-v2 :class&#x3D;&quot;&#123;&#39;has-learned&#39;: prevtime &#x3D;&#x3D;&#x3D; totalDuration&#125;&quot; ref&#x3D;&quot;VueAliplayerV2&quot; :options&#x3D;&quot;options&quot; @ready&#x3D;&quot;ready&quot; @ended&#x3D;&quot;ended&quot; @timeupdate&#x3D;&quot;timeUpDate&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里使用v-if判断是否显示是为了解决组件在没有正确时间初始化的问题</p>
+</blockquote>
+<h5 id="播放器配置（options）"><a href="#播放器配置（options）" class="headerlink" title="播放器配置（options）"></a>播放器配置（options）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 播放器配置</span><br><span class="line">        options: &#123;</span><br><span class="line">          width: &quot;100%&quot;,</span><br><span class="line">          height: &quot;40vw&quot;,</span><br><span class="line">          controlBarVisibility: &#39;always&#39;,</span><br><span class="line">          format: &#39;m3u8&#39;,</span><br><span class="line">          qualitySort:&#39;desc&#39;,</span><br><span class="line">          definition:&#39;FD,LD,SD&#39;,</span><br><span class="line">          defaultDefinition:&#39;FD&#39;,</span><br><span class="line">          &#x2F;&#x2F;设置阿里云播放器的样式</span><br><span class="line">          skinLayout: [&#123;</span><br><span class="line">            name: &quot;bigPlayButton&quot;,</span><br><span class="line">            align: &quot;blabs&quot;,</span><br><span class="line">            x: 30,</span><br><span class="line">            y: 80</span><br><span class="line">          &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              name: &quot;H5Loading&quot;,</span><br><span class="line">              align: &quot;cc&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              name: &quot;errorDisplay&quot;,</span><br><span class="line">              align: &quot;tlabs&quot;,</span><br><span class="line">              x: 0,</span><br><span class="line">              y: 0</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              name: &quot;controlBar&quot;, align: &quot;blabs&quot;, x: 0, y: 0,</span><br><span class="line">              children: [</span><br><span class="line">                &#123;name: &quot;progress&quot;, align: &quot;blabs&quot;, x: 0, y: 44&#125;,</span><br><span class="line">                &#123;name: &quot;playButton&quot;, align: &quot;tl&quot;, x: 10, y: 12&#125;,</span><br><span class="line">                &#123;name: &quot;timeDisplay&quot;, align: &quot;tl&quot;, x: 10, y: 5&#125;,</span><br><span class="line">                &#123;name: &quot;fullScreenButton&quot;, align: &quot;tr&quot;, x: 10, y: 12&#125;,</span><br><span class="line">                &#123;name:&quot;setting&quot;, align:&quot;tr&quot;,x:10, y:12&#125;,</span><br><span class="line">                &#123;name: &quot;volume&quot;, align: &quot;tr&quot;, x: 10, y: 10&#125;</span><br><span class="line">              ]</span><br><span class="line">            &#125;</span><br><span class="line">          ],</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<h5 id="播放器方法"><a href="#播放器方法" class="headerlink" title="播放器方法"></a>播放器方法</h5><p>如何获取实例？</p>
+<blockquote>
+<p>在组件中通过定义ref值来获取。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;vue-aliplayer-v2 :class&#x3D;&quot;&#123;&#39;has-learned&#39;: prevtime &#x3D;&#x3D;&#x3D; totalDuration&#125;&quot; ref&#x3D;&quot;VueAliplayerV2&quot; :options&#x3D;&quot;options&quot; @ready&#x3D;&quot;ready&quot; @ended&#x3D;&quot;ended&quot; @timeupdate&#x3D;&quot;timeUpDate&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>最后通过实例来获取播放器中的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.$refs.VueAliplayerV2.play() </span><br><span class="line">this.$refs.VueAliplayerV2.pause();</span><br><span class="line">this.$refs.VueAliplayerV2.seek(20) </span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="播放器事件"><a href="#播放器事件" class="headerlink" title="播放器事件"></a>播放器事件</h5><p>看源码可以知道，监听播放器方法，需要通过 @ready=”ready”的写法监听。其实就是父子组件之间的写法。</p>
+<blockquote>
+<p>1、ready事件：播放器视频初始化按钮渲染完毕 。在这里可以触发视频播放器的播放方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;this.$refs.VueAliplayerV2.play()   &#x2F;&#x2F;触发视频播放</span><br><span class="line">&gt;this.$refs.VueAliplayerV2.seek(this.prevtime)   &#x2F;&#x2F;让视频在某个指定时间点触发播放</span><br></pre></td></tr></table></figure>
+
+<p>2、ended事件：当前视频播放完毕时触发 。</p>
+<p>可以在这个方法中执行某个操作。比如：我在项目中让视频播放结束后请求学习记录的接口，表示这个视频已经学习结束。</p>
+<p>3、timeUpDate事件：播放位置发生改变时触发，仅H5播放器。可通过getCurrentTime方法，得到当前播放时间。 当然，这个事件1秒内会执行多次。在遇到监听视频到某一秒执行某个操作这样的需求时，需要先将获取到的时间点取整，并在操作最后记录这个取整的时间。等第二次获取到这个时间点时，如何两个时间相等，那说明这是在同一秒内的操作，就不让执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;this.currentTime &#x3D; parseInt(this.$refs.VueAliplayerV2.getCurrentTime())</span><br><span class="line">&gt;&#x2F;&#x2F; 设定了一个当前的取整时间，判断当前的整数时间等于上传的整数时间，说明这还是在同一秒不执行代码</span><br><span class="line">&gt;if (this.currentTime !&#x3D;&#x3D; this.lastCurrentTime) &#123;</span><br><span class="line">  &#x2F;&#x2F;执行操作</span><br><span class="line">&#125;</span><br><span class="line">&gt;this.lastCurrentTime &#x3D; this.currentTime</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>具体代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 监听视频播放update事件</span><br><span class="line">      timeUpDate() &#123;</span><br><span class="line">        this.currentTime &#x3D; parseInt(this.$refs.VueAliplayerV2.getCurrentTime())</span><br><span class="line">        &#x2F;&#x2F; 设定了一个当前的取整时间，判断当前的整数时间等于上传的整数时间，说明这还是在同一秒不执行代码</span><br><span class="line">        if (this.currentTime !&#x3D;&#x3D; this.lastCurrentTime) &#123;</span><br><span class="line">          if (this.prevtime &lt; this.totalDuration) &#123;</span><br><span class="line">            &#x2F;&#x2F; 禁止快进</span><br><span class="line">            if(this.currentTime &gt; this.prevtime &amp;&amp; this.currentTime - this.lastCurrentTime &gt; 2)&#123;</span><br><span class="line">              this.$refs.VueAliplayerV2.seek(this.lastCurrentTime)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F; 监听断点，学员进行测试</span><br><span class="line">            this.breakPointList.forEach(item &#x3D;&gt; &#123;</span><br><span class="line">              console.log(this.currentTime)</span><br><span class="line">              if (this.currentTime &#x3D;&#x3D;&#x3D; item) &#123;</span><br><span class="line">                this.questionDialogVisible &#x3D; true;</span><br><span class="line">                this.$refs.VueAliplayerV2.pause()</span><br><span class="line">                this.currentBreakPoint &#x3D; item</span><br><span class="line">                this.showPaper &#x3D; false</span><br><span class="line">                this.disabledStatus &#x3D; false</span><br><span class="line">                this.getPaperQuestions(this.currentChapterId, this.currentBreakPoint)</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F; 时长统计</span><br><span class="line">            if (this.currentTime - this.lastCurrentTime &lt; 2 &amp;&amp; this.currentTime - this.prevtime &gt;&#x3D; 60 &amp;&amp; this.currentTime &gt; this.prevtime) &#123;</span><br><span class="line">              this.prevtime &#x3D; this.currentTime;</span><br><span class="line">              let data &#x3D; &#123;</span><br><span class="line">                video_id: this.videoDetail.id,</span><br><span class="line">                chapter_id: this.currentChapterId,</span><br><span class="line">                learn_duration: this.currentTime,</span><br><span class="line">                push_event: &#39;update&#39;</span><br><span class="line">              &#125;</span><br><span class="line">              this.addLearnRecord(data, &#39;update&#39;)</span><br><span class="line">            &#125;</span><br><span class="line">            this.lastCurrentTime &#x3D; this.currentTime</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        this.lastCurrentTime &#x3D; this.currentTime</span><br><span class="line">      &#125;,</span><br><span class="line">      ready()&#123;</span><br><span class="line">        console.log(&#39;ready&#39;)</span><br><span class="line">        this.$nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">          if (this.prevtime &#x3D;&#x3D;&#x3D; this.totalDuration) &#123;</span><br><span class="line">            this.$refs.VueAliplayerV2.play()</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            this.$refs.VueAliplayerV2.seek(this.prevtime)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      ended() &#123;</span><br><span class="line">        &#x2F;&#x2F;监听end事件</span><br><span class="line">        let data &#x3D; &#123;</span><br><span class="line">          video_id: this.videoDetail.id,</span><br><span class="line">          chapter_id: this.currentChapterId,</span><br><span class="line">          learn_duration: this.totalDuration,</span><br><span class="line">          push_event: &#39;ended&#39;</span><br><span class="line">        &#125;</span><br><span class="line">        this.addLearnRecord(data, &#39;end&#39;)</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="如何覆盖播放器的样式？"><a href="#如何覆盖播放器的样式？" class="headerlink" title="如何覆盖播放器的样式？"></a>如何覆盖播放器的样式？</h4><blockquote>
+<p>需求：阿里云播放器实现倍速播放以及切换分辨率播放，只要在配置中设置即可。但项目中要求学生在学习过程中不能倍速播放，就需要将倍速的按钮隐藏掉。所以就在思考如何通过样式隐藏播放器。</p>
+</blockquote>
+<p>注意：如果要覆盖播放器的样式，不能再style中设置scoped，要不然就不会生效。</p>
+<blockquote>
+<p>方法：:class=”{‘has-learned’: prevtime === totalDuration}” </p>
+<p>设置一个动态类，通过这个动态类实现动态显示和隐藏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&lt;vue-aliplayer-v2 :class&#x3D;&quot;&#123;&#39;has-learned&#39;: prevtime &#x3D;&#x3D;&#x3D; totalDuration&#125;&quot; ref&#x3D;&quot;VueAliplayerV2&quot; :options&#x3D;&quot;options&quot; @ready&#x3D;&quot;ready&quot; @ended&#x3D;&quot;ended&quot; @timeupdate&#x3D;&quot;timeUpDate&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">  .prism-player .prism-setting-speed&#123;</span><br><span class="line">    display: none !important;</span><br><span class="line">  &#125;</span><br><span class="line">  .has-learned.prism-player .prism-setting-speed&#123;</span><br><span class="line">    display: block !important;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考链接：</p>
+<p>​    <a href="https://github.com/wtjnh/vue-aliplayer-v2" target="_blank" rel="noopener">vue-alipayer-v2</a></p>
+<p>​    <a href="https://player.alicdn.com/aliplayer/setting/setting.html" target="_blank" rel="noopener">配置阿里云播放器</a></p>
+<p>​    <a href="https://help.aliyun.com/document_detail/125572.html?spm=a2c4g.11186623.6.1179.58a1727enkwtUa" target="_blank" rel="noopener">阿里云播放器文档-属性和接口说明</a></p>
 
       
 
@@ -199,6 +262,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -249,7 +323,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/22/vue%E9%A1%B9%E7%9B%AEwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +337,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信小程序websocket的用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/12/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC-%E4%B8%8B%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信小程序页面传值-下一个页面向上一个页面传值</div>
+    <a href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序websocket的用法</div>
       <i class="icon-circle-right"></i>
     </a>
   
