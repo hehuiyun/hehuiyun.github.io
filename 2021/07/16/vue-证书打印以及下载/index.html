@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2021 | Whittney&#39;s blog</title>
+  <title>vue-证书打印以及下载 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2021/index.html">
+  <meta name="description" content="前言证书打印这里分两种打印方式：一种是将证书模板和文字整体打印出来，根据证书模板以及文字的x、y坐标显示在相应的位置；另一种称之为套打，不打印模板，只打印需要的文字，根据文字的x、y坐标显示在相应的位置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-证书打印以及下载">
+<meta property="og:url" content="http://yoursite.com/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言证书打印这里分两种打印方式：一种是将证书模板和文字整体打印出来，根据证书模板以及文字的x、y坐标显示在相应的位置；另一种称之为套打，不打印模板，只打印需要的文字，根据文字的x、y坐标显示在相应的位置。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/avatar.jpg">
+<meta property="article:published_time" content="2021-07-16T06:37:44.000Z">
+<meta property="article:modified_time" content="2021-07-27T08:46:25.480Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,36 +147,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue-证书打印以及下载" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue-证书打印以及下载
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/" class="archive-article-date">
+
+        
+        <a href="/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/" class="archive-article-date">
   	<time datetime="2021-07-16T06:37:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/">vue-证书打印以及下载</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>证书打印这里分两种打印方式：一种是将证书模板和文字整体打印出来，根据证书模板以及文字的x、y坐标显示在相应的位置；另一种称之为套打，不打印模板，只打印需要的文字，根据文字的x、y坐标显示在相应的位置。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+
+
+<h4 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h4><h5 id="1-打印的时候图片会时而显示时而不显示"><a href="#1-打印的时候图片会时而显示时而不显示" class="headerlink" title="1.打印的时候图片会时而显示时而不显示"></a>1.打印的时候图片会时而显示时而不显示</h5><p>这里使用的打印插件是vue-print-nb，之前的使用方式要打印的区域定义的id，比如‘test’ 和打印按钮上定义<strong>v-print=”‘#test’”</strong> ，id一致就可以了。但在测试过程中发现，点击打印的时候图片会时而显示时而不显示。排查之后发现可能是异步的问题，使用this.$nextTick(() =&gt; {}）后问题得到解决。所以，后面改为引入打印插件的核心代码printarea(该文件在vue-print-nb -&gt; src -&gt; packages -&gt; printarea.js)，之后的使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Print from &quot;@&#x2F;utils&#x2F;printarea&quot;;</span><br><span class="line">this.$nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">      new Print(&#123;</span><br><span class="line">         ids: &quot;#certificate&quot;, &#x2F;&#x2F; * 局部打印必传入id</span><br><span class="line">         endCallback() &#123;</span><br><span class="line">                &#x2F;&#x2F; 调用打印之后的回调事件</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">	&#125;, 500);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-打印的时候图片跨域"><a href="#2-打印的时候图片跨域" class="headerlink" title="2.打印的时候图片跨域"></a>2.打印的时候图片跨域</h5><p>在开发过程中，本人的电脑打印一切正常，但是其他小伙伴电脑出现图片跨域。在网上搜了很多方法，发现将图片转化为blob对象是可以解决问题的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let myImage &#x3D; new Image();</span><br><span class="line">myImage.setAttribute(&quot;crossOrigin&quot;,&#39;Anonymous&#39;)  </span><br><span class="line">this.toDataURL(data.train_credit_template, function(dataUrl) &#123;</span><br><span class="line">    myImage.src &#x3D; dataUrl;</span><br><span class="line">&#125;);</span><br><span class="line">myImage.crossOrigin &#x3D; &quot;Anonymous&quot;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">toDataURL(url, callback) &#123;</span><br><span class="line">   var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line">   xhr.onload &#x3D; function() &#123;</span><br><span class="line">     var reader &#x3D; new FileReader();</span><br><span class="line">     reader.onloadend &#x3D; function() &#123;</span><br><span class="line">       callback(reader.result);</span><br><span class="line">     &#125;;</span><br><span class="line">     reader.readAsDataURL(xhr.response);</span><br><span class="line">   &#125;;</span><br><span class="line">   xhr.open(&quot;GET&quot;, url);</span><br><span class="line">   xhr.responseType &#x3D; &quot;blob&quot;;</span><br><span class="line">   xhr.send();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-文字换行"><a href="#3-文字换行" class="headerlink" title="3.文字换行"></a>3.文字换行</h5><p>上网搜索了一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">textPrewrap(ctx, content, drawX, drawY, lineHeight, lineMaxWidth, lineNum) &#123;</span><br><span class="line">        var drawTxt &#x3D; &#39;&#39;; &#x2F;&#x2F; 当前绘制的内容</span><br><span class="line">        var drawLine &#x3D; 1; &#x2F;&#x2F; 第几行开始绘制</span><br><span class="line">        var drawIndex &#x3D; 0; &#x2F;&#x2F; 当前绘制内容的索引</span><br><span class="line">        ctx.textAlign &#x3D; &#39;left&#39;</span><br><span class="line">        &#x2F;&#x2F; 判断内容是否可以一行绘制完毕</span><br><span class="line">        if(ctx.measureText(content).width &lt;&#x3D; lineMaxWidth) &#123;</span><br><span class="line">          ctx.fillText(content.substring(drawIndex, i), drawX, drawY);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          for (var i &#x3D; 0; i &lt; content.length; i++) &#123;</span><br><span class="line">            drawTxt +&#x3D; content[i];</span><br><span class="line">            if (ctx.measureText(drawTxt).width &gt;&#x3D; lineMaxWidth) &#123;</span><br><span class="line">              if (drawLine &gt;&#x3D; lineNum) &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex, i) + &#39;..&#39;, drawX, drawY);</span><br><span class="line">                break;</span><br><span class="line">              &#125; else &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex, i + 1), drawX, drawY);</span><br><span class="line">                drawIndex &#x3D; i + 1;</span><br><span class="line">                drawLine +&#x3D; 1;</span><br><span class="line">                drawY +&#x3D; lineHeight;</span><br><span class="line">                drawTxt &#x3D; &#39;&#39;;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              &#x2F;&#x2F; 内容绘制完毕，但是剩下的内容宽度不到lineMaxWidth</span><br><span class="line">              if (i &#x3D;&#x3D;&#x3D; content.length - 1) &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex), drawX, drawY);</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-调节文字行间距"><a href="#4-调节文字行间距" class="headerlink" title="4.调节文字行间距"></a>4.调节文字行间距</h5><p>一定要加’!important‘，不然权限不够，会不起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#chapterCanvas&#123;</span><br><span class="line">   letter-spacing: 3px !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5-通过样式调整打印的方向"><a href="#5-通过样式调整打印的方向" class="headerlink" title="5.通过样式调整打印的方向"></a>5.通过样式调整打印的方向</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@media print &#123;</span><br><span class="line">    @page&#123;</span><br><span class="line">      &#x2F;*页面设置：a4 横幅*&#x2F;</span><br><span class="line">    	size: A4 portrait;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="6-如何只打印需要打印的部分"><a href="#6-如何只打印需要打印的部分" class="headerlink" title="6.如何只打印需要打印的部分"></a>6.如何只打印需要打印的部分</h5><p>在套打过程中，不需要显示证书模板，所以只需要给证书模板dom添加以下定义的类，该类定义display:none，也就是说在打印的时候就不会显示了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img class&#x3D;&quot;canvas-bg no-print&quot; :src&#x3D;&quot;item.comple_credit_template&quot; :style&#x3D;&quot;&#123;&#39;width&#39;: item.comple_credit_template_width+&#39;px&#39;, &#39;height&#39;: item.comple_credit_template_height+&#39;px&#39;&#125;&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media print &#123;</span><br><span class="line">    .no-print &#123;</span><br><span class="line">      display: none;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="7-如何下载"><a href="#7-如何下载" class="headerlink" title="7.如何下载"></a>7.如何下载</h5><p>通过html2canvas插件将页面转化为图片。注意这里也有跨域问题，需要设置一个属性useCORS: true 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let that &#x3D; this</span><br><span class="line">    var opts &#x3D; &#123;</span><br><span class="line">      useCORS: true &#x2F;&#x2F; 【重要】开启跨域配置</span><br><span class="line">    &#125;;</span><br><span class="line">    html2canvas(document.querySelector(id),opts).then(canvas &#x3D;&gt; &#123;</span><br><span class="line">      that.downLoading.close()</span><br><span class="line">      let url &#x3D; canvas.toDataURL(&quot;image&#x2F;jpeg&quot;);</span><br><span class="line">      downloadFileByBase64(url,name)</span><br><span class="line">    &#125;).catch(error &#x3D;&gt; &#123;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>最后，通过downloadFileByBase64方法，将url处理一下，最后生成下载链接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function dataURLtoBlob (dataurl, filename) &#123;</span><br><span class="line">  let arr &#x3D; dataurl.split(&quot;,&quot;);</span><br><span class="line">  let mime &#x3D; arr[0].match(&#x2F;:(.*?);&#x2F;)[1];</span><br><span class="line">  let bstr &#x3D; atob(arr[1]);</span><br><span class="line">  let n &#x3D; bstr.length;</span><br><span class="line">  let u8arr &#x3D; new Uint8Array(n);</span><br><span class="line">  while (n--) &#123;</span><br><span class="line">    u8arr[n] &#x3D; bstr.charCodeAt(n);</span><br><span class="line">  &#125;</span><br><span class="line">  return new Blob([u8arr], &#123; type: mime &#125;);</span><br><span class="line">&#125;</span><br><span class="line">function downloadFile (url, name) &#123;</span><br><span class="line">  var a &#x3D; document.createElement(&quot;a&quot;);</span><br><span class="line">  a.setAttribute(&quot;href&quot;, url);</span><br><span class="line">  a.setAttribute(&quot;download&quot;, name);</span><br><span class="line">  a.setAttribute(&quot;target&quot;, &quot;_blank&quot;);</span><br><span class="line">  let clickEvent &#x3D; document.createEvent(&quot;MouseEvents&quot;);</span><br><span class="line">  clickEvent.initEvent(&quot;click&quot;, true, true);</span><br><span class="line">  a.dispatchEvent(clickEvent);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default function downloadFileByBase64 (base64, name) &#123;</span><br><span class="line">  let myBlob &#x3D; dataURLtoBlob(base64);</span><br><span class="line">  let myUrl &#x3D; URL.createObjectURL(myBlob);</span><br><span class="line">  downloadFile(myUrl, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="一、证书模板和文字整体打印出来"><a href="#一、证书模板和文字整体打印出来" class="headerlink" title="一、证书模板和文字整体打印出来"></a>一、证书模板和文字整体打印出来</h4><p>完整代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"certificate-container"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"printing"</span>&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"printing-btn"</span> @click=<span class="string">"adjustWidth"</span>&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"printing-icon iconfont icondayinji"</span>&gt;&lt;<span class="regexp">/i&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;打印&lt;/</span>p&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div class="printing-btn download" @click="download()"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;i class="printing-icon el-icon-download" style="color:#fff"&gt;&lt;/i</span>&gt;</span><br><span class="line">        &lt;p&gt;下载&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="certificate-box" id="certificate" style="height:100%;"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div class="certificate-list"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div :id="'certificate'+index" class="certificate-item" v-for="(item,index) in certificateList" :key="index"&gt;</span></span><br><span class="line"><span class="regexp">          &lt;div class="canvas-loading" v-if="loading" v-loading="loading"&gt;&lt;/</span>div&gt;</span><br><span class="line">          &lt;canvas :id=<span class="string">"'chapterCanvas'+index"</span> width=<span class="string">"1006"</span> height=<span class="string">"710"</span>&gt;&lt;<span class="regexp">/canvas&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">import</span> html2canvas <span class="keyword">from</span> <span class="string">'html2canvas'</span></span><br><span class="line">  <span class="keyword">import</span> Print <span class="keyword">from</span> <span class="string">"@/utils/printarea"</span>;</span><br><span class="line">  <span class="keyword">import</span> downloadFileByBase64 <span class="keyword">from</span> <span class="string">'@/utils/exportBase64'</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    props: [ <span class="string">'certificateList'</span>],</span><br><span class="line">    data() &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        loading: <span class="literal">false</span>,</span><br><span class="line">        downLoading: <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.loading = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">this</span>.certificateList.forEach(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.canvas(item,index)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      adjustWidth() &#123;</span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">new</span> Print(&#123;</span><br><span class="line">              ids: <span class="string">"#certificate"</span>, <span class="comment">// * 局部打印必传入id</span></span><br><span class="line">              endCallback() &#123;</span><br><span class="line">                <span class="comment">// 调用打印之后的回调事件</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;, <span class="number">500</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">      textPrewrap(ctx, content, drawX, drawY, lineHeight, lineMaxWidth, lineNum) &#123;</span><br><span class="line">        <span class="keyword">var</span> drawTxt = <span class="string">''</span>; <span class="comment">// 当前绘制的内容</span></span><br><span class="line">        <span class="keyword">var</span> drawLine = <span class="number">1</span>; <span class="comment">// 第几行开始绘制</span></span><br><span class="line">        <span class="keyword">var</span> drawIndex = <span class="number">0</span>; <span class="comment">// 当前绘制内容的索引</span></span><br><span class="line">        ctx.textAlign = <span class="string">'left'</span></span><br><span class="line">        <span class="comment">// 判断内容是否可以一行绘制完毕</span></span><br><span class="line">        <span class="keyword">if</span>(ctx.measureText(content).width &lt;= lineMaxWidth) &#123;</span><br><span class="line">          ctx.fillText(content.substring(drawIndex, i), drawX, drawY);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; content.length; i++) &#123;</span><br><span class="line">            drawTxt += content[i];</span><br><span class="line">            <span class="keyword">if</span> (ctx.measureText(drawTxt).width &gt;= lineMaxWidth) &#123;</span><br><span class="line">              <span class="keyword">if</span> (drawLine &gt;= lineNum) &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex, i) + <span class="string">'..'</span>, drawX, drawY);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex, i + <span class="number">1</span>), drawX, drawY);</span><br><span class="line">                drawIndex = i + <span class="number">1</span>;</span><br><span class="line">                drawLine += <span class="number">1</span>;</span><br><span class="line">                drawY += lineHeight;</span><br><span class="line">                drawTxt = <span class="string">''</span>;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="comment">// 内容绘制完毕，但是剩下的内容宽度不到lineMaxWidth</span></span><br><span class="line">              <span class="keyword">if</span> (i === content.length - <span class="number">1</span>) &#123;</span><br><span class="line">                ctx.fillText(content.substring(drawIndex), drawX, drawY);</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      canvas(data,id)&#123;</span><br><span class="line">        <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"chapterCanvas"</span>+id);</span><br><span class="line">        <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">        <span class="comment">// let canvas = document.getElementById("chapterCanvas");</span></span><br><span class="line">        <span class="comment">// let ctx = canvas.getContext("2d");</span></span><br><span class="line">        <span class="keyword">let</span> myImage = <span class="keyword">new</span> Image();</span><br><span class="line">        myImage.setAttribute(<span class="string">"crossOrigin"</span>,<span class="string">'Anonymous'</span>)</span><br><span class="line">        <span class="comment">// myImage.src = data.train_credit_template;</span></span><br><span class="line">        <span class="keyword">this</span>.toDataURL(data.train_credit_template, <span class="function"><span class="keyword">function</span>(<span class="params">dataUrl</span>) </span>&#123;</span><br><span class="line">          myImage.src = dataUrl;</span><br><span class="line">        &#125;);</span><br><span class="line">        myImage.crossOrigin = <span class="string">"Anonymous"</span>;</span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">        myImage.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">if</span>(myImage.complete)&#123;</span><br><span class="line">            that.loading = <span class="literal">false</span></span><br><span class="line">            <span class="comment">// 背景图片</span></span><br><span class="line">            ctx.drawImage(myImage,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1006</span>,<span class="number">710</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 证书标题</span></span><br><span class="line">            <span class="keyword">let</span> title = data.course_name+<span class="string">'线上培训合格证书'</span></span><br><span class="line">            ctx.font = <span class="string">"bold 38px Microsoft YaHei"</span></span><br><span class="line">            ctx.textBaseline = <span class="string">'middle'</span></span><br><span class="line">            ctx.textAlign = <span class="string">'center'</span></span><br><span class="line">            ctx.fillStyle = <span class="string">"#103159"</span></span><br><span class="line">            ctx.fillText(title, canvas.width / <span class="number">2</span> - <span class="number">5</span>, <span class="number">140</span>)</span><br><span class="line">            <span class="comment">// 有学员照片</span></span><br><span class="line">            <span class="keyword">if</span>(data.train_credit_photo)&#123;</span><br><span class="line">              <span class="comment">// 内容</span></span><br><span class="line">              ctx.font = <span class="string">"bold 23px Microsoft YaHei"</span></span><br><span class="line">              ctx.textBaseline = <span class="string">'middle'</span></span><br><span class="line">              ctx.textAlign = <span class="string">'center'</span></span><br><span class="line">              ctx.fillStyle = <span class="string">"#333333"</span></span><br><span class="line">              ctx.letterSpacing = <span class="string">'203px'</span>;</span><br><span class="line">              <span class="keyword">let</span> content = data.realname+<span class="string">' 于'</span>+data.begin_time_Y+<span class="string">'年'</span>+data.begin_time_m+<span class="string">'月'</span>+ data.begin_time_d + <span class="string">'日至'</span>+ data.end_time_Y+<span class="string">'年'</span>+data.end_time_m+<span class="string">'月'</span>+ data.end_time_d + <span class="string">'日参加'</span>+data.course_name+<span class="string">'线上培训课程，在线学习时长达到规定课时（24课时），成绩合格，特发此证。'</span></span><br><span class="line">              that.textPrewrap(ctx,content,<span class="number">300</span>,<span class="number">240</span>,<span class="number">65</span>,<span class="number">550</span>,<span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">              <span class="comment">// 照片</span></span><br><span class="line">              <span class="keyword">let</span> avatarImage = <span class="keyword">new</span> Image();</span><br><span class="line">              avatarImage.setAttribute(<span class="string">"crossOrigin"</span>,<span class="string">'Anonymous'</span>)</span><br><span class="line">              <span class="comment">// avatarImage.src = data.credit_avatar</span></span><br><span class="line">              that.toDataURL(data.credit_avatar, <span class="function"><span class="keyword">function</span>(<span class="params">dataUrl</span>) </span>&#123;</span><br><span class="line">                avatarImage.src = dataUrl;</span><br><span class="line">              &#125;);</span><br><span class="line">              avatarImage.crossOrigin = <span class="string">"Anonymous"</span>;</span><br><span class="line">              avatarImage.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(avatarImage.complete)&#123;</span><br><span class="line">                  ctx.drawImage(avatarImage,<span class="number">120</span>,<span class="number">230</span>,<span class="number">142</span>,<span class="number">200</span>);</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              <span class="comment">// 内容</span></span><br><span class="line">              ctx.font = <span class="string">"bold 24px Microsoft YaHei"</span></span><br><span class="line">              ctx.textBaseline = <span class="string">'middle'</span></span><br><span class="line">              ctx.textAlign = <span class="string">'center'</span></span><br><span class="line">              ctx.fillStyle = <span class="string">"#39322d"</span></span><br><span class="line">              <span class="keyword">let</span> content = data.realname+<span class="string">'于'</span>+data.begin_time_Y+<span class="string">'年'</span>+data.begin_time_m+<span class="string">'月'</span>+ data.begin_time_d + <span class="string">'日至'</span>+ data.end_time_Y+<span class="string">'年'</span>+data.end_time_m+<span class="string">'月'</span>+ data.end_time_d + <span class="string">'日参加'</span>+ data.course_name +<span class="string">'线上培训课程，在线学习时长达到规定课时（24课时），成绩合格，特发此证。'</span></span><br><span class="line">              that.textPrewrap(ctx,content,<span class="number">120</span>,<span class="number">240</span>,<span class="number">45</span>,<span class="number">720</span>,<span class="number">100</span>)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 身份证号</span></span><br><span class="line">            <span class="keyword">let</span> idcard = <span class="string">'身份证号：'</span>+ data.idcard</span><br><span class="line">            ctx.font = <span class="string">"20px Microsoft YaHei"</span></span><br><span class="line">            ctx.textBaseline = <span class="string">'middle'</span></span><br><span class="line">            ctx.fillStyle = <span class="string">"#4A4B4B"</span></span><br><span class="line">            ctx.fillText(idcard, <span class="number">120</span>, <span class="number">510</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 证书编号</span></span><br><span class="line">            <span class="keyword">let</span> credit = <span class="string">'证书编号：'</span>+ data.train_credit</span><br><span class="line">            ctx.fillText(credit, <span class="number">120</span>, <span class="number">580</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 发证单位</span></span><br><span class="line">            <span class="keyword">let</span> authority = <span class="string">'发证单位： （盖章）'</span></span><br><span class="line">            ctx.fillText(authority, <span class="number">660</span>, <span class="number">510</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 盖章日期</span></span><br><span class="line">            <span class="keyword">let</span> date = data.credit_time_Y+<span class="string">'年'</span>+data.credit_time_m+<span class="string">'月'</span>+ data.credit_time_d + <span class="string">'日'</span></span><br><span class="line">            ctx.fillText(date, <span class="number">660</span>, <span class="number">580</span>)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      toDataURL(url, callback) &#123;</span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">          reader.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback(reader.result);</span><br><span class="line">          &#125;;</span><br><span class="line">          reader.readAsDataURL(xhr.response);</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.open(<span class="string">"GET"</span>, url);</span><br><span class="line">        xhr.responseType = <span class="string">"blob"</span>;</span><br><span class="line">        xhr.send();</span><br><span class="line">      &#125;,</span><br><span class="line">      toImg (id,name) &#123;</span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">        <span class="keyword">var</span> opts = &#123;</span><br><span class="line">          useCORS: <span class="literal">true</span> <span class="comment">// 【重要】开启跨域配置</span></span><br><span class="line">        &#125;;</span><br><span class="line">        html2canvas(<span class="built_in">document</span>.querySelector(id),opts).then(<span class="function"><span class="params">canvas</span> =&gt;</span> &#123;</span><br><span class="line">          that.downLoading.close()</span><br><span class="line">          <span class="keyword">let</span> url = canvas.toDataURL(<span class="string">"image/jpeg"</span>);</span><br><span class="line">          downloadFileByBase64(url,name)</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      download()&#123;</span><br><span class="line">        <span class="keyword">this</span>.downLoading = <span class="keyword">this</span>.$loading(&#123;</span><br><span class="line">          lock: <span class="literal">true</span>,</span><br><span class="line">          text: <span class="string">'下载中...'</span>,</span><br><span class="line">          spinner: <span class="string">'el-icon-loading'</span>,</span><br><span class="line">          background: <span class="string">'rgba(0, 0, 0, 0.7)'</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">this</span>.$nextTick( <span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.certificateList.forEach(<span class="function">(<span class="params">item,index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.toImg(<span class="string">'#certificate'</span>+index,<span class="string">'培训证书('</span>+item.realname+<span class="string">')'</span>)</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style lang="scss" scoped&gt;</span></span><br><span class="line"><span class="regexp">  .printing &#123;</span></span><br><span class="line"><span class="regexp">    position: fixed;</span></span><br><span class="line"><span class="regexp">    top: 50%;</span></span><br><span class="line"><span class="regexp">    right: 17px;</span></span><br><span class="line"><span class="regexp">    transform: translateY(-50%);</span></span><br><span class="line"><span class="regexp">    z-index: 100;</span></span><br><span class="line"><span class="regexp">    cursor: pointer;</span></span><br><span class="line"><span class="regexp">    .printing-btn &#123;</span></span><br><span class="line"><span class="regexp">      width: 70px;</span></span><br><span class="line"><span class="regexp">      height: 70px;</span></span><br><span class="line"><span class="regexp">      background: #27A3FF;</span></span><br><span class="line"><span class="regexp">      padding: 12px 0;</span></span><br><span class="line"><span class="regexp">      border-radius: 4px 0px 0px 4px;</span></span><br><span class="line"><span class="regexp">      text-align: center;</span></span><br><span class="line"><span class="regexp">      .printing-icon&#123;</span></span><br><span class="line"><span class="regexp">        font-size: 24px;</span></span><br><span class="line"><span class="regexp">        color: #fff;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">      p &#123;</span></span><br><span class="line"><span class="regexp">        font-size: 12px;</span></span><br><span class="line"><span class="regexp">        color: #fff;</span></span><br><span class="line"><span class="regexp">        padding-top: 6px;</span></span><br><span class="line"><span class="regexp">        text-align: center;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    .download&#123;</span></span><br><span class="line"><span class="regexp">      margin-top: 3px;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  .certificate-box&#123;</span></span><br><span class="line"><span class="regexp">    padding: 30px;</span></span><br><span class="line"><span class="regexp">    .certificate-list&#123;</span></span><br><span class="line"><span class="regexp">      height:100%;</span></span><br><span class="line"><span class="regexp">      .certificate-item&#123;</span></span><br><span class="line"><span class="regexp">        text-align: center;</span></span><br><span class="line"><span class="regexp">        #chapterCanvas&#123;</span></span><br><span class="line"><span class="regexp">          letter-spacing: 3px !important;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        .canvas-loading&#123;</span></span><br><span class="line"><span class="regexp">          display: inline-block;</span></span><br><span class="line"><span class="regexp">          width: 950px;</span></span><br><span class="line"><span class="regexp">          height: 660px;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  /</span>*以下样式可以控制打印的横纵方向，但项目中有其他的打印会影响全局所以在项目中注释了*<span class="regexp">/                 </span></span><br><span class="line"><span class="regexp">  /</span>*@media print &#123;*<span class="regexp">/  </span></span><br><span class="line"><span class="regexp">  /</span>*  @page&#123;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">  /</span>*    size:  auto;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">  /</span>*    margin: <span class="number">10</span>mm auto;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">  /</span>*  &#125;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">  /</span>*&#125;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="二、证书模板不打印，只打印文字"><a href="#二、证书模板不打印，只打印文字" class="headerlink" title="二、证书模板不打印，只打印文字"></a>二、证书模板不打印，只打印文字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;certificate-container&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;printing&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;printing-btn&quot; @click&#x3D;&quot;adjustWidth&quot;&gt;</span><br><span class="line">        &lt;i class&#x3D;&quot;printing-icon iconfont icondayinji&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">        &lt;p&gt;打印&lt;&#x2F;p&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;certificate-box&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;certificate-list&quot; id&#x3D;&quot;certificate&quot; style&#x3D;&quot;height:100%;&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;certificate-item&quot; v-for&#x3D;&quot;(item,index) in certificateList&quot; :key&#x3D;&quot;index&quot; :style&#x3D;&quot;&#123;&#39;width&#39;: item.comple_credit_template_width+&#39;px&#39;, &#39;height&#39;: item.comple_credit_template_height+&#39;px&#39;&#125;&quot;&gt;</span><br><span class="line">          &lt;img class&#x3D;&quot;canvas-bg no-print&quot; :src&#x3D;&quot;item.comple_credit_template&quot; :style&#x3D;&quot;&#123;&#39;width&#39;: item.comple_credit_template_width+&#39;px&#39;, &#39;height&#39;: item.comple_credit_template_height+&#39;px&#39;&#125;&quot;&#x2F;&gt;</span><br><span class="line">          &lt;div class&#x3D;&quot;canvas-loading&quot; v-if&#x3D;&quot;loading&quot; v-loading&#x3D;&quot;loading&quot; :style&#x3D;&quot;&#123;&#39;width&#39;: item.comple_credit_template_width+&#39;px&#39;, &#39;height&#39;: item.comple_credit_template_height+&#39;px&#39;&#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">          &lt;canvas class&#x3D;&quot;canvas-item&quot; :id&#x3D;&quot;&#39;chapterCanvas&#39;+index&quot; :width&#x3D;&quot;item.comple_credit_template_width&quot; :height&#x3D;&quot;item.comple_credit_template_height&quot;&gt;&lt;&#x2F;canvas&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import Print from &#39;@&#x2F;utils&#x2F;printarea&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    props: [ &#39;certificateList&#39;],</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        loading: false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      this.$nextTick(()&#x3D;&gt; &#123;</span><br><span class="line">        this.loading &#x3D; true</span><br><span class="line">        this.certificateList.forEach((item,index) &#x3D;&gt; &#123;</span><br><span class="line">          this.canvas(item,index)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      let that &#x3D; this</span><br><span class="line">      setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        that.loading &#x3D; false</span><br><span class="line">      &#125;, 1500);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      adjustWidth() &#123;</span><br><span class="line">        this.$nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">          var that &#x3D; this;</span><br><span class="line">          setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">            new Print(&#123;</span><br><span class="line">              ids: &quot;#certificate&quot;, &#x2F;&#x2F; * 局部打印必传入id</span><br><span class="line">              ignoreClass: &#39;noprint&#39;,</span><br><span class="line">              endCallback() &#123;</span><br><span class="line">                &#x2F;&#x2F; 调用打印之后的回调事件</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;, 500);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">      canvas(data,id)&#123;</span><br><span class="line">        let canvas &#x3D; document.getElementById(&quot;chapterCanvas&quot;+id);</span><br><span class="line">        let ctx &#x3D; canvas.getContext(&quot;2d&quot;);</span><br><span class="line">        if(data.comple_templates.length !&#x3D;&#x3D; 0)&#123;</span><br><span class="line">          data.comple_templates.forEach(item &#x3D;&gt;&#123;</span><br><span class="line">            let fontSize &#x3D; &#39;&#39;</span><br><span class="line">            if(data.comple_credit_template_height &lt; 500)&#123;</span><br><span class="line">              fontSize &#x3D; &#39;12&#39;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">              fontSize &#x3D; data.comple_credit_template_height*0.024</span><br><span class="line">            &#125;</span><br><span class="line">            ctx.font &#x3D; fontSize + &quot;px Microsoft YaHei&quot;</span><br><span class="line">            ctx.textBaseline &#x3D; &#39;middle&#39;</span><br><span class="line">            ctx.fillStyle &#x3D; &quot;#000&quot;</span><br><span class="line">            if (!item.text) &#123;</span><br><span class="line">              ctx.fillText(&#39;--&#39;, item.x_coordinate, item.y_coordinate)</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              ctx.fillText(item.text, item.x_coordinate, item.y_coordinate)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;</span><br><span class="line">  .printing &#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: 50%;</span><br><span class="line">    right: 17px;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">    z-index: 100;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    .printing-btn &#123;</span><br><span class="line">      width: 70px;</span><br><span class="line">      height: 70px;</span><br><span class="line">      background: #27A3FF;</span><br><span class="line">      padding: 12px 0;</span><br><span class="line">      border-radius: 4px 0px 0px 4px;</span><br><span class="line">      text-align: center;</span><br><span class="line">      .printing-icon&#123;</span><br><span class="line">        font-size: 24px;</span><br><span class="line">        color: #fff;</span><br><span class="line">      &#125;</span><br><span class="line">      p &#123;</span><br><span class="line">        font-size: 12px;</span><br><span class="line">        color: #fff;</span><br><span class="line">        padding-top: 6px;</span><br><span class="line">        text-align: center;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  .certificate-box&#123;</span><br><span class="line">    .certificate-list&#123;</span><br><span class="line">      height:100%;</span><br><span class="line">      .certificate-item&#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        text-align: center;</span><br><span class="line">        margin: 0 auto;</span><br><span class="line">        .canvas-loading&#123;</span><br><span class="line">          display: inline-block;</span><br><span class="line">        &#125;</span><br><span class="line">        .canvas-bg&#123;</span><br><span class="line">          position: absolute;</span><br><span class="line">          left: 0;</span><br><span class="line">          top: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .canvas-item&#123;</span><br><span class="line">          position: absolute;</span><br><span class="line">          left: 0;</span><br><span class="line">          right: 0;</span><br><span class="line">          margin: 0 auto;</span><br><span class="line">          top: 0;</span><br><span class="line">          z-index: 10;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @media print &#123;</span><br><span class="line">    .no-print &#123;</span><br><span class="line">      display: none;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,174 +263,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/07/16/vue-%E8%AF%81%E4%B9%A6%E6%89%93%E5%8D%B0%E4%BB%A5%E5%8F%8A%E4%B8%8B%E8%BD%BD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/06/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E7%9A%84html/" class="archive-article-date">
-  	<time datetime="2021-04-06T02:20:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/06/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E7%9A%84html/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端如何显示生成订单后端返回的html</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/06/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E7%9A%84html/">前端如何显示生成订单后端返回的html</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/vue%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E9%99%A4%E4%BA%86%E8%87%AA%E5%B7%B1%E4%B9%8B%E5%A4%96%E7%82%B9%E5%87%BB%E9%A1%B5%E9%9D%A2%E4%BB%BB%E6%84%8F%E5%9C%B0%E6%96%B9%E5%B0%86%E8%87%AA%E8%BA%AB%E5%85%83%E7%B4%A0%E9%9A%90%E8%97%8F/" class="archive-article-date">
-  	<time datetime="2021-04-02T09:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/vue%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E9%99%A4%E4%BA%86%E8%87%AA%E5%B7%B1%E4%B9%8B%E5%A4%96%E7%82%B9%E5%87%BB%E9%A1%B5%E9%9D%A2%E4%BB%BB%E6%84%8F%E5%9C%B0%E6%96%B9%E5%B0%86%E8%87%AA%E8%BA%AB%E5%85%83%E7%B4%A0%E9%9A%90%E8%97%8F/">vue中实现点击除了自己之外点击页面任意地方将自身元素隐藏</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/19/vue%E5%AE%9E%E7%8E%B0%E7%83%AD%E5%8A%A0%E8%BD%BD-%E6%A0%B9%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%9F%9F%E5%90%8D%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/" class="archive-article-date">
-  	<time datetime="2021-02-19T06:38:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/19/vue%E5%AE%9E%E7%8E%B0%E7%83%AD%E5%8A%A0%E8%BD%BD-%E6%A0%B9%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%9F%9F%E5%90%8D%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/">vue实现热加载-根据访问域名动态修改接口地址</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-01-28T07:57:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/">vue-阿里云播放器的用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -374,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
