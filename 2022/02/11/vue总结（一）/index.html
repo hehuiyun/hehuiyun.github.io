@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2021 | Whittney&#39;s blog</title>
+  <title>vue总结（一） | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2021/page/2/index.html">
+  <meta name="description" content="前言新的一年，来一波总结~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue总结（一）">
+<meta property="og:url" content="http://yoursite.com/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言新的一年，来一波总结~">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/avatar.jpg">
+<meta property="og:image" content="http://yoursite.com/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/vue%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.jpg">
+<meta property="article:published_time" content="2022-02-11T10:02:24.000Z">
+<meta property="article:modified_time" content="2022-02-11T10:06:46.992Z">
 <meta property="article:author" content="Whittney He">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,215 +147,293 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue总结（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue总结（一）
+    </h1>
+  
+
+        
+        <a href="/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-02-11T10:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>新的一年，来一波总结~</p>
+<a id="more"></a>
+
+
+
+<p>1、箭头函数没有自己的this值，箭头函数中所使用的this来自于函数作用域链；</p>
+<p>2、vue数据代理原理：</p>
+<blockquote>
+<p>1). 通过Object.defineProperty(vm, key, {})给vm添加与data对象的属性对应的属性；<br>2). 所有添加的属性都包含get/set方法；<br>3). 在get/set方法中去操作data中对应的属性。</p>
+</blockquote>
+<p><img src="/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/vue%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.jpg" alt></p>
+<p>3、computed和watch的区别：</p>
+<p>computed执行场景： 1、页面渲染的时候；2、所依赖的值发生变化的时候</p>
+<p>watch执行场景：当值第一次绑定的时候，不会执行监听函数，只有值发生改变才会执行。如果我们需要在最初绑定值得时候也执行函数，就需要用到 immediate 属性immediate: true。</p>
+<blockquote>
+<p>immediate 表示在 watch 中首次绑定数据的时候是否执行 handler ，值为 true 则表示在 watch 声明的时候就立即执行 handler 方法，值为 false 时，则和一般使用 watch 一样，在数据发生变化的时候才执行 handler。</p>
+</blockquote>
+<blockquote>
+<p>1、computed支持缓存，只有依赖数据发生改变,才会重新进行计算;而watch不支持缓存，数据变,直接会触发相应的操作。 </p>
+<p>2、computed不支持异步 ，当computed内有异步操作时无效，无法监听数据的变化;而watch支持异步。</p>
+<p>3、computed属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于data中声明过或者父组件传递的props中的数据通过计算得到的值;而watch监听的函数接收两个参数，第一个参数是最新的值，第二个参数是输入之前的值。</p>
+<p>4、如果一个数据受多个数据影响 ，一般用computed；一个数据影响多个数据，一般用watch。</p>
+<p>5、如果computed属性属性值是函数，那么默认会走get方法;函数的返回值就是属性的属性值;在computed中的，属性都有-个get和一 个set方法，当数据变化时，调用set方法。而watch监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其它操作，函数有两个参数。</p>
+</blockquote>
+<p>4、v-show和v-if的区别：</p>
+<blockquote>
+<p>v-show 本质是修改元素的的CSS属性(display)来决定实现显示还是隐藏 </p>
+<p>v-if 本质是通过操纵dom元素来进行切换显示</p>
+<p>v-if需要操作dom元素，有更高的切换消耗，v-show只是修改元素的的CSS属性有更高的初始渲染消耗，如果需要非常频繁的切换，建议使用v-show较好，如果在运行时条件很少改变，则使用v-if较好 </p>
+</blockquote>
+<p>5、谈谈重绘(repaint)和回流(reflow)</p>
+<blockquote>
+<p>比如我们增删DOM节点，修改一个元素的宽高，页面布局发生变化，DOM树结构发生变化，那么肯定要重新构建DOM树，而DOM树与渲染树是紧密相连的，DOM树构建完，渲染树也会随之对页面进行再次渲染，<strong>这个过程就叫回流</strong>。</p>
+<p>当你给一个元素更换颜色，这样的行为是不会影响页面布局的，DOM树不会变化，但颜色变了，渲染树得重新渲染页面，<strong>这就是重汇</strong>。</p>
+<p>总结：引起DOM树结构变化，页面布局变化的行为叫回流，且回流一定伴随重绘。</p>
+<p>只是样式的变化，不会引起DOM树变化，页面布局变化的行为叫重绘，且重绘不一定会便随回流。</p>
+</blockquote>
+<p>6、当数据发生变化时，vue是怎样更新节点的?</p>
+<p>渲染真实DOM的占用是很大的，比如有时我们修改了某个数据，如果直接渲染到真实dom上会引起整个dom树的重绘和重排</p>
+<p>有没有可能我们只更新我们修改的那一小块dom而不是更新整个dom呢？回答：diff算法能够帮助我们。</p>
+<p>diff算法：</p>
+<blockquote>
+<p>我们先根据真实DOM生成virtual DOM</p>
+<p>当virtual DOM某个节点的数据改变后生成一个新的vnode</p>
+<p>然后Vnode和oldVnode作对比，发现有不一样的地方就直接修改在真实的DOM上</p>
+<p>然后使oldVnode的值为Vnode。</p>
+</blockquote>
+<p>7、v-for循环中:key的作用是什么？key的默认值为index，用index作为key会有什么坑？</p>
+<p>key作为列表的唯一标识。</p>
+<p>如果用index作为key，在这种特殊情况下会出问题</p>
+<blockquote>
+<p>向一个列表中的<strong>最前面</strong>添加新数据，根据diff算法，第一个数据进行对比时，先对比key,再对比节点内容，发现节点内容会对不上，从而导致不能复用，重新渲染。这样的写法造成列表所有的key和节点内容都不一样，从而所有列表项都要重新生成真实dom，影响性能。</p>
+</blockquote>
+<p>8、数据监测原理</p>
+<p>（1）监测对象</p>
+<p>通过setter实现监视，且要在new Vue时就传入要监测的数据。</p>
+<p>对象中后追加的属性，Vue默认不做响应式处理,如需给后添加的属性做响应式，请使用如下API:</p>
+<blockquote>
+<p>Vue.set(target,propertyName/index,value) 或者</p>
+<p>this.$set(target,propertyName/index,value)</p>
+</blockquote>
+<p>Vue.set()和this.$set()都可以为对象添加一个新属性。</p>
+<p>🌹调用方法：this.$set( target, key, value )</p>
+<p>🌹 target：要更改的数据源(可以是对象或者数组)</p>
+<p>🌹 key：要更改的具体数据</p>
+<p>🌹 value ：重新赋的值</p>
+<p>Vue.set()和this.$set()区别：</p>
+<blockquote>
+<p>1、Vue.set()是将set函数绑定在Vue构造函数上，this.$set()是将set函数绑定在Vue原型上；</p>
+<p>2、Vue.set() 只允许给data里面的一个对象新增属性，有局限性。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个监视的实例对象，用于监视data中属性的变化</span></span><br><span class="line"><span class="keyword">const</span> obs = <span class="keyword">new</span> Observer(data)</span><br><span class="line"><span class="comment">//准备一个vm实例对象</span></span><br><span class="line"><span class="keyword">let</span> vm = &#123;&#125;</span><br><span class="line">vm._data = data = obs</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">observe</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//汇总对象中的所有属性形成一个数组</span></span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(obj)</span><br><span class="line">    <span class="comment">//遍历</span></span><br><span class="line">    keys.map(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 将object属性特殊处理</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">      <span class="comment">// 是对象属性的再次监听</span></span><br><span class="line">      observe(obj[key]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 非对象属性的做监听</span></span><br><span class="line">      defineReactive(obj, key, obj[key]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 利用Object.defineProperty做对象属性的做监听</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defineReactive</span>(<span class="params">obj, key, val</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(obj, key, &#123;</span><br><span class="line">    <span class="keyword">get</span>() &#123;</span><br><span class="line">      <span class="keyword">return</span> val;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span>(newVal) &#123;</span><br><span class="line">      <span class="comment">// 新增的属性再次进行监听</span></span><br><span class="line">      observe(newVal);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>（2）监测数组</p>
+<blockquote>
+<p>通过数组更新元素的方法实现，本质就是做了两件事：</p>
+<p>1.调用原生数组方法对数据进行更新；</p>
+<p>2.重新解析模板，进而更新页面。</p>
+</blockquote>
+<p>在vue中修改数组中的某个元素可以使用如下方法：</p>
+<blockquote>
+<p>1.使用这些API: push，pop，shift，unshift，splice, sort，reverse;</p>
+<p>2.替换原数组，使用这些API：filter concat slice 。它们虽然不会变更原始数组，而是返回一个新数组。所以可以使用新数组替换旧数组，从而实现数组的变更；</p>
+<p>3.使用Vue.set()和this.$set()。</p>
+</blockquote>
+<p>注意：</p>
+<blockquote>
+<p>在Vue2.x中数组变化监听的问题，其实不是Object.definePropertype方法监听不到，而是为了性能和收益比例综合考虑之下，改变了监听方式，从原本的直接监听结果变化这种思路变换到监听会导致结果变化的方法上，也就上面所提到的对数组的重写。</p>
+<p>而Vue3.0中利用Proxy的方式则完美解决了2.0中出现的问题。</p>
+</blockquote>
+<p>参考链接： <a href="https://blog.csdn.net/qq_27053493/article/details/105062078" target="_blank" rel="noopener">https://blog.csdn.net/qq_27053493/article/details/105062078</a></p>
+<p>9、XSS攻击</p>
+<p>盗走用户的cookie(用户信息)，使用v-html就容易被XSS攻击，所以要确保赋值内容的安全性。</p>
+<p>10、v-cloak</p>
+<p>解决的问题：</p>
+<blockquote>
+<p>网速过慢时，解决页面展示Mustache标签的问题。</p>
+</blockquote>
+<p>用法：</p>
+<blockquote>
+<p>这个指令保持在元素上直到关联实例结束编译。和 css 规则如<code>[v-cloak] { display: none }</code>一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。</p>
+</blockquote>
+<p>11、自定义指令</p>
+<blockquote>
+<p>注意：</p>
+<p>1、自定义指令不支持驼峰的写法，要用‘-’符号连接；</p>
+<p>2、自定义指令中的this不是vm，而是window；</p>
+</blockquote>
+<p>(1)自定义指令为函数写法时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">directives:&#123;</span><br><span class="line">	<span class="comment">//element 所用到这个指令的真实DOM</span></span><br><span class="line">	<span class="comment">//binding 包含指令的所有详细信息，比如value</span></span><br><span class="line">    hhy:<span class="function"><span class="keyword">function</span>(<span class="params">element,binding</span>)</span>&#123;</span><br><span class="line">        element.innerText = binding.value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2)自定义指令为对象写法时</p>
+<blockquote>
+<ul>
+<li><code>bind</code>：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</li>
+<li><code>inserted</code>：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</li>
+<li><code>update</code>：所在组件的 VNode 更新时调用，<strong>但是可能发生在其子 VNode 更新之前</strong>。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">directives:&#123;</span><br><span class="line">    hhy:&#123;</span><br><span class="line">        <span class="comment">//指令与元素成功绑定</span></span><br><span class="line">        bind(element,binding)&#123;</span><br><span class="line">            element.value = binding.value</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//指令所在元素被插入页面时</span></span><br><span class="line">        inserted()&#123;</span><br><span class="line">           element.focus()     </span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//指令所在模块被重新解析时    </span></span><br><span class="line">        update()&#123;</span><br><span class="line">           element.value = binding.value   </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上写法为局部指令，全局指令用以下写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 注册一个全局自定义指令 &#96;v-focus&#96;</span><br><span class="line">Vue.directive(&#39;focus&#39;, &#123;</span><br><span class="line">  &#x2F;&#x2F; 当被绑定的元素插入到 DOM 中时……</span><br><span class="line">  inserted: function (el) &#123;</span><br><span class="line">    &#x2F;&#x2F; 聚焦元素</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/06/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E7%9A%84html/" class="archive-article-date">
-  	<time datetime="2021-04-06T02:20:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/06/%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E7%9A%84html/">前端如何显示生成订单后端返回的html</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/vue%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E9%99%A4%E4%BA%86%E8%87%AA%E5%B7%B1%E4%B9%8B%E5%A4%96%E7%82%B9%E5%87%BB%E9%A1%B5%E9%9D%A2%E4%BB%BB%E6%84%8F%E5%9C%B0%E6%96%B9%E5%B0%86%E8%87%AA%E8%BA%AB%E5%85%83%E7%B4%A0%E9%9A%90%E8%97%8F/" class="archive-article-date">
-  	<time datetime="2021-04-02T09:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/10/stickyFooter%E5%B8%83%E5%B1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">stickyFooter布局</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/02/vue%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%82%B9%E5%87%BB%E9%99%A4%E4%BA%86%E8%87%AA%E5%B7%B1%E4%B9%8B%E5%A4%96%E7%82%B9%E5%87%BB%E9%A1%B5%E9%9D%A2%E4%BB%BB%E6%84%8F%E5%9C%B0%E6%96%B9%E5%B0%86%E8%87%AA%E8%BA%AB%E5%85%83%E7%B4%A0%E9%9A%90%E8%97%8F/">vue中实现点击除了自己之外点击页面任意地方将自身元素隐藏</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/19/vue%E5%AE%9E%E7%8E%B0%E7%83%AD%E5%8A%A0%E8%BD%BD-%E6%A0%B9%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%9F%9F%E5%90%8D%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/" class="archive-article-date">
-  	<time datetime="2021-02-19T06:38:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/19/vue%E5%AE%9E%E7%8E%B0%E7%83%AD%E5%8A%A0%E8%BD%BD-%E6%A0%B9%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%9F%9F%E5%90%8D%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/">vue实现热加载-根据访问域名动态修改接口地址</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-01-28T07:57:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/28/vue-%E9%98%BF%E9%87%8C%E4%BA%91%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95/">vue-阿里云播放器的用法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-01-22T07:43:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/">微信小程序websocket的用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2021/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -374,8 +457,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
