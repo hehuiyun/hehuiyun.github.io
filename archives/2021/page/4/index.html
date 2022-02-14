@@ -6,22 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>多图片上传 vue+element | Whittney&#39;s blog</title>
+  <title>Archives: 2021 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言总结自己封装的多图片上传组件。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="多图片上传 vue+element">
-<meta property="og:url" content="http://yoursite.com/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/index.html">
+  <meta name="description" content="好好学习，天天向上！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Whittney&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/archives/2021/page/4/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="前言总结自己封装的多图片上传组件。">
+<meta property="og:description" content="好好学习，天天向上！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/avatar.jpg">
-<meta property="article:published_time" content="2021-08-27T03:51:46.000Z">
-<meta property="article:modified_time" content="2022-02-14T04:04:39.044Z">
 <meta property="article:author" content="Whittney He">
-<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -147,192 +142,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-多图片上传-vue-element" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      多图片上传 vue+element
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-01-22T07:43:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/01/22/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fwebsocket%E7%9A%84%E7%94%A8%E6%B3%95/">微信小程序websocket的用法</a>
     </h1>
   
 
-        
-        <a href="/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/" class="archive-article-date">
-  	<time datetime="2021-08-27T03:51:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总结自己封装的多图片上传组件。</p>
-<a id="more"></a>
-
-<p>多图片上传核心代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"upload-multi-container"</span>&gt;</span><br><span class="line">        &lt;el-upload multiple :data=<span class="string">"uploadType"</span> :on-change=<span class="string">"handFileChange"</span> :limit=<span class="string">"uploadType.limit"</span> :on-exceed=<span class="string">"handleExceed"</span> list-type=<span class="string">"picture-card"</span> ref=<span class="string">"upload"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"upload-style"</span> name=<span class="string">"file"</span> :on-remove=<span class="string">"handleRemove"</span> :file-list=<span class="string">"elFileList"</span> :headers=<span class="string">"headers"</span> :action=<span class="string">"fileAddr"</span> :before-upload=<span class="string">"beforeFileUpload"</span>  :on-success=<span class="string">"handleFileSuccess"</span>&gt;</span><br><span class="line">            &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"el-icon-plus"</span>&gt;&lt;<span class="regexp">/i&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>el-upload&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span></span><br><span class="line">    <span class="keyword">import</span> uploadApi <span class="keyword">from</span> <span class="string">"@/api/upload"</span>;</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">        name: <span class="string">""</span>,</span><br><span class="line">        props:&#123;</span><br><span class="line">            uploadType:&#123;</span><br><span class="line">                type: <span class="built_in">Object</span>,</span><br><span class="line">                <span class="keyword">default</span>: &#123;&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            fileList: <span class="built_in">Array</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        data()&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                fileAddr: axios.$context+<span class="string">'/b/v1/resource/attachment'</span>,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    authorization: <span class="keyword">this</span>.$store.getters.token</span><br><span class="line">                &#125;,</span><br><span class="line">                elFileList: <span class="keyword">this</span>.fileList,</span><br><span class="line">                uploadNum: <span class="number">0</span>,</span><br><span class="line">                currentUploadNum: <span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            <span class="comment">// 获取上传图片的数量</span></span><br><span class="line">            handFileChange(files, fileList) &#123;</span><br><span class="line">                <span class="keyword">var</span> upload_img = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'upload-style'</span>)</span><br><span class="line">                <span class="keyword">if</span> (upload_img &amp;&amp; upload_img.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">var</span> upload = upload_img[<span class="number">0</span>].getElementsByTagName(<span class="string">'input'</span>)</span><br><span class="line">                    <span class="keyword">if</span> (upload &amp;&amp; upload.length &gt; <span class="number">0</span> &amp;&amp; upload[<span class="number">0</span>].files &amp;&amp; upload[<span class="number">0</span>].files.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">this</span>.uploadNum = upload[<span class="number">0</span>].files.length</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 获取文件后缀名</span></span><br><span class="line">            extname(filename) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!filename||<span class="keyword">typeof</span> filename!=<span class="string">'string'</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="keyword">let</span> a = filename.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                <span class="keyword">let</span> b = a.substring(<span class="number">0</span>,a.search(<span class="regexp">/\./</span>)).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                <span class="keyword">return</span> b</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">//文件上传之前</span></span><br><span class="line">            beforeFileUpload(file) &#123;</span><br><span class="line">                <span class="keyword">let</span> extArr = [<span class="string">'jpg'</span>,<span class="string">'png'</span>,<span class="string">'jpeg'</span>]</span><br><span class="line">                <span class="keyword">let</span> extension = <span class="literal">false</span></span><br><span class="line">                extArr.forEach(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">this</span>.extname(file.name).toLowerCase() === element.toLowerCase()) &#123;</span><br><span class="line">                        extension = <span class="literal">true</span></span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="keyword">const</span> isLt10M = file.size / <span class="number">1024</span> / <span class="number">1024</span> &lt; <span class="number">10</span>;</span><br><span class="line">                <span class="keyword">if</span> (!extension) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$message.error(<span class="string">'请上传图片!'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!isLt10M) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$message.error(<span class="string">'上传头像图片大小不能超过 10MB!'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> isLt10M &amp;&amp; extension;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">//文件上传成功</span></span><br><span class="line">            handleFileSuccess(res,file,fileList)&#123;</span><br><span class="line">                <span class="keyword">this</span>.$refs.upload.clearFiles();</span><br><span class="line">                <span class="keyword">if</span>(res.code === <span class="number">200</span>)&#123;</span><br><span class="line">                    <span class="keyword">this</span>.elFileList = fileList</span><br><span class="line">                    <span class="keyword">this</span>.currentUploadNum++</span><br><span class="line">                    <span class="keyword">if</span>(<span class="keyword">this</span>.uploadNum &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                        <span class="keyword">if</span>(<span class="keyword">this</span>.currentUploadNum == <span class="keyword">this</span>.uploadNum)&#123;</span><br><span class="line">                            <span class="keyword">this</span>.$emit(<span class="string">'getFileList'</span>, <span class="keyword">this</span>.elFileList);</span><br><span class="line">                            <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">                                type: <span class="string">'success'</span>,</span><br><span class="line">                                message: res.msg</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="keyword">this</span>.$emit(<span class="string">'getFileList'</span>, <span class="keyword">this</span>.elFileList);</span><br><span class="line">                        <span class="keyword">if</span>(<span class="keyword">this</span>.currentUploadNum == <span class="keyword">this</span>.uploadNum)&#123;</span><br><span class="line">                            <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">                                type: <span class="string">'success'</span>,</span><br><span class="line">                                message: res.msg</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">                        type: <span class="string">'error'</span>,</span><br><span class="line">                        message: res.msg</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            handleRemove(file, fileList) &#123;</span><br><span class="line">                <span class="keyword">if</span> (file &amp;&amp; file.status===<span class="string">"success"</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.elFileList = fileList</span><br><span class="line">                    <span class="keyword">this</span>.$emit(<span class="string">'getFileList'</span>, <span class="keyword">this</span>.elFileList);</span><br><span class="line">                    <span class="keyword">if</span>(!file.response &amp;&amp; !file.id)&#123;</span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="keyword">let</span> deleteId = <span class="literal">undefined</span></span><br><span class="line">                        <span class="keyword">if</span>(file.response)&#123;</span><br><span class="line">                            deleteId = file.response.data.id</span><br><span class="line">                        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            deleteId = file.id</span><br><span class="line">                        &#125;</span><br><span class="line">                        uploadApi.delImg(deleteId).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                            <span class="keyword">if</span> (res.code === <span class="number">204</span>) &#123;</span><br><span class="line">                                <span class="keyword">this</span>.$message.success(res.msg);</span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                <span class="keyword">this</span>.$message.error(res.msg);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;).catch(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                        &#125;)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            handleExceed() &#123;</span><br><span class="line">                <span class="keyword">this</span>.$message.error(<span class="string">`当前限制选择 <span class="subst">$&#123;<span class="keyword">this</span>.uploadType.limit&#125;</span> 个文件`</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//uploadType 后端规定的上传类型</span></span><br><span class="line"><span class="comment">//coverUrl 给组件传的值，回显用的</span></span><br><span class="line"><span class="comment">//getFileList 子组件传给父组件的值</span></span><br><span class="line">&lt;upload-img-multi v-<span class="keyword">if</span>=<span class="string">"showComponent"</span> :uploadType=<span class="string">"uploadType"</span> :fileList=<span class="string">"imgUrls"</span> @getFileList=<span class="string">"getImgUrls"</span>&gt;&lt;<span class="regexp">/upload-img-multi&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">methods:&#123;</span></span><br><span class="line"><span class="regexp">   getImgUrls(val)&#123;</span></span><br><span class="line"><span class="regexp">      console.log(val)</span></span><br><span class="line"><span class="regexp">      if(val.length !== 0)&#123;</span></span><br><span class="line"><span class="regexp">          let imgArr = []</span></span><br><span class="line"><span class="regexp">          val.forEach((item) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">            imgArr.push(item.response.data.id)</span></span><br><span class="line"><span class="regexp">          &#125;)</span></span><br><span class="line"><span class="regexp">          this.imgUrls = imgArr;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">   &#125;,</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>顺便给出当个图片上传封装的组件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--上传一个图像，比如头像、封面--&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"upload-container"</span>&gt;</span><br><span class="line">    &lt;el-upload :data=<span class="string">"uploadType"</span> :show-file-list=<span class="string">"false"</span> list-type=<span class="string">"picture-card"</span> ref=<span class="string">"upload"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"upload-style"</span> name=<span class="string">"file"</span> :headers=<span class="string">"headers"</span> :action=<span class="string">"fileAddr"</span> :before-upload=<span class="string">"beforeFileUpload"</span>  :on-success=<span class="string">"handleFileSuccess"</span>&gt;</span><br><span class="line">      &lt;el-image v-<span class="keyword">if</span>=<span class="string">"url"</span> :src=<span class="string">"url"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"avatar"</span> fit=<span class="string">"contain"</span>&gt;&lt;<span class="regexp">/el-image&gt;</span></span><br><span class="line"><span class="regexp">      &lt;i v-else class="el-icon-plus avatar-uploader-icon"&gt;&lt;/i</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/el-upload&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  import axios from "axios"</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    name: "",</span></span><br><span class="line"><span class="regexp">    props:&#123;</span></span><br><span class="line"><span class="regexp">      uploadType:&#123;</span></span><br><span class="line"><span class="regexp">        type: Object,</span></span><br><span class="line"><span class="regexp">        default: &#123;&#125;</span></span><br><span class="line"><span class="regexp">      &#125;,</span></span><br><span class="line"><span class="regexp">      imageUrls: &#123;</span></span><br><span class="line"><span class="regexp">        type: String,</span></span><br><span class="line"><span class="regexp">        default: ''</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    data()&#123;</span></span><br><span class="line"><span class="regexp">      return &#123;</span></span><br><span class="line"><span class="regexp">        fileAddr: axios.$context+'/</span>b/v1/resource/attachment<span class="string">',</span></span><br><span class="line"><span class="string">        headers: &#123;</span></span><br><span class="line"><span class="string">          authorization: this.$store.getters.token</span></span><br><span class="line"><span class="string">        &#125;,</span></span><br><span class="line"><span class="string">        url: this.imageUrls</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    methods: &#123;</span></span><br><span class="line"><span class="string">      // 获取文件后缀名</span></span><br><span class="line"><span class="string">      extname(filename) &#123;</span></span><br><span class="line"><span class="string">        if(!filename||typeof filename!='</span>string<span class="string">')&#123;</span></span><br><span class="line"><span class="string">          return false</span></span><br><span class="line"><span class="string">        &#125;;</span></span><br><span class="line"><span class="string">        let a = filename.split('</span><span class="string">').reverse().join('</span><span class="string">');</span></span><br><span class="line"><span class="string">        let b = a.substring(0,a.search(/\./)).split('</span><span class="string">').reverse().join('</span><span class="string">');</span></span><br><span class="line"><span class="string">        return b</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      //文件上传之前</span></span><br><span class="line"><span class="string">      beforeFileUpload(file) &#123;</span></span><br><span class="line"><span class="string">        let extArr = ['</span>jpg<span class="string">','</span>png<span class="string">','</span>jpeg<span class="string">']</span></span><br><span class="line"><span class="string">        let extension = false</span></span><br><span class="line"><span class="string">        extArr.forEach((element) =&gt; &#123;</span></span><br><span class="line"><span class="string">          if (this.extname(file.name).toLowerCase() === element.toLowerCase()) &#123;</span></span><br><span class="line"><span class="string">            extension = true</span></span><br><span class="line"><span class="string">            return</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">        const isLt10M = file.size / 1024 / 1024 &lt; 10;</span></span><br><span class="line"><span class="string">        if (!extension) &#123;</span></span><br><span class="line"><span class="string">          this.$message.error('</span>请上传图片!<span class="string">');</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        if (!isLt10M) &#123;</span></span><br><span class="line"><span class="string">          this.$message.error('</span>上传图片大小不能超过<span class="number">10</span>MB!<span class="string">');</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        return isLt10M &amp;&amp; extension;</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      //文件上传成功</span></span><br><span class="line"><span class="string">      handleFileSuccess(res)&#123;</span></span><br><span class="line"><span class="string">        this.$refs.upload.clearFiles();</span></span><br><span class="line"><span class="string">        if(res.code === 200)&#123;</span></span><br><span class="line"><span class="string">          this.url = res.data.url</span></span><br><span class="line"><span class="string">          this.$emit('</span>getFileList<span class="string">', this.url);</span></span><br><span class="line"><span class="string">          this.$message(&#123;</span></span><br><span class="line"><span class="string">            type: '</span>success<span class="string">',</span></span><br><span class="line"><span class="string">            message: '</span>导入成功!<span class="string">'</span></span><br><span class="line"><span class="string">          &#125;);</span></span><br><span class="line"><span class="string">        &#125;else&#123;</span></span><br><span class="line"><span class="string">          this.$message(&#123;</span></span><br><span class="line"><span class="string">            type: '</span>error<span class="string">',</span></span><br><span class="line"><span class="string">            message: res.msg</span></span><br><span class="line"><span class="string">          &#125;);</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;style lang="scss" scoped&gt;</span></span><br><span class="line"><span class="string">  .upload-container&#123;</span></span><br><span class="line"><span class="string">    .upload-style&#123;</span></span><br><span class="line"><span class="string">      position: relative;</span></span><br><span class="line"><span class="string">      color: #27A3FF;</span></span><br><span class="line"><span class="string">      width: 100%;</span></span><br><span class="line"><span class="string">      height: 100%;</span></span><br><span class="line"><span class="string">      border-radius: inherit;</span></span><br><span class="line"><span class="string">      line-height: inherit;</span></span><br><span class="line"><span class="string">      ::v-deep .el-upload--picture-card&#123;</span></span><br><span class="line"><span class="string">        width: 100%;</span></span><br><span class="line"><span class="string">        height: 100%;</span></span><br><span class="line"><span class="string">        border-radius: inherit;</span></span><br><span class="line"><span class="string">        line-height: inherit;</span></span><br><span class="line"><span class="string">        box-sizing: content-box;</span></span><br><span class="line"><span class="string">        i&#123;</span></span><br><span class="line"><span class="string">          position: absolute;</span></span><br><span class="line"><span class="string">          left: 0;</span></span><br><span class="line"><span class="string">          top: 0;</span></span><br><span class="line"><span class="string">          right: 0;</span></span><br><span class="line"><span class="string">          bottom: 0;</span></span><br><span class="line"><span class="string">          margin: auto;</span></span><br><span class="line"><span class="string">          width: 28px;</span></span><br><span class="line"><span class="string">          height: 28px;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    .avatar&#123;</span></span><br><span class="line"><span class="string">      width: 100%;</span></span><br><span class="line"><span class="string">      height: 100%;</span></span><br><span class="line"><span class="string">      border-radius: inherit;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//uploadType 后端规定的上传类型</span></span><br><span class="line"><span class="comment">//coverUrl 给组件传的值，回显用的</span></span><br><span class="line"><span class="comment">//getFileList 子组件传给父组件的值</span></span><br><span class="line">&lt;upload-img-single v-<span class="keyword">if</span>=<span class="string">"showComponent"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cover-style"</span> :uploadType=<span class="string">"uploadType"</span> :imageUrls=<span class="string">"coverUrl"</span> @getFileList=<span class="string">"getCoverUrl"</span>&gt;&lt;<span class="regexp">/upload-img-single&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">methods:&#123;</span></span><br><span class="line"><span class="regexp">    getCoverUrl(val)&#123;</span></span><br><span class="line"><span class="regexp">      console.log(val)</span></span><br><span class="line"><span class="regexp">      if(val)&#123;</span></span><br><span class="line"><span class="regexp">         this.coverUrl = val</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/08/27/%E5%A4%9A%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0-vue-element/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/09/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue-cropper头像裁剪
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/08/24/vue%E7%BB%84%E4%BB%B6%E9%80%92%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue组件递归</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2021/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><a class="page-number" href="/archives/2021/page/2/">2</a><a class="page-number" href="/archives/2021/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -356,8 +222,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
