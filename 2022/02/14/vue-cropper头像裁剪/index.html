@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Whittney&#39;s blog</title>
+  <title>vue-cropper头像裁剪 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/10/index.html">
+  <meta name="description" content="前言需求是：当上传的图片需要有一定的比例时，需要上传前将图片裁剪成相应的比例。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cropper头像裁剪">
+<meta property="og:url" content="http://yoursite.com/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言需求是：当上传的图片需要有一定的比例时，需要上传前将图片裁剪成相应的比例。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/avatar.jpg">
+<meta property="article:published_time" content="2022-02-14T03:25:12.000Z">
+<meta property="article:modified_time" content="2022-02-14T03:50:57.572Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,215 +147,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-cropper头像裁剪" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue-cropper头像裁剪
+    </h1>
+  
+
+        
+        <a href="/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/" class="archive-article-date">
+  	<time datetime="2022-02-14T03:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>需求是：当上传的图片需要有一定的比例时，需要上传前将图片裁剪成相应的比例。</p>
+<a id="more"></a>
+
+<p>vue-cropper使用方法：</p>
+<p>安装：<code>npm install vue-cropper</code>  </p>
+<p>使用：</p>
+<p>1、局部使用 </p>
+<blockquote>
+<p>import { VueCropper } from ‘vue-cropper’ </p>
+</blockquote>
+<p>2、全局使用</p>
+<blockquote>
+<p>在main.js中引用</p>
+<p>import VueCropper from ‘vue-cropper’</p>
+<p>Vue.use(VueCropper)</p>
+</blockquote>
+<p>具体使用：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- vueCropper 剪裁图片实现--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-upload</span> <span class="attr">:data</span>=<span class="string">"uploadType"</span> <span class="attr">:auto-upload</span>=<span class="string">"false"</span> <span class="attr">:show-file-list</span>=<span class="string">"false"</span> <span class="attr">list-type</span>=<span class="string">"picture-card"</span> <span class="attr">ref</span>=<span class="string">"upload"</span> <span class="attr">class</span>=<span class="string">"upload-style"</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">:headers</span>=<span class="string">"headers"</span> <span class="attr">:action</span>=<span class="string">"fileAddr"</span> <span class="attr">:on-change</span>=<span class="string">"(file,fileList)=&gt;&#123;return changeFile(file,fileList,item.id)&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-image</span> <span class="attr">v-if</span>=<span class="string">"item.logo"</span> <span class="attr">:src</span>=<span class="string">"item.logo"</span> <span class="attr">class</span>=<span class="string">"avatar"</span> <span class="attr">fit</span>=<span class="string">"cover"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-image</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"el-icon-plus avatar-uploader-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-upload</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">"图片剪裁"</span> <span class="attr">:visible.sync</span>=<span class="string">"cropperVisible"</span> <span class="attr">append-to-body</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cropper-content"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cropper"</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">vueCropper</span> <span class="attr">ref</span>=<span class="string">"cropper"</span> </span></span><br><span class="line"><span class="tag">       	<span class="attr">:img</span>=<span class="string">"option.img"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:outputSize</span>=<span class="string">"option.size"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:outputType</span>=<span class="string">"option.outputType"</span>                </span></span><br><span class="line"><span class="tag">        <span class="attr">:info</span>=<span class="string">"true"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:full</span>=<span class="string">"option.full"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:canMove</span>=<span class="string">"option.canMove"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:canMoveBox</span>=<span class="string">"option.canMoveBox"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:original</span>=<span class="string">"option.original"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:autoCrop</span>=<span class="string">"option.autoCrop"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:fixed</span>=<span class="string">"option.fixed"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:fixedNumber</span>=<span class="string">"option.fixedNumber"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:centerBox</span>=<span class="string">"option.centerBox"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">:infoTrue</span>=<span class="string">"option.infoTrue"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:fixedBox</span>=<span class="string">"option.fixedBox"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">vueCropper</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"footer"</span> <span class="attr">class</span>=<span class="string">"dialog-footer"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"cropperVisible = false"</span>&gt;</span>取 消<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"finish"</span> <span class="attr">:loading</span>=<span class="string">"loading"</span>&gt;</span>确认<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>js：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">        name: <span class="string">'Index'</span>,</span><br><span class="line">        data() &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                uploadType: &#123;</span><br><span class="line">                    type: <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                fileAddr: axios.$context+<span class="string">'/b/v1/resource/attachment'</span>,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    authorization: <span class="keyword">this</span>.$store.getters.token</span><br><span class="line">                &#125;,</span><br><span class="line">                cropperVisible: <span class="literal">false</span>,</span><br><span class="line">                option: &#123;</span><br><span class="line">                    img: <span class="string">''</span>, <span class="comment">// 裁剪图片的地址</span></span><br><span class="line">                    info: <span class="literal">true</span>, <span class="comment">// 裁剪框的大小信息</span></span><br><span class="line">                    outputSize: <span class="number">1</span>, <span class="comment">// 裁剪生成图片的质量</span></span><br><span class="line">                    outputType: <span class="string">'jpeg'</span>, <span class="comment">// 裁剪生成图片的格式</span></span><br><span class="line">                    canScale: <span class="literal">false</span>, <span class="comment">// 图片是否允许滚轮缩放</span></span><br><span class="line">                    autoCrop: <span class="literal">true</span>, <span class="comment">// 是否默认生成截图框</span></span><br><span class="line">                    <span class="comment">// autoCropWidth: 300, // 默认生成截图框宽度</span></span><br><span class="line">                    <span class="comment">// autoCropHeight: 200, // 默认生成截图框高度</span></span><br><span class="line">                    fixedBox: <span class="literal">false</span>, <span class="comment">// 固定截图框大小 不允许改变</span></span><br><span class="line">                    fixed: <span class="literal">true</span>, <span class="comment">// 是否开启截图框宽高固定比例</span></span><br><span class="line">                    fixedNumber: [<span class="number">1</span>, <span class="number">1</span>], <span class="comment">// 截图框的宽高比例</span></span><br><span class="line">                    full: <span class="literal">true</span>, <span class="comment">// 是否输出原图比例的截图</span></span><br><span class="line">                    canMoveBox: <span class="literal">true</span>, <span class="comment">// 截图框能否拖动</span></span><br><span class="line">                    original: <span class="literal">false</span>, <span class="comment">// 上传图片按照原始比例渲染</span></span><br><span class="line">                    centerBox: <span class="literal">false</span>, <span class="comment">// 截图框是否被限制在图片里面</span></span><br><span class="line">                    infoTrue: <span class="literal">true</span> <span class="comment">// true 为展示真实输出图片宽高 false 展示看到的截图框宽高</span></span><br><span class="line">                &#125;,</span><br><span class="line">                loading: <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            <span class="comment">// 获取文件后缀名</span></span><br><span class="line">            extname(filename) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!filename||<span class="keyword">typeof</span> filename!=<span class="string">'string'</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="keyword">let</span> a = filename.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                <span class="keyword">let</span> b = a.substring(<span class="number">0</span>,a.search(<span class="regexp">/\./</span>)).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                <span class="keyword">return</span> b</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 获取编辑头像id</span></span><br><span class="line">            changeFile(file,fileList,id)&#123;</span><br><span class="line">                <span class="keyword">this</span>.editId = id</span><br><span class="line">                <span class="keyword">let</span> extArr = [<span class="string">'jpg'</span>,<span class="string">'png'</span>,<span class="string">'jpeg'</span>]</span><br><span class="line">                <span class="keyword">let</span> extension = <span class="literal">false</span></span><br><span class="line">                extArr.forEach(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">this</span>.extname(file.name).toLowerCase() === element.toLowerCase()) &#123;</span><br><span class="line">                        extension = <span class="literal">true</span></span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="keyword">const</span> isLt10M = file.size / <span class="number">1024</span> / <span class="number">1024</span> &lt; <span class="number">10</span>;</span><br><span class="line">                <span class="keyword">if</span> (!extension) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$message.error(<span class="string">'请上传图片!'</span>);</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!isLt10M) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.$message.error(<span class="string">'上传图片大小不能超过10MB!'</span>);</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//关键</span></span><br><span class="line">                <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">this</span>.option.img = file.url</span><br><span class="line">                    <span class="keyword">this</span>.cropperVisible = <span class="literal">true</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 点击裁剪，这一步是可以拿到处理后的地址</span></span><br><span class="line">            finish() &#123;</span><br><span class="line">                <span class="keyword">this</span>.$refs.cropper.getCropData(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="keyword">this</span>.imgType)</span><br><span class="line">                    <span class="keyword">let</span> uploadParams = &#123;</span><br><span class="line">                        type: <span class="number">0</span>,</span><br><span class="line">                        image_base64: data,</span><br><span class="line">                        extension: <span class="string">'png'</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    uploadApi.uploadCropperImg(uploadParams).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (res.code == <span class="number">200</span>) &#123;</span><br><span class="line">                            <span class="keyword">let</span> params = &#123;</span><br><span class="line">                                type: <span class="string">'logo'</span>,</span><br><span class="line">                                logo: res.data.url</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="built_in">console</span>.log(params)</span><br><span class="line">                            <span class="comment">//具体操作</span></span><br><span class="line">                            <span class="keyword">this</span>.cropperVisible = <span class="literal">false</span></span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">                                type: <span class="string">"error"</span>,</span><br><span class="line">                                message: res.msg,</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;).catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(error)</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2018-06-12T08:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/12/%E8%B0%B7%E6%AD%8C%E6%92%AD%E6%94%BEflash%E8%A7%86%E9%A2%91%E9%BB%98%E8%AE%A4flash%E5%B1%8F%E8%94%BD%E9%97%AE%E9%A2%98/">谷歌播放flash视频默认flash屏蔽问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2022/02/14/vue-cropper%E5%A4%B4%E5%83%8F%E8%A3%81%E5%89%AA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/" class="archive-article-date">
-  	<time datetime="2018-05-18T01:36:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/11/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue总结（一）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/%E8%AF%B4%E4%B8%80%E8%AF%B4animation/">说一说animation</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2018-05-08T02:16:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/08/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0web%E5%8A%A8%E7%94%BB/">多种方法实现web动画</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2018-05-04T08:14:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/04/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">前端布局问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML+CSS+JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2018-05-04T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/04/H5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0/">H5自定义视频播放器实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">h5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/11/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -374,8 +352,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
