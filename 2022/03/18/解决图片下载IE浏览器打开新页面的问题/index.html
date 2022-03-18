@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Whittney&#39;s blog</title>
+  <title>解决图片下载IE浏览器打开新页面的问题 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+  <meta name="description" content="前言​    在后台管理系统中，时常会有下载图片的需求，但在开发过程中发现，通过a标签下载的话，IE浏览器的下载表现是打开新的页面显示图片，并不是直接下载。为了兼容性，如果浏览器为IE时，使用window.navigator.msSaveBlob方法实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决图片下载IE浏览器打开新页面的问题">
+<meta property="og:url" content="http://yoursite.com/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言​    在后台管理系统中，时常会有下载图片的需求，但在开发过程中发现，通过a标签下载的话，IE浏览器的下载表现是打开新的页面显示图片，并不是直接下载。为了兼容性，如果浏览器为IE时，使用window.navigator.msSaveBlob方法实现。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/avatar.png">
+<meta property="article:published_time" content="2022-03-18T03:46:14.000Z">
+<meta property="article:modified_time" content="2022-03-18T06:53:23.529Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="jQuery">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/avatar.png">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,35 +147,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-CSP内容安全策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-解决图片下载IE浏览器打开新页面的问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/">CSP内容安全策略</a>
+    <h1 class="article-title" itemprop="name">
+      解决图片下载IE浏览器打开新页面的问题
     </h1>
   
 
         
-        <a href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="archive-article-date">
-  	<time datetime="2019-07-06T08:55:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+        <a href="/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-03-18T03:46:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从搜索如何预防xss脚本攻击，了解到CSP。</p>
-        
-          <a class="article-more-a" href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/#more">more >></a>
-        
+        <p><img src="/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/avatar.png" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在后台管理系统中，时常会有下载图片的需求，但在开发过程中发现，通过a标签下载的话，IE浏览器的下载表现是打开新的页面显示图片，并不是直接下载。为了兼容性，如果浏览器为IE时，使用window.navigator.msSaveBlob方法实现。</p>
+<a id="more"></a>
+
+
+
+<p>核心代码</p>
+<p>这个可以下载图片，也可以下载文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断浏览器类型</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myBrowser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> userAgent = navigator.userAgent; <span class="comment">//取得浏览器的userAgent字符串</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"OPR"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Opera"</span>;</span><br><span class="line">        &#125;; <span class="comment">//判断是否Opera浏览器 OPR/43.0.2442.991</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"Firefox"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"FF"</span>;</span><br><span class="line">        &#125; <span class="comment">//判断是否Firefox浏览器  Firefox/51.0</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"Trident"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"IE"</span>;</span><br><span class="line">        &#125; <span class="comment">//判断是否IE浏览器  Trident/7.0; rv:11.0</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"Edge"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Edge"</span>;</span><br><span class="line">        &#125; <span class="comment">//判断是否Edge浏览器  Edge/14.14393</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"Chrome"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Chrome"</span>;</span><br><span class="line">        &#125; <span class="comment">// Chrome/56.0.2924.87</span></span><br><span class="line">        <span class="keyword">if</span> (userAgent.indexOf(<span class="string">"Safari"</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Safari"</span>;</span><br><span class="line">        &#125; <span class="comment">//判断是否Safari浏览器 AppleWebKit/534.57.2 Version/5.1.7 Safari/534.57.2</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断文件是否为图片类型</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isImage</span>(<span class="params">ext</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (ext == <span class="string">'png'</span> || ext == <span class="string">'jpg'</span> || ext == <span class="string">'jpeg'</span> || ext == <span class="string">'gif'</span> || ext == <span class="string">'bmp'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// download(type, data, name)：</span></span><br><span class="line">    <span class="comment">// type: 1 或 2（ 用于判断传入的是地址还是canvas对象 ）</span></span><br><span class="line">    <span class="comment">// data: type = 1 时传入文件地址； type = 2 时传入一个canvas对象（ 配合html2canvas使用 ）</span></span><br><span class="line">    <span class="comment">// name: 下载图片默认文件名（ type = 1 时设置''为地址默认文件名, type = 2 时 name 不能为空 ）</span></span><br><span class="line">    <span class="comment">// 注：name 参数虽然只有在下载文件类型为图片时生效，但为避免出错都需要传入一个值</span></span><br><span class="line">    <span class="comment">// 例：download(1, url, '') 或 download(2, canvas对象, '图片附件')</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">download</span>(<span class="params">type, data, name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (type == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> url = data;</span><br><span class="line">            <span class="comment">// 通过地址判断是否为图片类型文件</span></span><br><span class="line">            <span class="keyword">var</span> ext = url.slice(url.lastIndexOf(<span class="string">'.'</span>) + <span class="number">1</span>).toLowerCase();</span><br><span class="line">            <span class="keyword">if</span> (isImage(ext)) &#123;</span><br><span class="line">                convertUrlToBase64(url).then(<span class="function"><span class="keyword">function</span> (<span class="params">base64</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> blob = convertBase64UrlToBlob(base64);</span><br><span class="line">                    <span class="comment">// 下载</span></span><br><span class="line">                    <span class="keyword">if</span> (myBrowser() == <span class="string">'IE'</span>) &#123;</span><br><span class="line">                        <span class="built_in">window</span>.navigator.msSaveBlob(blob, name + <span class="string">'.jpg'</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">                        a.download = name;</span><br><span class="line">                        a.href = URL.createObjectURL(blob);</span><br><span class="line">                        a.style.display = <span class="string">'none'</span></span><br><span class="line">                        <span class="built_in">document</span>.body.appendChild(a);</span><br><span class="line">                        a.click();</span><br><span class="line">                        <span class="built_in">document</span>.body.removeChild(a);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">                a.download = name;</span><br><span class="line">                a.href = url;</span><br><span class="line">                a.style.display = <span class="string">'none'</span></span><br><span class="line">                <span class="built_in">document</span>.body.appendChild(a);</span><br><span class="line">                a.click();</span><br><span class="line">                <span class="built_in">document</span>.body.removeChild(a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> dataURL = data.toDataURL(<span class="string">'image/jpeg'</span>, <span class="number">1.0</span>);</span><br><span class="line">            <span class="keyword">var</span> base64 = &#123;</span><br><span class="line">                dataURL: dataURL,</span><br><span class="line">                type: <span class="string">'image/jpg'</span>,</span><br><span class="line">                ext: <span class="string">'jpg'</span></span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">var</span> blob = convertBase64UrlToBlob(base64);</span><br><span class="line">            <span class="comment">// 下载</span></span><br><span class="line">            <span class="keyword">if</span> (myBrowser() == <span class="string">'IE'</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.navigator.msSaveBlob(blob, name + <span class="string">'.jpg'</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">var</span> _a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">                _a.download = name;</span><br><span class="line">                _a.href = URL.createObjectURL(blob);</span><br><span class="line">                _a.style.display = <span class="string">'none'</span></span><br><span class="line">                <span class="built_in">document</span>.body.appendChild(_a);</span><br><span class="line">                _a.click();</span><br><span class="line">                <span class="built_in">document</span>.body.removeChild(_a);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将 base64 转换位 blob 对象</span></span><br><span class="line"><span class="comment">     * blob 存储 2进制对象的容器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@export</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param <span class="type">&#123;*&#125;</span> <span class="variable">base64</span></span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@returns</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">convertBase64UrlToBlob</span>(<span class="params">base64</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> parts = base64.dataURL.split(<span class="string">';base64,'</span>);</span><br><span class="line">        <span class="keyword">var</span> contentType = parts[<span class="number">0</span>].split(<span class="string">':'</span>)[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">var</span> raw = <span class="built_in">window</span>.atob(parts[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">var</span> rawLength = raw.length;</span><br><span class="line">        <span class="keyword">var</span> uInt8Array = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(rawLength);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; rawLength; i++) &#123;</span><br><span class="line">            uInt8Array[i] = raw.charCodeAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Blob([uInt8Array], &#123; <span class="attr">type</span>: contentType &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将图片地址转换为 base64 格式</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param <span class="type">&#123;*&#125;</span> <span class="variable">url</span></span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">convertUrlToBase64</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">            img.crossOrigin = <span class="string">'Anonymous'</span>;</span><br><span class="line">            img.src = url;</span><br><span class="line">            img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</span><br><span class="line">                canvas.width = img.width;</span><br><span class="line">                canvas.height = img.height;</span><br><span class="line">                <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">                ctx.drawImage(img, <span class="number">0</span>, <span class="number">0</span>, img.width, img.height);</span><br><span class="line">                <span class="keyword">var</span> ext = img.src.substring(img.src.lastIndexOf(<span class="string">'.'</span>) + <span class="number">1</span>).toLowerCase();</span><br><span class="line">                <span class="keyword">var</span> dataURL = canvas.toDataURL(<span class="string">'image/'</span> + ext);</span><br><span class="line">                <span class="keyword">var</span> base64 = &#123;</span><br><span class="line">                    dataURL: dataURL,</span><br><span class="line">                    type: <span class="string">'image/'</span> + ext,</span><br><span class="line">                    ext: ext</span><br><span class="line">                &#125;;</span><br><span class="line">                resolve(base64);</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用方法</p>
+<h4 id="download-type-data-name-："><a href="#download-type-data-name-：" class="headerlink" title="download(type, data, name)："></a>download(type, data, name)：</h4><blockquote>
+<ul>
+<li>type: 1 或 2（ 用于判断传入的是地址还是canvas对象 ）</li>
+<li>data: type = 1 时传入文件地址； type = 2 时传入一个canvas对象（ 配合html2canvas使用 ）</li>
+<li>name: 下载图片默认文件名（ type = 1 时设置’’为地址默认文件名, type = 2 时 name 不能为空 ）<br> 注：name 参数虽然只有在下载文件类型为图片时生效，但为避免出错都需要传入一个值<br> 例：download(1, url, ‘’) 或 download(2, canvas对象, ‘图片附件’)</li>
+</ul>
+</blockquote>
+<p> 案例</p>
+<p>解决IE浏览器不兼容es6的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"./browser.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>解决IE浏览器不兼容new promise的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = <span class="string">"https://cdn.polyfill.io/v2/polyfill.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>具体代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span> <span class="attr">id</span>=<span class="string">"img"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"width: 100px; height: 100px;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./browser.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"https://cdn.polyfill.io/v2/polyfill.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/babel"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">'img'</span>).onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">        download(<span class="number">1</span>,<span class="string">'./test.png'</span>,<span class="string">'test.png'</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -181,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
         		</li>
       		
 		</ul>
@@ -190,16 +240,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/CSP%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/03/vue%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue总结（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -219,320 +328,14 @@
 
 
 
-
-  
-    <article id="post-判断url中存在一个值并进行修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/">判断url中存在一个值并进行修改</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/" class="archive-article-date">
-  	<time datetime="2019-06-20T07:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>实现需求：当用户从A页面点击链接跳转到B页面,B页面自动显示弹框。要注意的是，只有从A页面点击进入B页面才显示弹框，否则不显示弹框，并且当用户在B页面点击关闭弹框刷新时，不会再次显示弹框。这里就需要在A页面跳转到B页面的时候在url中传入一个标志goSetting= 1，在B页面判断是否存在这个标志，存在则显示弹框，否则不显示。并且在关闭弹框的时候改变B页面url的标志的值goSetting= 0，否则刷新的时候会一直显示弹窗。</p>
-        
-          <a class="article-more-a" href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-localStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/localStorage/">localStorage</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/12/localStorage/" class="archive-article-date">
-  	<time datetime="2019-06-12T15:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/06/12/localStorage/avatar.jpg" alt></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>使用localStorage存储用户id，在使用的时候可以随时获取用户id。</p>
-        
-          <a class="article-more-a" href="/2019/06/12/localStorage/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/12/localStorage/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-实现在input输入一串含中文的字符串时，另一个input中实时显示缩写（要求中文显示拼音首字母大写）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/">实现在input输入一串含中文的字符串时，另一个input中实时显示缩写（要求中文显示拼音首字母大写）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-06-09T05:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/avatar.jpg" alt></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>有一个表单需要输入名称和名称缩写，为了优化用户体验，让用户在输入名称的时候，实时显示名称缩写。</p>
-        
-          <a class="article-more-a" href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue-element项目实现搜索表格字段，让表格滚动到相应的位置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/26/Vue-element%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E8%A1%A8%E6%A0%BC%E5%AD%97%E6%AE%B5%EF%BC%8C%E8%AE%A9%E8%A1%A8%E6%A0%BC%E6%BB%9A%E5%8A%A8%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%8D%E7%BD%AE/">Vue+element项目实现搜索表格字段，让表格滚动到相应的位置</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/26/Vue-element%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E8%A1%A8%E6%A0%BC%E5%AD%97%E6%AE%B5%EF%BC%8C%E8%AE%A9%E8%A1%A8%E6%A0%BC%E6%BB%9A%E5%8A%A8%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2019-05-26T14:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2019/05/26/Vue-element%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E8%A1%A8%E6%A0%BC%E5%AD%97%E6%AE%B5%EF%BC%8C%E8%AE%A9%E8%A1%A8%E6%A0%BC%E6%BB%9A%E5%8A%A8%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%8D%E7%BD%AE/avatar.jpg" alt></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近开始跟着大神做Vue的项目，虽然之前学过Vue，但一开始着手开发项目的时候还是以模仿代码为主。由于做的是后台管理的项目，所以最主要的还是结合element框架实现界面，调用接口就可以了。后期由于字段太多，导致查找 一个相关字段很是费劲。所以提出了一个需求：实现搜索表格字段，让表格滚动到相应的位置。 </p>
-        
-          <a class="article-more-a" href="/2019/05/26/Vue-element%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E8%A1%A8%E6%A0%BC%E5%AD%97%E6%AE%B5%EF%BC%8C%E8%AE%A9%E8%A1%A8%E6%A0%BC%E6%BB%9A%E5%8A%A8%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%8D%E7%BD%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/26/Vue-element%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E8%A1%A8%E6%A0%BC%E5%AD%97%E6%AE%B5%EF%BC%8C%E8%AE%A9%E8%A1%A8%E6%A0%BC%E6%BB%9A%E5%8A%A8%E5%88%B0%E7%9B%B8%E5%BA%94%E7%9A%84%E4%BD%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -555,8 +358,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
