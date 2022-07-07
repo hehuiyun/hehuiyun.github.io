@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: JS | Whittney&#39;s blog</title>
+  <title>采用scale适配方案，支持动态刷新适配 | Whittney&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好学习，天天向上！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whittney&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/JS/index.html">
+  <meta name="description" content="前言通过scale进行数据大屏实现各种不同大小设备的适配。也适用于各种需要适配设备的场景，比如登录页。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="采用scale适配方案，支持动态刷新适配">
+<meta property="og:url" content="http://yoursite.com/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/index.html">
 <meta property="og:site_name" content="Whittney&#39;s blog">
-<meta property="og:description" content="好好学习，天天向上！">
+<meta property="og:description" content="前言通过scale进行数据大屏实现各种不同大小设备的适配。也适用于各种需要适配设备的场景，比如登录页。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/avatar.jpg">
+<meta property="article:published_time" content="2022-07-07T02:45:57.000Z">
+<meta property="article:modified_time" content="2022-07-07T02:56:29.118Z">
 <meta property="article:author" content="Whittney He">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Whittney&#39;s blog" type="application/atom+xml">
   
@@ -142,36 +147,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-采用scale适配方案，支持动态刷新适配" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      采用scale适配方案，支持动态刷新适配
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/" class="archive-article-date">
+
+        
+        <a href="/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/" class="archive-article-date">
   	<time datetime="2022-07-07T02:45:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/">采用scale适配方案，支持动态刷新适配</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/avatar.jpg" alt></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过scale进行数据大屏实现各种不同大小设备的适配。也适用于各种需要适配设备的场景，比如登录页。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+
+
+<p>vue项目中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">      <span class="comment">//  适配处理</span></span><br><span class="line">      <span class="keyword">const</span> appRef = <span class="keyword">this</span>.$refs.appRef</span><br><span class="line">      <span class="keyword">const</span> manageScreen = <span class="keyword">this</span>.$refs.manageScreen</span><br><span class="line">      <span class="comment">// 默认缩放值</span></span><br><span class="line">      <span class="keyword">const</span> scale = &#123;</span><br><span class="line">        width: <span class="string">'1920'</span>,</span><br><span class="line">        height: <span class="string">'1080'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 设计稿尺寸（px）</span></span><br><span class="line">      <span class="keyword">const</span> baseWidth = <span class="number">1920</span></span><br><span class="line">      <span class="keyword">const</span> baseHeight = <span class="number">1080</span></span><br><span class="line">      <span class="comment">// 需保持的比例（默认1.77778）</span></span><br><span class="line">      <span class="comment">// const baseProportion = parseFloat((baseWidth / baseHeight).toFixed(5))</span></span><br><span class="line">      <span class="keyword">const</span> baseProportion = <span class="built_in">Math</span>.ceil((baseWidth / baseHeight) * <span class="number">100</span>) / <span class="number">100</span></span><br><span class="line">      <span class="keyword">this</span>.calcRate = debounce(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 当前宽高比</span></span><br><span class="line">        <span class="keyword">const</span> currentRate = <span class="built_in">parseFloat</span>((<span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight).toFixed(<span class="number">2</span>))</span><br><span class="line">        <span class="keyword">if</span> (appRef) &#123;</span><br><span class="line">          <span class="keyword">if</span> (currentRate &gt; baseProportion) &#123;</span><br><span class="line">            <span class="comment">// 表示更宽</span></span><br><span class="line">            scale.width = ((<span class="built_in">window</span>.innerHeight * baseProportion) / baseWidth).toFixed(<span class="number">2</span>)</span><br><span class="line">              scale.height = (<span class="built_in">window</span>.innerHeight / baseHeight).toFixed(<span class="number">2</span>)</span><br><span class="line">              appRef.style.transform = <span class="string">`scale(<span class="subst">$&#123;scale.width&#125;</span>, <span class="subst">$&#123;scale.height&#125;</span>) translate(-50%, -50%)`</span></span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 表示更高</span></span><br><span class="line">            scale.height = (<span class="built_in">window</span>.innerWidth / baseProportion / baseHeight).toFixed(<span class="number">2</span>)</span><br><span class="line">            scale.width = (<span class="built_in">window</span>.innerWidth / baseWidth).toFixed(<span class="number">2</span>)</span><br><span class="line">            appRef.style.transform = <span class="string">`scale(<span class="subst">$&#123;scale.width&#125;</span>, <span class="subst">$&#123;scale.height&#125;</span>) translate(-50%, -50%)`</span></span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;, <span class="number">200</span>)</span><br><span class="line">   <span class="keyword">this</span>.calcRate()</span><br><span class="line">   <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.calcRate)</span><br><span class="line">&#125;,</span><br><span class="line">destroyed() &#123;</span><br><span class="line">   <span class="comment">//需要销毁，不然别的页面也会受影响</span></span><br><span class="line">   <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.calcRate)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>jquery </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> timer</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> context = <span class="keyword">this</span></span><br><span class="line">            <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line">            clearTimeout(timer)</span><br><span class="line">            timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                fn.apply(context, args)</span><br><span class="line">            &#125;, delay)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  适配处理</span></span><br><span class="line">      <span class="keyword">var</span> appRef = <span class="built_in">document</span>.getElementById(<span class="string">'loginBox'</span>)</span><br><span class="line">      <span class="keyword">var</span> manageScreen = <span class="built_in">document</span>.getElementById(<span class="string">'sectionLogin'</span>)</span><br><span class="line">      <span class="comment">// 默认缩放值</span></span><br><span class="line">      <span class="keyword">var</span> scale = &#123;</span><br><span class="line">        width: <span class="string">'1920'</span>,</span><br><span class="line">        height: <span class="string">'1080'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 设计稿尺寸（px）</span></span><br><span class="line">      <span class="keyword">var</span> baseWidth = <span class="number">1920</span></span><br><span class="line">      <span class="keyword">var</span> baseHeight = <span class="number">1080</span></span><br><span class="line">      <span class="comment">// 需保持的比例</span></span><br><span class="line">      <span class="keyword">var</span> baseProportion = <span class="built_in">Math</span>.ceil((baseWidth / baseHeight) * <span class="number">100</span>) / <span class="number">100</span></span><br><span class="line">      <span class="keyword">var</span> calcRate = debounce(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 当前宽高比</span></span><br><span class="line">        <span class="keyword">var</span> currentRate = <span class="built_in">parseFloat</span>((<span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight).toFixed(<span class="number">2</span>))</span><br><span class="line">        <span class="keyword">if</span> (appRef) &#123;</span><br><span class="line">          <span class="keyword">if</span> (currentRate &gt; baseProportion) &#123;</span><br><span class="line">            <span class="comment">// 表示更宽</span></span><br><span class="line">             scale.width = ((<span class="built_in">window</span>.innerHeight * baseProportion) / baseWidth).toFixed(<span class="number">2</span>)</span><br><span class="line">              scale.height = (<span class="built_in">window</span>.innerHeight / baseHeight).toFixed(<span class="number">2</span>)</span><br><span class="line">              appRef.style.transform = <span class="string">`scale(<span class="subst">$&#123;scale.width&#125;</span>, <span class="subst">$&#123;scale.height&#125;</span>) translate(-50%, -50%)`</span></span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 表示更高</span></span><br><span class="line">            scale.height = (<span class="built_in">window</span>.innerWidth / baseProportion / baseHeight).toFixed(<span class="number">2</span>)</span><br><span class="line">            scale.width = (<span class="built_in">window</span>.innerWidth / baseWidth).toFixed(<span class="number">2</span>)</span><br><span class="line">            appRef.style.transform = <span class="string">`scale(<span class="subst">$&#123;scale.width&#125;</span>, <span class="subst">$&#123;scale.height&#125;</span>) translate(-50%, -50%)`</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="number">200</span>)</span><br><span class="line">      calcRate()</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, calcRate)</span><br><span class="line"> &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考链接：<a href="https://gitee.com/vergil_lu/v3-big-screen" target="_blank" rel="noopener">https://gitee.com/vergil_lu/v3-big-screen</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,194 +226,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2022/07/07/%E9%87%87%E7%94%A8scale%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%94%AF%E6%8C%81%E5%8A%A8%E6%80%81%E5%88%B7%E6%96%B0%E9%80%82%E9%85%8D/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/18/%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BDIE%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%96%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决图片下载IE浏览器打开新页面的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/%E5%85%B3%E4%BA%8EJS%E5%B0%8F%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-10-10T06:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/%E5%85%B3%E4%BA%8EJS%E5%B0%8F%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/">关于JS小数的加减乘除精度丢失问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/" class="archive-article-date">
-  	<time datetime="2019-06-20T07:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/20/%E5%88%A4%E6%96%ADurl%E4%B8%AD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%80%BC%E5%B9%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9/">判断url中存在一个值并进行修改</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/12/localStorage/" class="archive-article-date">
-  	<time datetime="2019-06-12T15:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/12/localStorage/">localStorage</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-06-09T05:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/09/%E5%AE%9E%E7%8E%B0%E5%9C%A8input%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%B2%E5%90%AB%E4%B8%AD%E6%96%87%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%EF%BC%8C%E5%8F%A6%E4%B8%80%E4%B8%AAinput%E4%B8%AD%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E7%BC%A9%E5%86%99%EF%BC%88%E8%A6%81%E6%B1%82%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%EF%BC%89/">实现在input输入一串含中文的字符串时，另一个input中实时显示缩写（要求中文显示拼音首字母大写）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/JS/page/2/">2</a><a class="page-number" href="/tags/JS/page/3/">3</a><a class="extend next" rel="next" href="/tags/JS/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -394,9 +348,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
